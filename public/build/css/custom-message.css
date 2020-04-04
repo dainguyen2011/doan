@@ -1,0 +1,275 @@
+/*----------------------------------------------------*/
+
+
+/*----------------- messageAlls CSS -----------------*/
+
+
+/*----------------------------------------------------*/
+
+.messageAll {
+    margin-bottom: 10px;
+}
+
+.messageAll-section {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid #fff;
+}
+
+.messageAll-section:after {
+    top: 100%;
+    left: 50px;
+    border: solid transparent;
+    content: " ";
+    position: absolute;
+    border-top-color: #fff;
+    border-width: 15px;
+    margin-left: -15px;
+}
+
+.messageAll-desc {
+    margin-top: 20px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.messageAll-desc img {
+    border: 1px solid #f5f5f5;
+    border-radius: 150px;
+    height: 70px;
+    padding: 3px;
+    width: 70px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/*---- Outlined Styles ----*/
+
+.messageAll.messageAll-default {}
+
+.messageAll.messageAll-default .messageAll-section {
+    border-color: #777;
+}
+
+.messageAll.messageAll-default .messageAll-section:after {
+    border-top-color: #777;
+}
+
+.messageAll.messageAll-default .messageAll-desc {}
+
+.messageAll.messageAll-default .messageAll-desc img {
+    border-color: #777;
+}
+
+.messageAll.messageAll-primary {}
+
+.messageAll.messageAll-primary .messageAll-section {
+    border-color: #337AB7;
+    color: #286090;
+    background-color: rgba(51, 122, 183, 0.1);
+}
+
+.messageAll.messageAll-primary .messageAll-section:after {
+    border-top-color: #337AB7;
+}
+
+.messageAll.messageAll-primary .messageAll-desc {}
+
+.messageAll.messageAll-primary .messageAll-desc img {
+    border-color: #337AB7;
+}
+
+.messageAll.messageAll-info {}
+
+.messageAll.messageAll-info .messageAll-section {
+    border-color: #5BC0DE;
+    color: #31b0d5;
+    background-color: rgba(91, 192, 222, 0.1);
+}
+
+.messageAll.messageAll-info .messageAll-section:after {
+    border-top-color: #5BC0DE;
+}
+
+.messageAll.messageAll-info .messageAll-desc {}
+
+.messageAll.messageAll-info .messageAll-desc img {
+    border-color: #5BC0DE;
+}
+
+.messageAll.messageAll-success {}
+
+.messageAll.messageAll-success .messageAll-section {
+    border-color: #5CB85C;
+    color: #449d44;
+    background-color: rgba(92, 184, 92, 0.1);
+}
+
+.messageAll.messageAll-success .messageAll-section:after {
+    border-top-color: #5CB85C;
+}
+
+.messageAll.messageAll-success .messageAll-desc {}
+
+.messageAll.messageAll-success .messageAll-desc img {
+    border-color: #5CB85C;
+}
+
+.messageAll.messageAll-warning {}
+
+.messageAll.messageAll-warning .messageAll-section {
+    border-color: #F0AD4E;
+    color: #d58512;
+    background-color: rgba(240, 173, 78, 0.1);
+}
+
+.messageAll.messageAll-warning .messageAll-section:after {
+    border-top-color: #F0AD4E;
+}
+
+.messageAll.messageAll-warning .messageAll-desc {}
+
+.messageAll.messageAll-warning .messageAll-desc img {
+    border-color: #F0AD4E;
+}
+
+.messageAll.messageAll-danger {}
+
+.messageAll.messageAll-danger .messageAll-section {
+    border-color: #D9534F;
+    color: #c9302c;
+    background-color: rgba(217, 83, 79, 0.1);
+}
+
+.messageAll.messageAll-danger .messageAll-section:after {
+    border-top-color: #D9534F;
+}
+
+.messageAll.messageAll-danger .messageAll-desc {}
+
+.messageAll.messageAll-danger .messageAll-desc img {
+    border-color: #D9534F;
+}
+
+
+/*---- Filled Styles ----*/
+
+.messageAll.messageAll-default-filled {}
+
+.messageAll.messageAll-default-filled .messageAll-section {
+    color: #fff;
+    border-color: #777;
+    background-color: #777;
+}
+
+.messageAll.messageAll-default-filled .messageAll-section:after {
+    border-top-color: #777;
+}
+
+.messageAll.messageAll-default-filled .messageAll-desc {}
+
+.messageAll.messageAll-default-filled .messageAll-desc img {
+    border-color: #777;
+    background-color: #777;
+}
+
+.messageAll.messageAll-primary-filled {}
+
+.messageAll.messageAll-primary-filled .messageAll-section {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.messageAll.messageAll-primary-filled .messageAll-section:after {
+    border-top-color: #337AB7;
+}
+
+.messageAll.messageAll-primary-filled .messageAll-desc {}
+
+.messageAll.messageAll-primary-filled .messageAll-desc img {
+    border-color: #2e6da4;
+    background-color: #337ab7;
+}
+
+.messageAll.messageAll-info-filled {}
+
+.messageAll.messageAll-info-filled .messageAll-section {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.messageAll.messageAll-info-filled .messageAll-section:after {
+    border-top-color: #5BC0DE;
+}
+
+.messageAll.messageAll-info-filled .messageAll-desc {}
+
+.messageAll.messageAll-info-filled .messageAll-desc img {
+    border-color: #46b8da;
+    background-color: #5bc0de;
+}
+
+.messageAll.messageAll-success-filled {}
+
+.messageAll.messageAll-success-filled .messageAll-section {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.messageAll.messageAll-success-filled .messageAll-section:after {
+    border-top-color: #5CB85C;
+}
+
+.messageAll.messageAll-success-filled .messageAll-desc {}
+
+.messageAll.messageAll-success-filled .messageAll-desc img {
+    border-color: #4cae4c;
+    background-color: #5cb85c;
+}
+
+.messageAll.messageAll-warning-filled {}
+
+.messageAll.messageAll-warning-filled .messageAll-section {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.messageAll.messageAll-warning-filled .messageAll-section:after {
+    border-top-color: #F0AD4E;
+}
+
+.messageAll.messageAll-warning-filled .messageAll-desc {}
+
+.messageAll.messageAll-warning-filled .messageAll-desc img {
+    border-color: #eea236;
+    background-color: #f0ad4e;
+}
+
+.messageAll.messageAll-danger-filled {}
+
+.messageAll.messageAll-danger-filled .messageAll-section {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.messageAll.messageAll-danger-filled .messageAll-section:after {
+    border-top-color: #D9534F;
+}
+
+.messageAll.messageAll-danger-filled .messageAll-desc {}
+
+.messageAll.messageAll-danger-filled .messageAll-desc img {
+    border-color: #d43f3a;
+    background-color: #D9534F;
+}

@@ -1,0 +1,104 @@
+/* =============Extra Segment and Tooltip Color============= */
+
+.bg-dark {
+    background: #2e3e4e;
+    color: #fff;
+}
+
+.bg-white {
+    background: #fff;
+    color: #2e3e4e;
+}
+
+.bg-red {
+    background: #F25F5C;
+    color: #fff;
+}
+
+.text-red {
+    color: #F25F5C;
+}
+
+.text-blue {
+    color: #247BA0;
+}
+
+.text-green {
+    color: #32936F;
+}
+
+.text-yellow {
+    color: #FFE066;
+}
+
+.bg-blue {
+    background: #247BA0;
+    color: #fff;
+}
+
+.bg-yellow {
+    background: #FFE066;
+    color: #50514F;
+}
+
+.bg-grey {
+    background: #50514F;
+    color: #fff;
+}
+
+.bg-green {
+    background: #32936F;
+    color: #fff;
+}
+
+.bg-darkpurple {
+    background: #2A1A1F;
+    color: #fff;
+}
+
+.bg-darkorange {
+    background: #764134;
+    color: #fff;
+}
+
+.bg-green2 {
+    background: #307473;
+    color: #fff;
+}
+
+.bg-pink {
+    background: #E76D83;
+    color: #fff;
+}
+
+.bg-darkyellow {
+    background: #EFD28D;
+    color: #001011;
+}
+
+.bg-dark2 {
+    background: #001011;
+    color: #fff;
+}
+
+.bg-pink2 {
+    background: #C1839F;
+    color: #fff;
+}
+
+.bg-lightbrown {
+    background: #E1B07E;
+    color: #fff;
+}
+
+.bg-danger {
+    color: #fff;
+    background-color: #d96557;
+}
+
+.bg-success {
+    color: #fff;
+    background-color: #2ecc71;
+}
+
+/* =============Extra Segment and Tooltip Color============= */

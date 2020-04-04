@@ -1,0 +1,11 @@
+/* Sparkline */
+
+.sparkline {
+    text-align: center;
+    width: %100;
+}
+.jqstooltip {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
