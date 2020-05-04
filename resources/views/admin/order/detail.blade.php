@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="pull-right">
-                        <button class="btn btn-primary" type="submit">Save</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i></button>
                     </div>
                 </div>
             </div>

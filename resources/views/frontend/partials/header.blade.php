@@ -6,23 +6,6 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="header-top-left">
                         <div class="header-top-menu">
-                            {{--                            <ul class="list-inline">--}}
-                            {{--                                <li><img src="assets/frontend/img/flag.png" alt="flag"></li>--}}
-                            {{--                                <li class="dropdown"><a href="#" data-toggle="dropdown">VietNam</a>--}}
-                            {{--                                    <ul class="dropdown-menu">--}}
-                            {{--                                        <li><a href="#">English</a></li>--}}
-                            {{--                                        <li><a href="#">China</a></li>--}}
-                            {{--                                    </ul>--}}
-                            {{--                                </li>--}}
-                            {{--                                <li class="dropdown"><a href="#" data-toggle="dropdown">USD</a>--}}
-                            {{--                                    <ul class="dropdown-menu usd-dropdown">--}}
-                            {{--                                        <li><a href="#">VNĐ</a></li>--}}
-                            {{--                                        <li><a href="#">USD</a></li>--}}
-                            {{--                                        <li><a href="#">GBP</a></li>--}}
-                            {{--                                        <li><a href="#">EUR</a></li>--}}
-                            {{--                                    </ul>--}}
-                            {{--                                </li>--}}
-                            {{--                            </ul>--}}
                         </div>
                         <p>Welcome visitor!</p>
                     </div>
@@ -90,7 +73,7 @@
                         <div class="header-search">
                             <form action="search">
                                 <input type="text" name="key" placeholder="My Search"/>
-                                <button type="button"><i class="fa fa-search"></i></button>
+                                <button style="height: 35px;" type="button"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                     </div>

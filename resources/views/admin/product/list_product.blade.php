@@ -14,7 +14,7 @@
                 <th>Sale_price</th>
 
                 <th>Description</th>
-                <th><a href="{{route('them-san-pham')}}" class="btn btn-primary">Add new</a></th>
+                <th><a href="{{route('them-san-pham')}}" class="btn btn-primary"><i class="fa fa-plus-square"></i></a></th>
             </tr>
             </thead>
             <tbody>
@@ -32,9 +32,9 @@
                     <td nowrap="">{{$product->getPrice()}}</td>
                     <td style="width: 100px">{!! $product->description  !!}</td>
                     <th nowrap="">
-                        <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary">Edit</a>
-                        <a onclick="return confirm('Bạn có muốn xóa không?')" href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger">Delete</a>
-                        <a href="{{route('list-image',$product->id)}}" class="btn btn-info">Gallery</a>
+                        <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?')" href="{{route('xoa-san-pham',$product->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{route('list-image',$product->id)}}" class="btn btn-info"><i class="fa fa-info-circle"></i></a>
                     </th>
                 </tr>
             @endforeach

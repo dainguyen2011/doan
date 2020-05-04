@@ -43,15 +43,15 @@
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Password:</label>
-                    <input class="form-control" type="password" value="{{Auth::user()->password}}" name="password" required placeholder="Enter Password"/>
-                    <span class="Error"></span>
+                    <label>Avatar:</label>
+                    <img src="{{url('/')}}/{{Auth::user()->avatar}}">
+                    <input class="form-control" type="file" name="avatar"/>
                 </div>
-                <div class="form-group">
-                    <label>Confirm Password:</label>
-                    <input class="form-control" type="password" value="{{Auth::user()->password}}" name="password_confirmation" required placeholder="Enter Password"/>
-                    <span class="Error"></span>
-                </div>
+{{--                <div class="form-group">--}}
+{{--                    <label>Confirm Password:</label>--}}
+{{--                    <input class="form-control" type="password" value="{{Auth::user()->password}}" name="password_confirmation" required placeholder="Enter Password"/>--}}
+{{--                    <span class="Error"></span>--}}
+{{--                </div>--}}
                 <div class="form-group">
                     <label>Gender:</label><br/>
                     <label><input type="radio" name="gender" required value="1" checked /> Male</label>

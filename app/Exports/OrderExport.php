@@ -36,7 +36,7 @@ class OrderExport implements FromCollection, WithHeadings
                 '12' => $row->product_qty,
                 '15' => $row->total,
 //                '20' => $row->orders->money
-            ); dd($product);
+            );
 
         }
 

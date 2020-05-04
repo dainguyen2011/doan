@@ -21,21 +21,21 @@
                 <tr>
                     <th>Product image</th>
                     <th>
-                        <input type="file" class="form-control" name="image">
+                        <input placeholder="Nhập ảnh 1" type="file" class="form-control" name="image">
                     </th>
                 </tr>
                 <tr>
                     <th>Product image 1</th>
                     <th>
-                        <input type="file" class="form-control" name="image1">
+                        <input placeholder="Nhập ảnh 2" type="file" class="form-control" name="image1">
                     </th>
                 </tr>
 
                 <tr>
                     <td colspan="3">
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{route('list-image',$product->id)}}" class="btn btn-primary">Cancel</a>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                            <a href="{{route('list-image',$product->id)}}" class="btn btn-danger"><i class="fa fa-backward"></i></a>
                         </div>
                     </td>
                 </tr>

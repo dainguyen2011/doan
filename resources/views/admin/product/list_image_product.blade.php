@@ -22,7 +22,7 @@
                     <td nowrap><img style="width: 100px" class="product-image" src="{{ asset('/'.$image->image1)}}">
                     </td>
                     <th nowrap>
-                        <a href="{{'xoa-san-pham',$product->id}}" class="btn btn-primary">Delete</a>
+                        <a onclick="return confirm('Bạn có muốn xóa không?')" href="{{'xoa-san-pham',$product->id}}" class="btn btn-primary"><i class="fa fa-trash"></i></a>
                     </th>
                 </tr>
             @endforeach
@@ -30,7 +30,7 @@
             <tr>
                 <td colspan="3">
                     <div class="pull-right">
-                        <a href="{{route('danh-sach-san-pham')}}" class="btn btn-primary">Back to list product</a>
+                        <a href="{{route('danh-sach-san-pham')}}" class="btn btn-primary"><i class="fa fa-backward"></i></a>
                     </div>
                 </td>
             </tr>

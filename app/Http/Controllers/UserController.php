@@ -25,19 +25,40 @@ class UserController extends Controller
     function getpostprofile(UserRequest $request)
     {
         $id = Auth::user()->id;
+        $post = $request->all();
 
-        $user = User::where('id', $id);
-
-
-        $user->update([
-            'password' => Hash::make($request->password),
-            'phone' => $request->phone,
-            'name' => $request->name,
-            'full_name' => $request->full_name,
-            'note' => $request->note,
-            'gender' => $request->gender,
-        ]);
-
+//        $user = User::where('id', $id);
+//
+//
+//        $user->update([
+////            'password' => decrypt(Hash::make($request->password)),
+//            'phone' => $request->phone,
+//            'name' => $request->name,
+//            'full_name' => $request->full_name,
+//            'note' => $request->note,
+//            'gender' => $request->gender,
+//        ]);
+        $user = User::find($id);
+        $user->phone = $post['phone'];
+        $user->name = $post['name'];
+        $user->full_name = $post['full_name'];
+        $user->note = $post['note'];
+        $user->gender = $post['gender'];
+        if ($user->save()) {
+            if ($request->hasFile('avatar')) {
+                $file = $request->avatar;
+                // nếu cần validate file upload lên thì sử dụng mấy biến này
+                $file_name = $file->getClientOriginalName();
+                $extension_file = $file->getClientOriginalExtension();
+                $temp_file = $file->getRealPath();
+                $file_size = $file->getSize();
+                $file_type = $file->getMimeType();
+                $random = random_int(10000, 50000);
+                $file->move('upload/products', $random . $file->getClientOriginalName());
+                $user->avatar = "upload/products/" . $random . $file->getClientOriginalName();
+                $user->save();
+            }
+        }
 
         return redirect(route('profile'))->with('sua', 'Sửa thành công,cảm ơn bạn  !!!!!!');
     }

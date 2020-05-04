@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
       $sx = $request->sx;
       if (empty($sx)){
-        $aoclb_products = Product::where('category_id', 8)->orderBy('sale_price','ASC')->get();
+        $aoclb_products = Product::where('category_id', 8)->orderBy('price','ASC')->get();
         $aodoituyen_products = Product::where('category_id',9)->orderBy('price','ASC')->get();
 
         $aologo_products = Product::where('category_id', 10)->orderBy('price','ASC')->get();

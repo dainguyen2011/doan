@@ -12,6 +12,8 @@
     <link href="{{asset('vendors/ionicons-master/css/ionicons.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('build/css/extra_colors.css')}}" rel="stylesheet"/>
     <link href="{{asset('build/css/bootstrap-extra.css')}}" rel="stylesheet"/>
+    <script src="{{asset('build/js/main.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- bootstrap-wysiwyg -->
     <!-- <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"> -->
     <!-- Font Awesome -->
@@ -111,28 +113,22 @@
                             <li class="person-info">
                                 <div class="an-sidebar-widgets">
                                     <div class="an-user-avatar">
-                                        <img src="{{asset('build/img/img.jpg')}}" alt="an-user-info">
+                                        <img src="{{ asset('/'.auth()->user()->avatar)}}" alt="an-user-info">
                                     </div>
                                     <div class="an-user-info">
                                         <div class="an-username">{{auth()->user()->name}}</div>
-                                        <div class="an-permision">Administrator</div>
+                                        <div class="an-permision">{{auth()->user()->type}}</div>
                                     </div>
                                 </div>
                             </li>
-
                             <li>
-                                <a href="{{route('danh-sach-san-pham')}}"><i class="fa fa-map text-green"></i>
-                                    <span class="">Quản lý sản phẩm</span></a>
+                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                        class="">Quản lý sản phẩm</span></a>
                                 <ul class="nav-flyout">
                                     <li>
                                         <a href="{{route('danh-sach-san-pham')}}"><i
-                                                class="ion-email-unread text-yellow"></i>Danh sách sản phẩm</a>
+                                                class="ion-arrow-return-right text-yellow"></i>Danh sách sản phẩm</a>
                                     </li>
-{{--                                    <li>--}}
-{{--                                        <a href="{{route('danh-sach-san-pham')}}"><i--}}
-{{--                                                class="ion-chatbox-working text-yellow"></i>Thêm sửa xóa sản phẩm</a>--}}
-
-{{--                                    </li>--}}
                                 </ul>
                             </li>
                             @if(Auth::check())
@@ -144,14 +140,6 @@
                                             <a href="{{route('list-danh-muc')}}"><i
                                                     class="ion-paintbucket text-green"></i>Danh sách danh mục</a>
                                         </li>
-                                        <!-- <li>
-                                <a href="gradidents.html"><i class="ion-paintbucket text-green"></i>Gradidents</a>
-                            </li>
-                            -->
-{{--                                        <li>--}}
-{{--                                            <a href="{{route('list-danh-muc')}}"><i class="ion-edit text-green"></i>Thêm--}}
-{{--                                                sửa xoá danh mục</a>--}}
-{{--                                        </li>--}}
                                     </ul>
                                 </li>
                             @endif
@@ -163,28 +151,21 @@
                                         <a href="{{route('list-don-hang')}}"><i
                                                 class="ion-arrow-return-right text-yellow"></i>Danh sách đơn hàng</a>
                                     </li>
-{{--                                    <li>--}}
-{{--                                        <a href="{{route('list-don-hang')}}"><i class="ion-at text-yellow"></i>Sửa xóa--}}
-{{--                                            đơn hàng</a>--}}
-{{--                                    </li>--}}
                                 </ul>
                             </li>
-{{--                            <li>--}}
-{{--                                <a href="{{route('list-comment')}}"><i class="ion-leaf text-green"></i> <span class="">Quản lý bình luận</span></a>--}}
-{{--                                <ul class="nav-flyout">--}}
-{{--                                    <li>--}}
-{{--                                        <a href="{{route('list-comment')}}"><i class="ion-arrow-swap text-green"></i>Danh--}}
-{{--                                            sách bình luận</a>--}}
-{{--                                    </li>--}}
-{{--                                    <li>--}}
-{{--                                        <a href="{{route('list-comment')}}"><i class="ion-asterisk text-green"></i>Xóa--}}
-{{--                                            bình luận</a>--}}
-{{--                                    </li>--}}
-
-{{--                                </ul>--}}
-{{--                            </li>--}}
                             <li>
-                                <a href="{{route('list-thong-ke')}}"><i class="fa fa-filter text-green"></i><span class="">Thống kê</span></a>
+                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                        class="">Thống kê</span></a>
+                                <ul class="nav-flyout">
+                                    <li>
+                                        <a href="{{route('list-thong-ke')}}"><i
+                                                class="ion-arrow-return-right text-yellow"></i>Theo đơn hàng</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('list-thong-ke-sp')}}"><i
+                                                class="ion-arrow-return-right text-yellow"></i>Theo sản phẩm</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -208,28 +189,6 @@
         </div>
     </footer>
 </div>
-
-
-<script src="{{asset('vendors/bootstrap/dist/js/jquery.min.js')}}"></script>
-<script src="{{asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<!-- FastClick -->
-<script src="{{asset('vendors/fastclick/lib/fastclick.js')}}"></script>
-<script src="{{asset('build/js/main.js')}}"></script>
-<!-- jquery.dataTables -->
-<script src="{{asset('build/js/jquery.dataTables.min.js')}}"></script>
-<!-- bootstrap-wysiwyg -->
-<script src="{{asset('vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js')}}"></script>
-<script src="{{asset('vendors/jquery.hotkeys/jquery.hotkeys.js')}}"></script>
-<script src="{{asset('vendors/google-code-prettify/src/prettify.js')}}"></script>
-<!-- bootstrap-wysiwyg -->
-<!-- page load pace-v1.0.0 -->
-<script src="{{asset('vendors/pace-v1.0.0/pace.min.js')}}"></script>
-<!-- chartjs  -->
-<script src="{{asset('vendors/Chart.js/dist/Chart.min.js')}}"></script>
-<!-- custom dashboard -->
-<script src="{{asset('build/js/custom-dashboard3.js')}}"></script>
-
-
 </body>
 
 </html>

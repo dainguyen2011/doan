@@ -15,18 +15,18 @@
         <table class="table table-bordered">
             <tr>
                 <th>Product name</th>
-                <th><input type="text" class="form-control" name="product_name"></th>
+                <th><input placeholder="Nhập tên sản phẩm" type="text" class="form-control" name="product_name"></th>
             </tr>
             <tr>
                 <th>Product image intro</th>
                 <th>
-                    <input type="file" class="form-control" name="product_image_intro">
+                    <input placeholder="Nhập ảnh" type="file" class="form-control" name="product_image_intro">
                 </th>
             </tr>
             <tr>
                 <th>Category</th>
                 <th>
-                    <select name="category_id">
+                    <select  name="category_id">
                         <option value="8">Áo clb</option>
                         <option value="9">Áo đội tuyển</option>
                         <option value="10">Áo không logo</option>
@@ -45,45 +45,45 @@
             <tr>
                 <th>price</th>
                 <th>
-                    <input type="text" name="price" class="form-control">
+                    <input placeholder="Nhập giá sản phẩm" type="text" name="price" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Sale price</th>
                 <th>
-                    <input type="text" name="sale" class="form-control">
+                    <input placeholder="Nhập giá sale sản phẩm" type="text" name="sale" class="form-control">
                 </th>
             </tr>
 
             <tr>
                 <th>Ordering</th>
                 <th>
-                    <input type="text" name="ordering" class="form-control">
+                    <input placeholder="Nhập ưu tiên sản phẩm" type="text" name="ordering" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Quantity</th>
                 <th>
-                    <input type="text" name="quantity" class="form-control">
+                    <input placeholder="Nhập số lượng sản phẩm" type="text" name="quantity" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Description</th>
                 <th>
-                    <textarea class="form-control" id="txt" name="description"></textarea>
+                    <textarea placeholder="Nhập mô tả sản phẩm" class="form-control" id="txt" name="description"></textarea>
                 </th>
             </tr>
             <tr>
                 <th>Full description</th>
                 <th>
-                    <textarea class="form-control" id="txt" name="full_description"></textarea>
+                    <textarea placeholder="Nhập mô tả đầy đủ sản phẩm" class="form-control" id="txt" name="full_description"></textarea>
                 </th>
             </tr>
             <tr>
                 <td colspan="2">
                     <div class="pull-right">
-                        <button type="submit" class="btn btn-primary">Save</button>
-                        <button type="submit" class="btn btn-primary">Cancel</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-backward"></i></button>
                     </div>
                 </td>
             </tr>

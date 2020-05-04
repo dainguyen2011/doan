@@ -30,6 +30,11 @@
         <table class="table table-bordered success">
             <thead>
             <tr >
+                <th class="info" >Avatar</th>
+                <td><img style="width: 100px"  class="product-image-intro"
+                         src="{{ asset('/'.auth()->user()->avatar)}}"></td>
+            </tr>
+            <tr >
                 <th class="info" >Name</th>
                 <td>{{Auth::user()->name}}</td>
             </tr>

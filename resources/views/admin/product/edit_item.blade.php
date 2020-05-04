@@ -98,8 +98,8 @@
                 <tr>
                     <td colspan="2">
                         <div class="pull-right">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{route('danh-sach-san-pham')}}" class="btn btn-primary">Cancel</a>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i></button>
+                            <a href="{{route('danh-sach-san-pham')}}" class="btn btn-primary"><i class="fa fa-backward"></i></a>
                         </div>
                     </td>
                 </tr>

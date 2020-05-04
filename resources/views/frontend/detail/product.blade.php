@@ -43,11 +43,14 @@
                                     <div class="available-option">
                                         <h2>Available Options:</h2>
                                         <p class="quality">Số lượng</p>
-                                        <select name="quality">
-                                            @for($i=1;$i<=100;$i++)
-                                                <option value="{{$i}}">{{$i}}</option>
-                                            @endfor
-                                        </select>
+{{--                                        <select name="quality">--}}
+{{--                                            @for($i=1;$i<=100;$i++)--}}
+{{--                                                <option value="{{$i}}">{{$i}}</option>--}}
+{{--                                            @endfor--}}
+{{--                                        </select>--}}
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text"  name="quality" min="1" value="1"  style="padding:20px; width: 80px;" step="1">
+                                        </div>
 {{--                                        <div class="quality">--}}
 {{--                                            <input type="number" size="4" class="input-text qty text"  name="quantity" min="1" value="1"  style="padding:20px; width: 80px;" step="1">--}}
 {{--                                        </div>--}}

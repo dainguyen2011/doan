@@ -125,6 +125,7 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
     Route::get("export", ['as' => 'export', 'uses' => "OrderController@export"]);
     Route::group(['prefix'=>'thong-ke'],function(){
         Route::get("list-thong-ke", ['as' => 'list-thong-ke', 'uses' => "OrderController@thongke"]);
+        Route::get("list-thong-ke-sp", ['as' => 'list-thong-ke-sp', 'uses' => "OrderController@thongkesp"]);
     });
     Route::group(['prefix' => 'comment'], function () {
         //root/admin/danh-muc/list-don-hang

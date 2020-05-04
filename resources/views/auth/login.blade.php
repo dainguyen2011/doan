@@ -7,18 +7,13 @@
                 <div class="card">
                     <div class="card-header">
                         <h3>Đăng nhập hệ thống</h3>
-                        <div class="d-flex justify-content-end social_icon">
-                            <span><i class="fab fa-facebook-square"></i></span>
-                            <span><i class="fab fa-google-plus-square"></i></span>
-                            <span><i class="fab fa-twitter-square"></i></span>
-                        </div>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon-user"></i></span>
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
                                 <input id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                                 @if ($errors->has('email'))
@@ -30,7 +25,7 @@
 
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><i class="icon-key"></i></span>
+                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
                                 </div>
                                 <input id="password" placeholder="Password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 

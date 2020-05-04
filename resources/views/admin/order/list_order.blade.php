@@ -20,11 +20,11 @@
                     <td>{{$order->customer->first_name ." ".$order->customer->last_name}}</td>
                     <td>{{$order->status}}</td>
                     <td>{{$order->total}},000 vnđ</td>
-                    <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary">Xem</a></td>
+                    <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary"><i class="fa fa-eye"></i></a></td>
                     <td>
 
                         <a onclick="return confirm('Bạn có muốn xóa không?')"
-                           href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-danger">Delete</a>
+                           href="{{route('xoa-don-hang',$order->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

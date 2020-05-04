@@ -47,8 +47,8 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <button class="btn btn-primary" type="submit">Save</button>
-                        <a class="btn btn-primary" href="{{route('list-danh-muc')}}">Cancel</a>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i></button>
+                        <a class="btn btn-danger" href="{{route('list-danh-muc')}}"><i class="fa fa-backward"></i></a>
                     </td>
                 </tr>
             </table>
