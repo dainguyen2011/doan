@@ -12,10 +12,9 @@ class CheckUserMiddleware
         if (Auth::user()->type == 'client' || Auth::user()->type == 'Client') {
             return redirect()->route('home');
         }
-        elseif (auth()->user()->type == 'employee' || auth()->user()->type == 'admin')
-        {
-            return $next($request);
-        }
+//        elseif (auth()->user()->type == 'employee' || auth()->user()->type == 'admin') {
+//            return $next($request);
+//        }
         return $next($request);
     }
 }
