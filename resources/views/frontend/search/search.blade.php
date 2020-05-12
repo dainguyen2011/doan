@@ -29,7 +29,10 @@
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">
-                                                    <p>{{$product->price}} vnđ</p>
+                                                    <p>
+                                                        <del>{{number_format($product->price)}} vnđ</del>
+                                                        &nbsp; {{number_format($product->getPrice())}} vnđ
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>

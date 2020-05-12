@@ -72,7 +72,7 @@
                     <div class="search-chart-list">
                         <div class="header-search">
                             <form action="search">
-                                <input type="text" name="key" placeholder="My Search"/>
+                                <input type="text" name="key" placeholder="Nhập tên áo cần tìm"/>
                                 <button style="height: 35px;" type="button"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -80,12 +80,6 @@
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="cart">
-                        {{--                        <a href="{{route('gio-hang')}}"--}}
-                        {{--                           style="display: inline-block;color: white;line-height: 30px;padding: 5px 25px;vertical-align: middle;background: #ff0300;font-size: 20px;border-radius: 5px">--}}
-                        {{--                            <span> Giỏ hàng {{Cart::count()}}</span>--}}
-                        {{--                            <i class="fas fa-cart-plus"></i>--}}
-
-                        {{--                        </a>--}}
                         <a class="btn btn-success btn-sm ml-3" href="{{route('gio-hang')}}">
                             <i style="height: 20px" class="fa fa-shopping-cart"></i> Giỏ hàng
                             <span class="badge badge-light">{{Cart::count()}}</span>

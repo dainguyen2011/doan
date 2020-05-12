@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <th>Total</th>
-                    <th>{{$order->total}},000 vnđ</th>
+                    <th>{{number_format($order->total)}} vnđ</th>
                 </tr>
                 <tr>
                     <th>State</th>
@@ -53,7 +53,7 @@
                     <tr>
                         <td>{{$product->product_id}}</td>
                         <td>{{$product->product_name}}</td>
-                        <td>{{$product->product_price}}</td>
+                        <td>{{number_format($product->product_price)}} vnđ</td>
                         <td>{{$product->product_qty}}</td>
                     </tr>
                 @endforeach
