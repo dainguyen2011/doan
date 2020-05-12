@@ -84,9 +84,9 @@
                                                         <p><span>Tên sản phẩm :</span> {{$product->name}} </p>
                                                         <p><span>size:</span> {{ ($product->options->has('size') ? $product->options->size : '')}} </p>
                                                         <p><span>Bạn đã chọn mua:</span> {{$product->qty}} sản phẩm </p>
-                                                        <p><span>Giá tiền :</span> {{$product->price}} vnđ</p>
+                                                        <p><span>Giá tiền :</span> {{number_format($product->price)}} vnđ</p>
                                                         @endforeach
-                                                        <p><span>Tổng :</span> {{Cart::subtotal()}} vnđ</p>
+                                                        <p><span>Tổng :</span> {{Cart::subtotal(0,3)}} vnđ</p>
 
                                                     </div>
                                                 </div>

@@ -26,8 +26,8 @@
                                         {{$item->qty}}
                                     </td>
                                     <td class="th-size">{{$item->options->size }}</td>
-                                    <td class="th-price">{{$item->price}}</td>
-                                    <td class="th-total">{{$item->price*$item->qty}}</td>
+                                    <td class="th-price">{{number_format($item->price)}} vnđ</td>
+                                    <td class="th-total">{{number_format($item->price*$item->qty)}} vnđ</td>
                                     <td class="th-delete">
                                         <form action="{{route('remove-item-cart',$item->rowId)}}" method="post">
                                         <button><i class="fa fa-trash"></i></button>
@@ -40,7 +40,7 @@
                             <tfoot>
                             <tr>
                                 <td colspan="5">Tổng tiền</td>
-                                <td>{{Cart::Subtotal()}} vnđ</td>
+                                <td>{{Cart::Subtotal(0,3)}} vnđ</td>
                             </tr>
                             </tfoot>
                         </table>
