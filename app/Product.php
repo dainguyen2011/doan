@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Product extends Model
 {
     protected $table='products';
-    protected $fillable = ['views'];
+    protected $fillable = ['views', 'pay', 'quantity'];
     public function getDataFoodByKeyWord($keyword)
     {
         $data = DB::table('products')->where('product_name', '=', $keyword)->get();
@@ -36,10 +36,9 @@ class Product extends Model
 }
     public function order()
     {
-
         return $this->hasMany('App\Orders');
     }
     public function order_product(){
-        return $this->belongsTo(OrderProduct::class,'product_id');
+        return $this->hasMany(OrderProduct::class,'product_id');
     }
 }

@@ -134,6 +134,7 @@
 <!-- bootstrap js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/frontend/detail.js') }}"></script>
 
 <!-- nivo slider js
 ============================================ -->

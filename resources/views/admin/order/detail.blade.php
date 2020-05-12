@@ -49,7 +49,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($list_product as $product)
+                @foreach($order->orderProducts as $product)
                     <tr>
                         <td>{{$product->product_id}}</td>
                         <td>{{$product->product_name}}</td>

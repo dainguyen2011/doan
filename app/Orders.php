@@ -9,6 +9,9 @@ use http\Env\Request;
 class Orders extends Model
 {
 
+    protected $table = 'orders';
+    protected $fillable = ['status'];
+
     public static function getAllProductByOrderId($id)
     {
         $list_product = DB::table('order_product')->select("*")->where('order_id', '=', $id)->get();
@@ -20,10 +23,11 @@ class Orders extends Model
 
         return $this->belongsTo('App\Customers');
     }
-    public function orderProduct()
+
+    public function orderProducts()
     {
 
-        return $this->belongsTo(OrderProduct::class,'order_id','id');
+        return $this->hasMany(OrderProduct::class, 'order_id', 'id');
     }
 
     public function product()

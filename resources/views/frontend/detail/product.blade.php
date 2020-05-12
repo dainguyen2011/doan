@@ -52,7 +52,7 @@
                                         <div class="size-option fix">
                                             <p>Size:</p>
                                             <select name="product_size">
-                                                <option value="Choose an option">Choose an option</option>
+                                                <option value="Choose an option">Chọn size</option>
                                                 <option value="S">S</option>
                                                 <option value="M">M</option>
                                                 <option value="L">L</option>
