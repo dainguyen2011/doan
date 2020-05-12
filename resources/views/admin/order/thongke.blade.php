@@ -127,7 +127,7 @@
                 <td>{{$loop->iteration}}</td>
                 <th>{{$order->customer->first_name ." ".$order->customer->last_name}}</th>
                 <th>{{date_format(date_create($order->created_at),"d/m/yy")}}</th>
-                <th>{{$order->total}},000 vnđ</th>
+                <th>{{number_format($order->total)}}vnđ</th>
             </tr>
                 @endforeach
 

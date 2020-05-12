@@ -31,6 +31,9 @@
                             @if(Auth::check())
                                 <li><a href="{{route('profile')}}"> Thông tin tài khoản</a></li>
                             @endif
+                            @if(auth::user() && auth::user()->type == "admin")
+                                <li><a href="{{route('danh-sach-san-pham')}}"> Trang quản trị</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>

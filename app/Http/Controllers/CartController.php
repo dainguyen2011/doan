@@ -42,9 +42,11 @@ class CartController extends Controller
         $customers->address = $post['address'];
         $customers->save();
 
+
+//        dd(str_replace(',', '', Cart::subtotal(0, 3)));
         $order = new Orders();
         $order->customer_id = $customers->id;
-        $order->total = Cart::subtotal();
+        $order->total = str_replace(',', '', Cart::subtotal(0, 3));
         $order->status = "pending";
         $order->save();
         $order_id = $order->id;

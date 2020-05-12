@@ -17,6 +17,9 @@ class ProductController extends Controller
     public function getDetailProduct($id, Request $request)
     {
         $product = Product::find($id);
+//dd($product->views);
+        $product->update(['views' => $product->views + 1]);
+
         $detailGall = $product->gallery;
         return view('frontend.detail.product', compact('product', 'detailGall'));
     }

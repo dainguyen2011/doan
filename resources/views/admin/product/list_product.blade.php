@@ -28,8 +28,8 @@
                     <td nowrap="">{{$product->publish}}</td>
                     <td nowrap="">{{$product->category_id}}</td>
                     <td nowrap="">{{$product->ordering}}</td>
-                    <td nowrap="">{{$product->price}}</td>
-                    <td nowrap="">{{$product->getPrice()}}</td>
+                    <td nowrap="">{{number_format($product->price)}} vnđ</td>
+                    <td nowrap="">{{number_format($product->getPrice())}} vnđ</td>
                     <td style="width: 100px">{!! $product->description  !!}</td>
                     <th nowrap="">
                         <a href="{{route('sua-san-pham',$product->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>

@@ -36,34 +36,29 @@
                                     <div class="product-tab-header">
                                         <h3>{{$product->product_name}}</h3>
                                         <div class="prices">
-                                            <span class="prices">{{$product->getPrice()}}</span>
-                                            <span class="currency"> vnđ</span>
+                                            <span class="prices">{{number_format($product->getPrice())}}</span><span class="currency"> vnđ</span>
+                                        </div>
+                                        <div class="prices">
+                                            <i class="fas fa-eye"></i>
+                                            <span class="prices">{{$product->views}} <sup>Luợt xem</sup></span>
                                         </div>
                                     </div>
                                     <div class="available-option">
                                         <h2>Available Options:</h2>
                                         <p class="quality">Số lượng</p>
-{{--                                        <select name="quality">--}}
-{{--                                            @for($i=1;$i<=100;$i++)--}}
-{{--                                                <option value="{{$i}}">{{$i}}</option>--}}
-{{--                                            @endfor--}}
-{{--                                        </select>--}}
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text"  name="quality" min="1" value="1"  style="padding:20px; width: 80px;" step="1">
+                                            <input type="number" size="4" class="input-text qty text" name="quality" min="1" value="1"  style="padding: 0px;width: 50px;" step="1">
                                         </div>
-{{--                                        <div class="quality">--}}
-{{--                                            <input type="number" size="4" class="input-text qty text"  name="quantity" min="1" value="1"  style="padding:20px; width: 80px;" step="1">--}}
-{{--                                        </div>--}}
                                         <div class="size-option fix">
                                             <p>Size:</p>
                                             <select name="product_size">
                                                 <option value="Choose an option">Choose an option</option>
-                                                <option value="Lg">Lg</option>
+                                                <option value="S">S</option>
                                                 <option value="M">M</option>
-                                                <option value="S">S</option>
-                                                <option value="S">S</option>
-                                                <option value="S">S</option>
-                                                <option value="Xs">Xs</option>
+                                                <option value="L">L</option>
+                                                <option value="XL">XL</option>
+                                                <option value="XXL">XXL</option>
+                                                <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
                                         <button style="margin-top: 10px" type="submit" class="btn btn-primary"><i

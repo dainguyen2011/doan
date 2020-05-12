@@ -33,7 +33,6 @@
                                                     <del>{{number_format($product->price)}} vnđ</del>
                                                     &nbsp; {{number_format($product->getPrice())}} vnđ
                                                 </span>
-                                                <span class="currency"> đ</span>
                                             </div>
                                             <a href="{{route('product-detail',$product->id)}}" class="btn btn-primary btn-block"><i class="fas fa-search-plus"></i> Mua hàng</a>
                                         </div>

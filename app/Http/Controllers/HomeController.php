@@ -20,9 +20,11 @@ class HomeController extends Controller
 //        $this->middleware('auth');
     }
 
-    public  function gioithieu(){
+    public function gioithieu()
+    {
         return view('frontend.gioithieu');
     }
+
     /**
      * Show the application dashboard.
      *
@@ -30,20 +32,22 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-      $sx = $request->sx;
-      if (empty($sx)){
-        $aoclb_products = Product::where('category_id', 8)->orderBy('price','ASC')->get();
-        $aodoituyen_products = Product::where('category_id',9)->orderBy('price','ASC')->get();
+        $sx = $request->sx;
+        if (empty($sx)) {
+            $aoclb_products = Product::where('category_id', 8)->orderBy('price', 'ASC')->get();
+            $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', 'ASC')->get();
 
-        $aologo_products = Product::where('category_id', 10)->orderBy('price','ASC')->get();
+            $aologo_products = Product::where('category_id', 10)->orderBy('price', 'ASC')->get();
+        } else {
+            $aoclb_products = Product::where('category_id', 8)->orderBy('price' * (100 - 'sale')/100, $sx)->get();
+            $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
+            $aologo_products = Product::where('category_id', 10)->orderBy('price', $sx)->get();
+        }
+        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
     }
-
-      else{
-          $aoclb_products = Product::where('category_id', 8)->orderBy('price',$sx)->get();
-          $aodoituyen_products = Product::where('category_id',9)->orderBy('price',$sx)->get();
-          $aologo_products = Product::where('category_id', 10)->orderBy('price',$sx)->get();
-      }
-return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
-    }
-
+//        foreach ($aoclb_products as $item){
+//            $item['price_sale'] =  $item->price * (100 - $item->sale) / 100;
+//        }
+//        $aoclb_products = $aoclb_products->sortByDesc('price_sale');
+//        dd($aoclb_products);
 }

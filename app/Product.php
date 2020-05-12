@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Product extends Model
 {
     protected $table='products';
+    protected $fillable = ['views'];
     public function getDataFoodByKeyWord($keyword)
     {
         $data = DB::table('products')->where('product_name', '=', $keyword)->get();

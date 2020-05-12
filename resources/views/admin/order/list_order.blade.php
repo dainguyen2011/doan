@@ -19,7 +19,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$order->customer->first_name ." ".$order->customer->last_name}}</td>
                     <td>{{$order->status}}</td>
-                    <td>{{$order->total}},000 vnđ</td>
+                    <td>{{number_format($order->total)}} vnđ</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary"><i class="fa fa-eye"></i></a></td>
                     <td>
 
