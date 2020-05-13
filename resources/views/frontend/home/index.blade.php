@@ -11,8 +11,6 @@
         <img class="mySlides" src="upload\products\sl2.jpg" style="width:100%">
         <img class="mySlides" src="upload\products\sl3.jpg" style="width:100%">
     </div>
-
-
     <script>
         var myIndex = 0;
         carousel();
@@ -31,6 +29,21 @@
             setTimeout(carousel, 2000); // Change image every 2 seconds
 
         }
+        function moveRight(id, speed) {
+
+            var pp = document.getElementsByClassName("myImage");
+            var right = parseInt(pp.style.left) || 0;
+
+            right += speed;  // move
+            pp.style.left = right + "px";
+
+            var move = setTimeout(function() {
+                moveRight(id, speed);
+            }, 50);
+
+        }
+
+        moveRight('test', 1);
     </script>
 
     <div class="product-area">
@@ -61,7 +74,7 @@
                                             <div class="single-product">
                                                 <div class="single-product-img">
                                                     <a href="{{route('showDetail',$product->id)}}"><img
-                                                            class="primary-img"
+                                                            class="primary-img myImage"
                                                             src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                                 </div>
                                                 <div class="single-product-content">
