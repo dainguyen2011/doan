@@ -20,7 +20,12 @@ class CartController extends Controller
 
     public function payNow()
     {
-        return view("frontend.checkout.index");
+        $carts = Cart::content();
+        foreach ($carts as $cart) {
+            $product = Product::findOrFail($cart->id);
+            if ($product->quantity < $cart->qty) return redirect()->back()->with('warning', 'Số lượng sản phẩm trong kho không đủ, vui lòng giảm số lượng sản phẩm !!!');
+            else return view("frontend.checkout.index");
+        }
     }
 
     public function postPayNow(Request $request)
@@ -50,13 +55,15 @@ class CartController extends Controller
         $order->status = "pending";
         $order->save();
         $order_id = $order->id;
+
+//        dd(Cart::content());
         foreach (Cart::content() as $item) {
             DB::table('order_product')->insert(
                 array(
                     'product_id' => $item->id,
                     'order_id' => $order_id,
                     'product_name' => $item->name,
-                    'product_size' => $item->product_size,
+                    'product_size' => $item->options->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
 
@@ -73,13 +80,13 @@ class CartController extends Controller
         $product = Product::find($id);
         $post = $request->all();
         $price = $product->getPrice();
-        $product->size=$request->product_size;
+        $product->size = $request->product_size;
 
         Cart::add([
             'id' => $id,
             'name' => $product->product_name,
             'qty' => $post['quality'],
-            'price' =>$price,
+            'price' => $price,
             'options' => ['size' => $product->size]
         ]);
         return redirect(route('gio-hang'));

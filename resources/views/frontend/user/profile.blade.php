@@ -52,7 +52,7 @@
             </tr>
             <tr>
                 <th class="info">Gender</th>
-                <td>{{Auth::user()->gender}}</td>
+                <td>{{Auth::user()->gender = 1? 'Nam' : 'Nữ'}}</td>
             </tr>
 
             <tr>

@@ -2,6 +2,24 @@
 @section('content')
     <div class="chart-area">
         <div class="container">
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ session('success') }}
+                </div>
+            @endif
+            @if (session('warning'))
+                <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ session('warning') }}
+                </div>
+            @endif
+            @if (session('error'))
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ session('error') }}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <div class="chart-item table-responsive fix">
@@ -46,7 +64,10 @@
                         </table>
                     </div>
                     <div class="cart-button pull-right">
+{{--                        @dd(Cart::content())--}}
+                        @if(Cart::count() > 0)
                         <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
+                        @endif
                         <a type="button" class="btn btn-primary" href="{{route('home')}}">TIẾP TỤC MUA HÀNG</a>
                     </div>
                 </div>

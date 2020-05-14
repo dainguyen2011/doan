@@ -18,21 +18,24 @@
                         <tr class="text-center">
                             <th class="text-center">STT</th>
                             <th class="text-center">Tên sản phẩm bán</th>
-                            <th class="text-center">Sản phẩm đã bán tháng</th>
+{{--                            <th class="text-center">Sản phẩm đã bán tháng</th>--}}
                             <th class="text-center">Số lượng đã bán</th>
                             <th class="text-center">Số lượng còn lại</th>
                             <th class="text-center">Tổng tiền bán được</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($order_detail as $order)
+                        @foreach($products as $product)
                             <tr class="text-center" style="height: 60px;">
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$order->product_name}}</td>
-                                <td>{{date_format(date_create($order->created_at),"m/yy")}}</td>
-                                <td>{{$order->total}}</td>
-                                <td>{{$order->quantity-$order->total}}</td>
-                                <td>{{number_format($order->money)}}VND</td>
+                                <td>{{$product->product_name}}</td>
+                                <td>{{$product->pay}}</td>
+                                <td>{{$product->quantity}}</td>
+                                <td>{{number_format($total_price)}} <sup>vnđ</sup></td>
+{{--                                <td>{{date_format(date_create($order->created_at),"m/yy")}}</td>--}}
+{{--                                <td>{{$order->total}}</td>--}}
+{{--                                <td>{{$order->quantity-$order->total}}</td>--}}
+{{--                                <td>{{number_format($order->money)}}VND</td>--}}
                             </tr>
                         @endforeach
                         </tbody>
@@ -42,9 +45,9 @@
             </div>
         </div>
     </div>
-    @if(empty($order))
-        {{$order->link}}
-    @endif
+{{--    @if(empty($order))--}}
+{{--        {{$order->link}}--}}
+{{--    @endif--}}
 {{--<div class="container-fluid">--}}
 {{--    <!-- Small boxes (Stat box) -->--}}
 {{--    <div class="row">--}}

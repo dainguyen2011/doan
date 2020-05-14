@@ -55,10 +55,6 @@ class OrderController extends Controller
             DB::rollBack();
             return redirect()->back()->with('error', $e->getMessage());
         }
-
-//        Session::flash('message', 'Đã cập nhật đơn hàng thành công');
-//        $list_product = Orders::getAllProductByOrderId($id);
-//        return redirect(route('list-don-hang'));
     }
 
     public function getDeleteOrder($id, Request $request)
@@ -98,14 +94,22 @@ class OrderController extends Controller
 
     public function thongkesp()
     {
-        $order_detail = DB::table('order_product')->join('orders', 'orders.id', '=', 'order_product.order_id')
-            ->join('products', 'products.id', '=', 'order_product.product_id')
-            ->where('orders.status', 'completed')
-            ->select('orders.id', 'order_product.product_id', 'order_product.product_qty', 'orders.created_at', 'products.product_name', 'products.quantity', DB::raw('SUM(order_product.product_qty) AS total'), DB::raw('SUM(total) AS money'))
-            ->groupBy('order_product.product_id')
-            ->orderBy('orders.created_at', 'desc')
-            ->get();
-        return view('admin.order.thongke', compact('order_detail'));
+        $orders = Orders::all();
+        $products = Product::where('pay', '>', 0)->latest()->get();
+        foreach ($products as $product) {
+            $total_price = 0;
+            foreach ($product->order_product as $item) {
+                if ($item->orders->status == 'completed') {
+                    $total_price += $item->product_price * $item->product_qty;
+                }
+            }
+        }
+        $data = [
+            'products' => $products,
+            'total_price' => $total_price,
+            'ordera' => $orders,
+        ];
+        return view('admin.order.thongke', $data);
     }
 
     public function export()
