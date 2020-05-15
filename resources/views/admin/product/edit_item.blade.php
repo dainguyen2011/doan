@@ -55,13 +55,13 @@
                 <tr>
                     <th>price</th>
                     <th>
-                        <input type="text" name="price" value="{{$product->price}}" class="form-control">
+                        <input type="number" name="price" value="{{$product->price}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
                     <th>Sale price</th>
                     <th>
-                        <input type="text" name="sale" value="{{$product->sale}}" class="form-control">
+                        <input type="number" name="sale" value="{{$product->sale}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
@@ -73,7 +73,7 @@
                 <tr>
                     <th>Ordering</th>
                     <th>
-                        <input type="text" name="ordering" value="{{$product->ordering}}" class="form-control">
+                        <input type="number" name="ordering" value="{{$product->ordering}}" class="form-control">
                     </th>
                 </tr>
                 <tr>

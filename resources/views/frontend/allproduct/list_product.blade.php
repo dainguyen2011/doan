@@ -21,22 +21,29 @@
                         </div>
                         <div class="row">
                             @foreach($products as $product)
-                                <div class="col-md-3">
-                                    <div class="clb-item">
-                                        <div clb-item-content>
-                                            <div class="wrapper-image">
-                                                <img class="clb-image-intro" src="{{url('/')}}/{{$product->product_image_intro}}">
+                                <div class="col-md-4">
+                                        <div class="single-product" style="margin-top: 37px;margin-bottom: 16px;">
+                                            <div class="single-product-img">
+                                                <a href="{{route('showDetail',$product->id)}}"><img
+                                                        class="primary-img myImage"
+                                                        src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                             </div>
-                                            <h4 class="clb-name">{{$product->product_name}}</h4>
-                                            <div class="prices">
-                                                <span>
+                                            <div class="single-product-content">
+                                            <div class="product-content-left">
+                                                <h2><a style="font-weight: bold"
+                                                       href="{{route('product-detail',$product->id)}}">MUA
+                                                        HÀNG</a></h2>
+                                                <p>{{$product->product_name}}</p>
+                                            </div>
+                                            <div style="font-size: medium"
+                                                 class="product-content-right pull-right">
+                                                <p>
                                                     <del>{{number_format($product->price)}} vnđ</del>
                                                     &nbsp; {{number_format($product->getPrice())}} vnđ
-                                                </span>
+                                                </p>
                                             </div>
-                                            <a href="{{route('product-detail',$product->id)}}" class="btn btn-primary btn-block"><i class="fas fa-search-plus"></i> Mua hàng</a>
                                         </div>
-                                    </div>
+                                        </div>
                                 </div>
                             @endforeach
                         </div>

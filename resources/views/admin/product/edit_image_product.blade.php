@@ -1,6 +1,24 @@
 @extends('admin.layouts.index')
 @section('content')
     <div class="view-edit-product">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('warning'))
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('warning') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('error') }}
+            </div>
+        @endif
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -27,7 +45,7 @@
                 <tr>
                     <th>Product image 1</th>
                     <th>
-                        <input placeholder="Nhập ảnh 2" type="file" class="form-control" name="image1">
+                        <input placeholder="Nhập ảnh 2" type="file" class="form-control" name="image">
                     </th>
                 </tr>
 

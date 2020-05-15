@@ -18,14 +18,19 @@
                                                     style="width: 100%" class="product-image-intro"
                                                     src="{{ asset('/'.$product->product_image_intro)}}"></a></li>
                                         <br>
-
-                                        <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img
-                                                    style="width: 20%" src="{{ asset('/'.$detailGall->image)}}"
-                                                    alt="tab-img"></a></li>
-                                        <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab"
-                                                                                       data-toggle="tab"><img
-                                                    style="width: 20%" src="{{ asset('/'.$detailGall->image1)}}"
-                                                    alt="tab-img"></a></li>
+                                        @if($product->gallery)
+                                            <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img
+                                                        style="width: 20%"
+                                                        src="{{ asset('/'.$product->gallery->image)}}"
+                                                        alt="tab-img"></a></li>
+                                        @endif
+                                        @if($product->gallery)
+                                            <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab"
+                                                                                           data-toggle="tab"><img
+                                                        style="width: 20%"
+                                                        src="{{ asset('/'.$product->gallery->image1)}}"
+                                                        alt="tab-img"></a></li>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -36,7 +41,8 @@
                                     <div class="product-tab-header">
                                         <h3>{{$product->product_name}}</h3>
                                         <div class="prices">
-                                            <span class="prices">{{number_format($product->getPrice())}}</span><span class="currency"> vnđ</span>
+                                            <span class="prices">{{number_format($product->getPrice())}}</span><span
+                                                class="currency"> vnđ</span>
                                         </div>
                                         <div class="prices">
                                             <i class="fas fa-eye"></i>
@@ -47,7 +53,8 @@
                                         <h2>Available Options:</h2>
                                         <p class="quality">Số lượng</p>
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" name="quality" min="1" value="1"  style="padding: 0px;width: 50px;" step="1">
+                                            <input type="number" size="4" class="input-text qty text" name="quality"
+                                                   min="1" value="1" style="padding: 0px;width: 50px;" step="1">
                                         </div>
                                         <div class="size-option fix">
                                             <p>Size:</p>
@@ -95,7 +102,6 @@
                                          data-numposts="10"></div>
 
 
-
                                 </div>
 
 
@@ -110,20 +116,21 @@
     </div>
 
     <div id="fb-root"></div>
-    <script language="javascript" async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=232587937746885&autoLogAppEvents=1">
+    <script language="javascript" async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=232587937746885&autoLogAppEvents=1">
 
         CKEDITOR.replace('txt');
 
     </script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             //-- Click on detail
-            $("ul.menu-items > li").on("click",function(){
+            $("ul.menu-items > li").on("click", function () {
                 $("ul.menu-items > li").removeClass("active");
                 $(this).addClass("active");
             })
 
-            $(".attr,.attr2").on("click",function(){
+            $(".attr,.attr2").on("click", function () {
                 var clase = $(this).attr("class");
 
                 $("." + clase).removeClass("active");
@@ -131,20 +138,22 @@
             })
 
             //-- Click on QUANTITY
-            $(".btn-minus").on("click",function(){
+            $(".btn-minus").on("click", function () {
                 var now = $(".section > div > input").val();
-                if ($.isNumeric(now)){
-                    if (parseInt(now) -1 > 0){ now--;}
+                if ($.isNumeric(now)) {
+                    if (parseInt(now) - 1 > 0) {
+                        now--;
+                    }
                     $(".section > div > input").val(now);
-                }else{
+                } else {
                     $(".section > div > input").val("1");
                 }
             })
-            $(".btn-plus").on("click",function(){
+            $(".btn-plus").on("click", function () {
                 var now = $(".section > div > input").val();
-                if ($.isNumeric(now)){
-                    $(".section > div > input").val(parseInt(now)+1);
-                }else{
+                if ($.isNumeric(now)) {
+                    $(".section > div > input").val(parseInt(now) + 1);
+                } else {
                     $(".section > div > input").val("1");
                 }
             })

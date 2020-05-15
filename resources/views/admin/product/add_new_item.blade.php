@@ -45,26 +45,26 @@
             <tr>
                 <th>price</th>
                 <th>
-                    <input placeholder="Nhập giá sản phẩm" type="text" name="price" class="form-control">
+                    <input placeholder="Nhập giá sản phẩm" type="number" name="price" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Sale price</th>
                 <th>
-                    <input placeholder="Nhập giá sale sản phẩm" type="text" name="sale" class="form-control">
+                    <input placeholder="Nhập giá sale sản phẩm" type="number" name="sale" class="form-control">
                 </th>
             </tr>
 
             <tr>
                 <th>Ordering</th>
                 <th>
-                    <input placeholder="Nhập ưu tiên sản phẩm" type="text" name="ordering" class="form-control">
+                    <input placeholder="Nhập ưu tiên sản phẩm" type="number" name="ordering" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Quantity</th>
                 <th>
-                    <input placeholder="Nhập số lượng sản phẩm" type="text" name="quantity" class="form-control">
+                    <input placeholder="Nhập số lượng sản phẩm" type="number" name="quantity" class="form-control">
                 </th>
             </tr>
             <tr>
