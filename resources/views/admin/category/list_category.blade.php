@@ -6,10 +6,10 @@
             <thead>
             <tr>
                 <th>STT</th>
-                <th>Category name</th>
-                <th>Parent id</th>
+                <th>Tên danh mục</th>
+                <th>Danh mục con</th>
 {{--                <th>Image</th>--}}
-                <th>Description</th>
+                <th>Mô tả</th>
                 <th><a href="{{route('them-danh-muc')}}" class="btn btn-primary"><i class="fa fa-plus-square"></i></a></th>
             </tr>
             </thead>

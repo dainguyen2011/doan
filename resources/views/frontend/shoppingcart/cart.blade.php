@@ -68,7 +68,7 @@
                         @if(Cart::count() > 0)
                         <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
                         @endif
-                        <a type="button" class="btn btn-primary" href="{{route('home')}}">TIẾP TỤC MUA HÀNG</a>
+                        <a type="button" class="btn btn-info" href="{{route('home')}}">TIẾP TỤC MUA HÀNG</a>
                     </div>
                 </div>
             </div>

@@ -13,12 +13,12 @@
         <form action="{{route('post-sua-danh-muc',$category->id)}}" method="post" enctype="multipart/form-data">
             <table class="table  table-bordered">
                 <tr>
-                    <th>Category name</th>
+                    <th>Tên danh mục</th>
                     <td><input type="text" class="form-control" value="{{$category->category_name}}"
                                name="category_name"></td>
                 </tr>
                 <tr>
-                    <th>Parent</th>
+                    <th>Danh mục cha</th>
                     <td>
                         <select name="parent">
                             <option value="" {{ $category->parent == "" ? " selected" : "" }}>Root</option>
@@ -30,19 +30,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Image</th>
+                    <th>Ảnh</th>
                     <td>
                         <img class="image-categoy-edit" src="{{url('/')}}/{{$category->image_category}}"/>
                         <input type="file" name="image_category" class="form-control">
                     </td>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>Mô tả</th>
                     <td><input type="text" class="form-control" value="{{$category->description}}" name="description">
                     </td>
                 </tr>
                 <tr>
-                    <th>Ordering</th>
+                    <th>Yêu cầu</th>
                     <td><input type="text" class="form-control" value="{{$category->ordering}}" name="ordering"></td>
                 </tr>
                 <tr>

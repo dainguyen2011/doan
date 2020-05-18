@@ -29,6 +29,7 @@
             setTimeout(carousel, 2000); // Change image every 2 seconds
 
         }
+
         function moveRight(id, speed) {
 
             var pp = document.getElementsByClassName("myImage");
@@ -37,7 +38,7 @@
             right += speed;  // move
             pp.style.left = right + "px";
 
-            var move = setTimeout(function() {
+            var move = setTimeout(function () {
                 moveRight(id, speed);
             }, 50);
 
@@ -114,6 +115,8 @@
                                                 <div class="product-content-left">
                                                     <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
                                                     </h2>
+                                                    {{--                                                        <h2><a href="{{route('product-detail',$product->id)}}">Hết hàng</a>--}}
+                                                    {{--                                                    </h2>--}}
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">

@@ -90,7 +90,7 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
             //root/admin/san-pham/add-image-product/{product_id}
             Route::get("add-image-product/{product_id}", ['as' => 'add-image-product', 'uses' => 'ProductController@getAddImageProduct']);
             //root/admin/san-pham/add-image-product/{product_id}
-            Route::post("post-add-image-product/{product_id}", ['as' => 'post-add-image-product', 'uses' => 'ProductController@postAddImageProduct']);
+            Route::post("add-image-product/{product_id}", ['as' => 'post-add-image-product', 'uses' => 'ProductController@postAddImageProduct']);
             //root/admin/san-pham/delete-gallery
             Route::get("delete-gallery/{id}", ['as' => 'delete-gallery', 'uses' => 'ProductController@getDeleteGallery']);
         });

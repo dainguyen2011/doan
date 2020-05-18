@@ -29,15 +29,15 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_first_name">Firstname *</label>
-                                    <input style="width: 300px" id="form_first_name" type="text" name="first_name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="first_name is required.">
+                                    <label for="form_first_name">Họ *</label>
+                                    <input style="width: 300px" id="form_first_name" type="text" name="first_name" class="form-control" placeholder="Nhập họ *" required="required" data-error="Họ bắt buộc nhập.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_last_name">Lastname *</label>
-                                    <input style="width: 300px" id="form_last_name" type="text" name="last_name" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="last_name is required.">
+                                    <label for="form_last_name">Tên *</label>
+                                    <input style="width: 300px" id="form_last_name" type="text" name="last_name" class="form-control" placeholder="Nhập tên*" required="required" data-error="Tên bắt buộc nhập.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -46,14 +46,14 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_email">Email *</label>
-                                    <input style="width: 300px" id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                    <input style="width: 300px" id="form_email" type="email" name="email" class="form-control" placeholder="Nhập email *" required="required" data-error="Email bắt buộc nhập.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_phone">Phone</label>
-                                    <input style="width: 300px" id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                                    <label for="form_phone">Số điện thoại</label>
+                                    <input style="width: 300px" id="form_phone" type="tel" name="phone" class="form-control" placeholder="Nhập số điện thoại">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -61,12 +61,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group" style="align-content: center">
-                                    <label for="form_message">Message *</label>
-                                    <textarea style="width: 500px" id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required data-error="Please,leave us a message."></textarea>
+                                    <label for="form_message">Nội dung phản hồi *</label>
+                                    <textarea style="width: 500px" id="form_message" name="message" class="form-control" placeholder="Nhập nội dung *" rows="4" required data-error="Vui lòng nhập nội dung."></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn btn-success btn-send" value="Send message">
+                                    <input type="submit" class="btn btn-success btn-send" value="Gửi phản hồi">
                                 </div>
                             </div>
                         </div>

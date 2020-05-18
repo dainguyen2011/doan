@@ -13,14 +13,14 @@
     <form action="{{route('post-add-category')}}" method="post" enctype="multipart/form-data">
         <table class="table table-bordered">
             <tr>
-                <th>Category name</th>
+                <th>Tên danh mục</th>
                 <th><input type="text" class="form-control" name="category_name"></th>
             </tr>
             <tr>
-                <th>Parent</th>
+                <th>Danh mục cha</th>
                 <td>
                     <select name="parent">
-                        <option value="">Root</option>
+                        <option value="">Khách</option>
                         @foreach($list_root_category as $category)
                             <option value="{{$category->id}}">{{$category->category_name}}</option>
                         @endforeach
@@ -28,17 +28,17 @@
                 </td>
             </tr>
             <tr>
-                <th>Image</th>
+                <th>Ảnh</th>
                 <td><input type="file" name="image_category" class="form-control"></td>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Mô tả</th>
                 <th>
                     <textarea class="form-control" name="description"></textarea>
                 </th>
             </tr>
             <tr>
-                <th>Ordering</th>
+                <th>Yêu cầu</th>
                 <th>
                     <input type="text" name="ordering" class="form-control">
                 </th>
