@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="prices">
                                             <i class="fas fa-eye"></i>
-                                            <span class="prices">{{$product->views}} <sup>Luợt xem</sup></span>
+                                            <span class="prices">{{number_format($product->views)}} <sup>Luợt xem</sup></span>
                                         </div>
                                     </div>
                                     <div class="available-option">

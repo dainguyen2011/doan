@@ -30,16 +30,16 @@
         <table class="table table-bordered success">
             <thead>
             <tr >
-                <th class="info" >Avatar</th>
+                <th class="info" >Ảnh đại diện</th>
                 <td><img style="width: 100px"  class="product-image-intro"
                          src="{{ asset('/'.auth()->user()->avatar)}}"></td>
             </tr>
             <tr >
-                <th class="info" >Name</th>
+                <th class="info" >Tên</th>
                 <td>{{Auth::user()->name}}</td>
             </tr>
             <tr >
-                <th class="info">Full Name</th>
+                <th class="info">Tên đầy đủ</th>
                 <td>{{Auth::user()->full_name}}</td>
             </tr>
             <tr>
@@ -47,16 +47,16 @@
                 <td>{{Auth::user()->email}}</td>
             </tr>
             <tr>
-                <th class="info">Phone</th>
+                <th class="info">Số điện thoại</th>
                 <td>{{Auth::user()->phone}}</td>
             </tr>
             <tr>
-                <th class="info">Gender</th>
+                <th class="info">Giới tính</th>
                 <td>{{Auth::user()->gender = 1? 'Nam' : 'Nữ'}}</td>
             </tr>
 
             <tr>
-                <th class="info">Note</th>
+                <th class="info">Ghi chú</th>
                 <td>{{Auth::user()->note}}</td>
             </tr>
             </thead>

@@ -17,12 +17,12 @@
                             @guest
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
 
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
                                     </li>
                                 @endif
                             @else
@@ -39,7 +39,7 @@
                                            var  check = confirm('Bạn có chắc chắn muốn đăng xuất ?');
                                            if (check){
                                                      document.getElementById('logout-form').submit();}">
-                                            {{ __('Logout') }}
+                                            {{ __('Đăng xuất') }}
 
                                         </a>
 

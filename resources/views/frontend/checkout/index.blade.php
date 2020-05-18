@@ -23,7 +23,7 @@
                             <form action="{{route('thanh-toan')}}" method="post" class="form-horizontal">
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        First Name <sup>*</sup>
+                                        Họ<sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
                                         <input name="first_name" type="text" class="form-control">
@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        Last Name <sup>*</sup>
+                                        Tên <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
                                         <input name="last_name" type="text" class="form-control">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        Address <sup>*</sup>
+                                        Địa chỉ <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
                                         <input name="address" type="text" class="form-control">
@@ -47,18 +47,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        E-mail Address <sup>*</sup>
+                                        Email <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="email" type="text" class="form-control">
+                                        <input name="email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">
-                                        Phone <sup>*</sup>
+                                        Số điện thoại <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="phone_number" type="text" class="form-control">
+                                        <input name="phone_number" type="number" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -82,7 +82,7 @@
                                                     <div class="single-review-content fix">
                                                         <h2><a href="{{route('showDetail',$product->id)}}">Chi tiết sản phẩm bạn đã chọn</a></h2>
                                                         <p><span>Tên sản phẩm :</span> {{$product->name}} </p>
-                                                        <p><span>size:</span> {{ ($product->options->has('size') ? $product->options->size : '')}} </p>
+                                                        <p><span>Size:</span> {{ ($product->options->has('size') ? $product->options->size : '')}} </p>
                                                         <p><span>Bạn đã chọn mua:</span> {{$product->qty}} sản phẩm </p>
                                                         <p><span>Giá tiền :</span> {{number_format($product->price)}} vnđ</p>
                                                         @endforeach

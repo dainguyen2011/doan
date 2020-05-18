@@ -26,12 +26,12 @@
                         <table class="col-md-12">
                             <thead>
                             <tr>
-                                <th class="th-product">Product </th>
-                                <th class="th-qty">Qty</th>
+                                <th class="th-product">Tên sản phẩm </th>
+                                <th class="th-qty">Số lượng</th>
                                 <th class="th-price">Size</th>
-                                <th class="th-price">Price</th>
-                                <th class="th-total">Total</th>
-                                <th class="th-delete">Delete</th>
+                                <th class="th-price">Giá tiền</th>
+                                <th class="th-total">Tổng tiền</th>
+                                <th class="th-delete">Xóa</th>
                             </tr>
                             </thead>
                             <tbody>

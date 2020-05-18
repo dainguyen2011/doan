@@ -11,7 +11,7 @@
                 <div class="main-menu hidden-xs">
                     <nav>
                         <ul>
-                            <li><a href="{{route('home')}}" class="active">HOME</a></li>
+                            <li><a href="{{route('home')}}" class="active">Trang chủ</a></li>
                             @foreach($list_root_category as $root_category)
                                 <li>
                                     <a href="javascript:void(0)">{{$root_category->category_name}}</a>

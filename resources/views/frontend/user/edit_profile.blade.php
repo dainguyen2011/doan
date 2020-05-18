@@ -18,32 +18,32 @@
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Name:</label>
-                    <input class="form-control" type="text" value="{{Auth::user()->name}}" name="name" required placeholder="Enter Your  Name"/>
+                    <label>Tên :</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->name}}" name="name" required placeholder="Nhập tên "/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Full Name:</label>
-                    <input class="form-control" type="text" value="{{Auth::user()->full_name}}" name="full_name" required placeholder="Enter Your Full Name"/>
+                    <label>Tên đầy đủ:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->full_name}}" name="full_name" required placeholder="Nhập tên đầy đủ"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
                     <label>Email:</label>
-                    <input class="form-control" value="{{Auth::user()->email}}" type="email" name="email" required placeholder="Enter Your Email"/>
+                    <input class="form-control" value="{{Auth::user()->email}}" type="email" name="email" required placeholder="Nhập eamil"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Phone:</label>
-                    <input class="form-control" type="text" value="{{Auth::user()->phone}}" name="phone" required placeholder="Enter Your Phone"/>
+                    <label>Số điện thoại:</label>
+                    <input class="form-control" type="number" value="{{Auth::user()->phone}}" name="phone" required placeholder="Nhập số điện thoại"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Note:</label>
-                    <input class="form-control" type="text" value="{{Auth::user()->note}}" name="note" required placeholder="Enter Your Note"/>
+                    <label>Ghi chú:</label>
+                    <input class="form-control" type="text" value="{{Auth::user()->note}}" name="note" required placeholder="Nhập ghi chú"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Avatar:</label>
+                    <label>Ảnh đại diện:</label>
                     <img src="{{url('/')}}/{{Auth::user()->avatar}}">
                     <input class="form-control" type="file" name="avatar"/>
                 </div>
@@ -53,10 +53,10 @@
 {{--                    <span class="Error"></span>--}}
 {{--                </div>--}}
                 <div class="form-group">
-                    <label>Gender:</label><br/>
-                    <label><input type="radio" name="gender" required value="1" checked /> Male</label>
-                    <label><input type="radio" name="gender" required value="2" /> Female</label>
-                    <label><input type="radio" name="gender" required value="3" /> Other</label>
+                    <label>Giới tính:</label><br/>
+                    <label><input type="radio" name="gender" required value="1" checked /> Nam</label>
+                    <label><input type="radio" name="gender" required value="2" /> Nữ</label>
+                    <label><input type="radio" name="gender" required value="3" /> Khác</label>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">

@@ -40,14 +40,14 @@
                             {{--                        <input style="margin-right: 30px" class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}><p>Remember me</p>--}}
                             {{--                    </div>--}}
                             <div class="row align-items-center remember">
-                                <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Remember Me
+                                <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>Nhớ mật khẩu
                             </div>
 
                             <div class="form-group">
                                 <button type="submit" class="btn float-right login_btn">Đăng nhập</button>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Quên mật khẩu ?') }}
                                     </a>
                                 @endif
                             </div>
