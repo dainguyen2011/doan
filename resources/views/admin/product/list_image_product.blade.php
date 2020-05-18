@@ -5,12 +5,12 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Product_id</th>
+                <th>Mã sản phẩm</th>
 
-                <th>Image</th>
-                <th>Image1</th>
+                <th>Ảnh 1</th>
+                <th>Ảnh 2</th>
 
-                <th><a href="{{route('add-image-product',$product->id)}}" class="btn btn-primary">Add new</a></th>
+                <th><a href="{{route('add-image-product',$product->id)}}" class="btn btn-primary">Thêm mới</a></th>
             </tr>
             </thead>
             <tbody>

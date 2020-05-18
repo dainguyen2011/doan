@@ -5,15 +5,15 @@
             <thead>
             <tr>
                 <th>STT</th>
-                <th>Product name</th>
-                <th>Image</th>
+                <th>Tên sản phẩm</th>
+                <th>Ảnh</th>
                 <th>Published</th>
-                <th>Category</th>
-                <th>Ordering</th>
-                <th>Price</th>
-                <th>Sale_price</th>
+                <th>Danh mục</th>
+                <th>Yêu cầu</th>
+                <th>Giá</th>
+                <th>Giá sale</th>
 
-                <th>Description</th>
+                <th>Mô tả</th>
                 <th><a href="{{route('them-san-pham')}}" class="btn btn-primary"><i class="fa fa-plus-square"></i></a></th>
             </tr>
             </thead>

@@ -14,17 +14,17 @@
     <form action="{{route('post-add-product')}}" method="post" enctype="multipart/form-data">
         <table class="table table-bordered">
             <tr>
-                <th>Product name</th>
+                <th>Tên sản phẩm</th>
                 <th><input placeholder="Nhập tên sản phẩm" type="text" class="form-control" name="product_name"></th>
             </tr>
             <tr>
-                <th>Product image intro</th>
+                <th>Ảnh sản phẩm</th>
                 <th>
                     <input placeholder="Nhập ảnh" type="file" class="form-control" name="product_image_intro">
                 </th>
             </tr>
             <tr>
-                <th>Category</th>
+                <th>Danh mục</th>
                 <th>
                     <select  name="category_id">
                         <option value="8">Áo clb</option>
@@ -43,38 +43,38 @@
                 </th>
             </tr>
             <tr>
-                <th>price</th>
+                <th>Giá</th>
                 <th>
                     <input placeholder="Nhập giá sản phẩm" type="number" name="price" class="form-control">
                 </th>
             </tr>
             <tr>
-                <th>Sale price</th>
+                <th>Giá sale</th>
                 <th>
                     <input placeholder="Nhập giá sale sản phẩm" type="number" name="sale" class="form-control">
                 </th>
             </tr>
 
             <tr>
-                <th>Ordering</th>
+                <th>Yêu cầu</th>
                 <th>
                     <input placeholder="Nhập ưu tiên sản phẩm" type="number" name="ordering" class="form-control">
                 </th>
             </tr>
             <tr>
-                <th>Quantity</th>
+                <th>Số lượng</th>
                 <th>
                     <input placeholder="Nhập số lượng sản phẩm" type="number" name="quantity" class="form-control">
                 </th>
             </tr>
             <tr>
-                <th>Description</th>
+                <th>Mô tả</th>
                 <th>
                     <textarea placeholder="Nhập mô tả sản phẩm" class="form-control" id="txt" name="description"></textarea>
                 </th>
             </tr>
             <tr>
-                <th>Full description</th>
+                <th>Mô tả đầy đủn</th>
                 <th>
                     <textarea placeholder="Nhập mô tả đầy đủ sản phẩm" class="form-control" id="txt" name="full_description"></textarea>
                 </th>

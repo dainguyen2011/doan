@@ -2,10 +2,10 @@
 @section('content')
     @php
         $list_order_status=[
-            "pending",
-            "processing",
-            "completed",
-            "cancel",
+            "Đang chờ xử lý",
+            "Đang xử lý",
+            "Đã xử lý",
+            "Đã hủy",
         ]
     @endphp
     <div class="view-order-detail">
@@ -15,19 +15,19 @@
         <form action="{{route('post-edit-order',$order->id)}}" method="post">
             <table class="table table-bordered">
                 <tr>
-                    <th>ID</th>
+                    <th>Mã đơn hàng</th>
                     <th>{{$order->id}}</th>
                 </tr>
                 <tr>
-                    <th>Customer Name</th>
+                    <th>Tên khách hàng</th>
                     <th>{{$order->customer->first_name ." ".$order->customer->last_name}}</th>
                 </tr>
                 <tr>
-                    <th>Total</th>
+                    <th>Tổng tiền</th>
                     <th>{{number_format($order->total)}} vnđ</th>
                 </tr>
                 <tr>
-                    <th>State</th>
+                    <th>Trạng thái</th>
                     <th>
                         <select class="form-control" name="status">
                             @foreach($list_order_status as $status)
@@ -38,14 +38,14 @@
                     </th>
                 </tr>
             </table>
-            <h3>List product</h3>
+            <h3>Danh sách sản phẩm</h3>
             <table class="table table-bordered">
                 <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Product name</th>
-                    <th>Product price</th>
-                    <th>Product quality</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
                 </tr>
                 </thead>
                 <tbody>

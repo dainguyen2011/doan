@@ -14,19 +14,19 @@
         <form action="{{route('post-sua-san-pham',$product->id)}}" method="post" enctype="multipart/form-data">
             <table class="table table-bordered">
                 <tr>
-                    <th>Product name</th>
+                    <th>Tên sản phẩm</th>
                     <th><input type="text" class="form-control" value="{{$product->product_name}}" name="product_name">
                     </th>
                 </tr>
                 <tr>
-                    <th>Product image intro</th>
+                    <th>Ảnh sản phẩm</th>
                     <th>
                         <img class="product-image-intro-edit" src="{{url('/')}}/{{$product->product_image_intro}}">
                         <input type="file" class="form-control" name="product_image_intro">
                     </th>
                 </tr>
                 <tr>
-                    <th>Category</th>
+                    <th>Danh mục</th>
                     <th>
                         <select name="category_id">
                             <option value="">Chọn danh mục</option>
@@ -53,43 +53,43 @@
                     </th>
                 </tr>
                 <tr>
-                    <th>price</th>
+                    <th>Giá</th>
                     <th>
                         <input type="number" name="price" value="{{$product->price}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
-                    <th>Sale price</th>
+                    <th>Giá sale</th>
                     <th>
                         <input type="number" name="sale" value="{{$product->sale}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
-                    <th>Size</th>
+                    <th>Kích cỡ</th>
                     <th>
                         <input type="text" name="size" value="{{$product->size}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
-                    <th>Ordering</th>
+                    <th>Yêu cầu</th>
                     <th>
                         <input type="number" name="ordering" value="{{$product->ordering}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
-                    <th>Quantity</th>
+                    <th>Số lượng</th>
                     <th>
                         <input type="number" name="quantity" value="{{$product->quantity}}" class="form-control">
                     </th>
                 </tr>
                 <tr>
-                    <th>Description</th>
+                    <th>Mô tả</th>
                     <th>
                         <textarea id="txt" class="form-control" name="description">{{$product->description}}</textarea>
                     </th>
                 </tr>
                 <tr>
-                    <th>Full description</th>
+                    <th>Mô tả đầy đủ</th>
                     <th>
                         <textarea class="form-control" id="txt"
                                   name="full_description">{{$product->full_description}}</textarea>

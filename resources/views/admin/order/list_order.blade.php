@@ -4,13 +4,12 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Id</th>
+                <th>Mã sản phẩm</th>
 
-                <th>Customer name</th>
-                <th>Status</th>
-                <th>Total</th>
+                <th>Tên khách hàng</th>
+                <th>Trạng thái</th>
+                <th>Tổng tiền</th>
                 <th>Xem</th>
-                <th>Add new</th>
             </tr>
             </thead>
             <tbody>

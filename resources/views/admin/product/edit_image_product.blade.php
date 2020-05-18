@@ -32,12 +32,12 @@
             @csrf
             <table class="table table-bordered">
                 <tr>
-                    <th>Product name</th>
+                    <th>Tên sản phẩm</th>
                     <th><input readonly type="text" class="form-control" value="{{$product->product_name}}"
                                name="product_name"></th>
                 </tr>
                 <tr>
-                    <th>Product image</th>
+                    <th>Ảnh sản phẩm</th>
                     <th>
                         <input placeholder="Nhập ảnh 1" type="file" class="form-control" name="image">
                     </th>
@@ -45,7 +45,7 @@
                 <tr>
                     <th>Product image 1</th>
                     <th>
-                        <input placeholder="Nhập ảnh 2" type="file" class="form-control" name="image">
+                        <input placeholder="Nhập ảnh 2" type="file" class="form-control" name="image1">
                     </th>
                 </tr>
 
@@ -58,7 +58,6 @@
                     </td>
                 </tr>
             </table>
-            {{csrf_field()}}
         </form>
         <script type="text/javascript">
             //CKEDITOR.replace( 'full_description' );
