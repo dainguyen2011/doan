@@ -121,9 +121,11 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
         Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
         //root/admin/danh-muc/xoa-don-ha
         Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
+
+        Route::get("change-status/{id}", ['as' => 'change-status', 'uses' => 'OrderController@changeStatus']);
     });
     Route::get("export", ['as' => 'export', 'uses' => "OrderController@export"]);
-    Route::group(['prefix'=>'thong-ke'],function(){
+    Route::group(['prefix' => 'thong-ke'], function () {
         Route::get("list-thong-ke", ['as' => 'list-thong-ke', 'uses' => "OrderController@thongke"]);
         Route::get("list-thong-ke-sp", ['as' => 'list-thong-ke-sp', 'uses' => "OrderController@thongkesp"]);
     });

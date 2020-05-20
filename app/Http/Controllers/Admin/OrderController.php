@@ -68,14 +68,14 @@ class OrderController extends Controller
     {
         $product_count = Product::count();
         $orders = Orders::where('status', 'pending')->get();
-        $order_count = Orders::where('status', 'pending')->count();
+        $order_count = Orders::where('status', 'processing')->count();
         $ordered_count = Orders::where('status', 'completed')->count();
         $delayed_count = Orders::where('status', 'cancel')->count();
         return view('admin.order.thongke', compact('product_count', 'order_count', 'ordered_count', 'delayed_count', 'orders'));
 
 //        $order_detail= DB::table('order_product')->join('orders', 'orders.id', '=', 'order_product.order_id')
 //            ->join('products','products.id', '=', 'order_product.product_id')
-//            ->where('orders.status','=','completed')
+//            ->where('orders.status','=','Đã xử lý')
 //            ->select('orders.id', 'order_product.product_id','order_product.product_qty','orders.created_at','products.product_name','products.quantity', DB::raw('SUM(order_product.product_qty) AS total'),DB::raw('SUM(total) AS money'))
 //            ->groupBy('order_product.product_id')
 //            ->orderBy('orders.created_at','desc')
@@ -99,7 +99,7 @@ class OrderController extends Controller
         foreach ($products as $product) {
             $total_price = 0;
             foreach ($product->order_product as $item) {
-                if ($item->orders->status == 'completed') {
+                if ($item->orders->status_1 == 2) {
                     $total_price += $item->product_price * $item->product_qty;
                 }
             }
@@ -115,5 +115,30 @@ class OrderController extends Controller
     public function export()
     {
         return Excel::download(new OrderExport, 'thongke.xlsx');
+    }
+
+    public function changeStatus($id)
+    {
+        $order = Orders::findOrFail($id);
+        switch ($order->status_1) {
+            case 0:
+                $order->update(['status_1' => 1]);
+                break;
+            case 1:
+                $order->update(['status_1' => 2]);
+                foreach ($order->orderProducts as $orderProduct) {
+                    $product = Product::findOrFail($orderProduct->product_id);
+                    if ($product->quantity >= $orderProduct->product_qty) {
+                        $product->update([
+                            'pay' => $product->pay + $orderProduct->product_qty,
+                            'quantity' => $product->quantity - $orderProduct->product_qty,
+                        ]);
+                    } else {
+                        return redirect(route('list-don-hang'));
+                    }
+                }
+                break;
+        }
+        return back();
     }
 }

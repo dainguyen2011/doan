@@ -1,18 +1,11 @@
 @extends('admin.layouts.index')
 @section('content')
-    @php
-        $list_order_status=[
-            "Đang chờ xử lý",
-            "Đang xử lý",
-            "Đã xử lý",
-            "Đã hủy",
-        ]
-    @endphp
     <div class="view-order-detail">
         @if (Session::has('message'))
             <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
         <form action="{{route('post-edit-order',$order->id)}}" method="post">
+            @csrf
             <table class="table table-bordered">
                 <tr>
                     <th>Mã đơn hàng</th>
@@ -29,12 +22,15 @@
                 <tr>
                     <th>Trạng thái</th>
                     <th>
-                        <select class="form-control" name="status">
-                            @foreach($list_order_status as $status)
-                                <option
-                                    <?php echo $status == $order->status ? '  selected ' : '' ?> value="{{$status}}">{{$status}}</option>
-                            @endforeach
-                        </select>
+                        @if($order->status_1 != 2 && $order->status_1 != 3)
+                            <a href="{{route('change-status', $order->id)}}">
+                                <span
+                                    class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</span>
+                            </a>
+                        @else
+                            <span
+                                class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</span>
+                        @endif
                     </th>
                 </tr>
             </table>
@@ -66,7 +62,6 @@
                     </div>
                 </div>
             </div>
-            {{csrf_field()}}
         </form>
     </div>
 @endsection

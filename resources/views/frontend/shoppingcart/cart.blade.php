@@ -47,7 +47,7 @@
                                     <td class="th-price">{{number_format($item->price)}} vnđ</td>
                                     <td class="th-total">{{number_format($item->price*$item->qty)}} vnđ</td>
                                     <td class="th-delete">
-                                        <form action="{{route('remove-item-cart',$item->rowId)}}" method="post">
+                                        <form action="{{route('remove-item-cart',$item->rowId)}}" onclick="return confirm('Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?')" method="post">
                                         <button><i class="fa fa-trash"></i></button>
                                             {{csrf_field()}}
                                         </form>
@@ -64,7 +64,6 @@
                         </table>
                     </div>
                     <div class="cart-button pull-right">
-{{--                        @dd(Cart::content())--}}
                         @if(Cart::count() > 0)
                         <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
                         @endif

@@ -32,10 +32,6 @@
                                 <td>{{$product->pay}}</td>
                                 <td>{{$product->quantity}}</td>
                                 <td>{{number_format($total_price)}} <sup>vnđ</sup></td>
-{{--                                <td>{{date_format(date_create($order->created_at),"m/yy")}}</td>--}}
-{{--                                <td>{{$order->total}}</td>--}}
-{{--                                <td>{{$order->quantity-$order->total}}</td>--}}
-{{--                                <td>{{number_format($order->money)}}VND</td>--}}
                             </tr>
                         @endforeach
                         </tbody>

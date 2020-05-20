@@ -10,7 +10,7 @@ class Orders extends Model
 {
 
     protected $table = 'orders';
-    protected $fillable = ['status'];
+    protected $fillable = ['status', 'status_1'];
 
     public static function getAllProductByOrderId($id)
     {
@@ -34,5 +34,30 @@ class Orders extends Model
     {
 
         return $this->belongsTo(Product::class);
+    }
+
+
+    protected $changeStatus = [
+        0 => [
+            'name' => 'Đang chờ',
+            'class' => 'label-primary'
+        ],
+        1 => [
+            'name' => 'Đang xử lý',
+            'class' => 'label-success',
+        ],
+        2 => [
+            'name' => 'Đã xử lý',
+            'class' => 'label-success',
+        ],
+        3 => [
+            'name' => 'Hủy',
+            'class' => 'label-danger',
+        ]
+    ];
+
+    public function getStatus()
+    {
+        return array_get($this->changeStatus, $this->status_1, '[N\A]');
     }
 }
