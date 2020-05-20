@@ -66,9 +66,11 @@
                                     <button  style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
+                                    @if($price_pay == null)
                                     <a href="{{route('create-payment')}}"   style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN QUA THẺ ATM
                                     </a>
+                                    @endif
                                 </div>
                                 {{csrf_field()}}
                             </form>

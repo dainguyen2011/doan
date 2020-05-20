@@ -52,7 +52,7 @@
                 {{ session('error') ?? session('success') }}
             </p>
         @endif
-        <form method="POST" action="{{ route('create-payment') }}">
+        <form method="POST" name="myForm" action="{{ route('create-payment') }}">
             @csrf
             <div class="m-2">
                 <input type="text" name="amount" placeholder="Amount" value="{{$price}}">
@@ -60,9 +60,17 @@
                     <span class="error"> {{ $errors->first('amount') }} </span>
                 @endif
             </div>
-            <button>Pay Now</button>
+            <button>Thanh toán</button>
         </form>
     </div>
 </section>
+<script type="text/javascript">
+    window.onload=function(){
+        submitform();
+        function submitform(){
+            document.forms["myForm"].submit();
+        }
+    }
+</script>
 </body>
 </html>
