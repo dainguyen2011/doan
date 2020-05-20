@@ -147,6 +147,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Srmklive\PayPal\Providers\PayPalServiceProvider::class,
 
         /*
          * Package Service Providers...

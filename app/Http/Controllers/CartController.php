@@ -21,10 +21,11 @@ class CartController extends Controller
     public function payNow()
     {
         $carts = Cart::content();
+        $price_pay = session('pay');
         foreach ($carts as $cart) {
             $product = Product::findOrFail($cart->id);
             if ($product->quantity < $cart->qty) return redirect()->back()->with('warning', 'Số lượng sản phẩm trong kho không đủ, vui lòng giảm số lượng sản phẩm !!!');
-            else return view("frontend.checkout.index");
+            else return view("frontend.checkout.index" ,compact('price_pay'));
         }
     }
 
@@ -72,6 +73,8 @@ class CartController extends Controller
         }
         Cart::destroy();
         Session::flash('message', 'Bạn đã mua hàng thành công, cảm ơn bạn');
+        session()->forget('pay');
+        session(['pay', 0]);
         return redirect(route('home'));
     }
 

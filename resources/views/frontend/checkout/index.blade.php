@@ -66,6 +66,9 @@
                                     <button  style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
+                                    <a href="{{route('create-payment')}}"   style="margin: 10px" class="btn btn-primary pull-right">
+                                        THANH TOÁN QUA THẺ ATM
+                                    </a>
                                 </div>
                                 {{csrf_field()}}
                             </form>
@@ -87,7 +90,7 @@
                                                         <p><span>Giá tiền :</span> {{number_format($product->price)}} vnđ</p>
                                                         @endforeach
                                                         <p><span>Tổng :</span> {{Cart::subtotal(0,3)}} vnđ</p>
-
+                                                        <p><span>Đã thanh toán :</span> {{$price_pay}} vnđ</p>
                                                     </div>
                                                 </div>
 

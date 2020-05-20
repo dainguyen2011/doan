@@ -62,6 +62,12 @@ Route::post("edit-profile", ['as' => 'update-profile', 'uses' => "UserController
 //TODO làm sau
 Route::get("danh-muc/{id}", ['as' => 'danh-muc', 'uses' => "ProductController@getProductsById"]);
 
+//Thanh toán
+//Route::view('/checkout', 'checkout-page');
+Route::get("/checkout", ['as' => 'checkout', 'uses' => "PaymentController@getCheckout"]);
+Route::post('/checkout', 'PaymentController@createPayment')->name('create-payment');
+Route::get('/confirm', 'PaymentController@confirmPayment')->name('confirm-payment');
+
 
 //++++++++++++++++ BACKEND +++++++++++++++++++++
 Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth"], function () {
