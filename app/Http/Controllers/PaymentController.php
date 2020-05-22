@@ -96,6 +96,6 @@ class PaymentController extends Controller
             return redirect('/checkout')->withError('Thanh toán không thành công.');
         }
         session(['pay' => \Cart::subtotal(0, 3)]);
-        return redirect('/thanh-toan')->withSuccess('Thanh toán thành công');
+        return redirect('/thanh-toan')->with('success', 'Thanh toán online thành công, vui lòng nhập đầy đủ thông tin vào hóa đơn !!!');;
     }
 }

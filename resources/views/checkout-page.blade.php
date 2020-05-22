@@ -84,56 +84,62 @@
 </head>
 <style type="text/css">
     /*Contact sectiom*/
-    .content-header{
+    .content-header {
         font-family: 'Oleo Script', cursive;
-        color:#fcc500;
+        color: #fcc500;
         font-size: 45px;
     }
 
-    .section-content{
+    .section-content {
         text-align: center;
 
     }
-    #contact{
+
+    #contact {
 
         font-family: 'Teko', sans-serif;
         padding-top: 60px;
         width: 100%;
         height: 550px;
         background: #3a6186; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #3a6186 , #89253e); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #3a6186 , #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        color : #fff;
+        background: -webkit-linear-gradient(to left, #3a6186, #89253e); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #3a6186, #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: #fff;
     }
-    .contact-section{
+
+    .contact-section {
         padding-top: 40px;
     }
-    .contact-section .col-md-6{
+
+    .contact-section .col-md-6 {
         width: 50%;
     }
 
-    .form-line{
+    .form-line {
         border-right: 1px solid #B29999;
     }
 
-    .form-group{
+    .form-group {
         margin-top: 10px;
     }
-    label{
+
+    label {
         font-size: 1.3em;
         line-height: 1em;
         font-weight: normal;
     }
-    .form-control{
+
+    .form-control {
         font-size: 1.3em;
         color: #080808;
     }
+
     textarea.form-control {
         height: 135px;
         /* margin-top: px;*/
     }
 
-    .submit{
+    .submit {
         font-size: 1.1em;
         float: right;
         width: 150px;
@@ -144,12 +150,13 @@
 
 </style>
 <body>
-<section class="checkout spad"  style="background: linear-gradient(to left, #3a6186 , #89253e);">
+<section class="checkout spad" style="background: linear-gradient(to left, #3a6186 , #89253e);">
     <div class="container-half-fluid">
         <div class="checkout__form">
             <div class="checkout__order">
                 <div class="section-content">
-                    <h1 class="section-header">Xin lỗi <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Vì sự bất tiện này</span></h1>
+                    <h1 class="section-header">Xin lỗi <span class="content-header wow fadeIn " data-wow-delay="0.2s"
+                                                             data-wow-duration="2s"> Vì sự bất tiện này</span></h1>
                     <h3>Đang điều hướng vui lòng chờ</h3>
                 </div>
                 <form method="POST" name="myForm" action="{{ route('create-payment') }}" style="display: none">

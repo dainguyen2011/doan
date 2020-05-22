@@ -25,7 +25,7 @@ class CartController extends Controller
         foreach ($carts as $cart) {
             $product = Product::findOrFail($cart->id);
             if ($product->quantity < $cart->qty) return redirect()->back()->with('warning', 'Số lượng sản phẩm trong kho không đủ, vui lòng giảm số lượng sản phẩm !!!');
-            else return view("frontend.checkout.index" ,compact('price_pay'));
+            else return view("frontend.checkout.index", compact('price_pay'));
         }
     }
 
@@ -54,10 +54,10 @@ class CartController extends Controller
         $order->customer_id = $customers->id;
         $order->total = str_replace(',', '', Cart::subtotal(0, 3));
         $order->status = "pending";
+        $order->paid = str_replace(',', '',session('pay') ) ;
         $order->save();
         $order_id = $order->id;
 
-//        dd(Cart::content());
         foreach (Cart::content() as $item) {
             DB::table('order_product')->insert(
                 array(

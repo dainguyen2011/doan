@@ -52,7 +52,7 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>68 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội</p>
+                                    <p>10 Hoàng Công Chất, Bắc Từ Liêm, Hà Nội</p>
                                 </div>
                             </div>
                         </div>

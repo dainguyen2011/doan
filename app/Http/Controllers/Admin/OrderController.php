@@ -31,10 +31,10 @@ class OrderController extends Controller
     {
         try {
             DB::beginTransaction();
-            $status = $request->input('status');
+            $status = $request->input('status_1');
             $order = Orders::find($id);
-            $order->update(['status' => $status]);
-            if ($status == 'completed') {
+            $order->update(['status_1' => $status]);
+            if ($status == '2') {
                 foreach ($order->orderProducts as $orderProduct) {
                     $product = Product::findOrFail($orderProduct->product_id);
                     if ($product->quantity >= $orderProduct->product_qty) {

@@ -10,7 +10,7 @@ class Orders extends Model
 {
 
     protected $table = 'orders';
-    protected $fillable = ['status', 'status_1'];
+    protected $fillable = ['status', 'status_1','paid'];
 
     public static function getAllProductByOrderId($id)
     {

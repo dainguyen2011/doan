@@ -58,7 +58,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="pull-right">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i></button>
+                        <a class="btn btn-primary" href="{{route('list-don-hang')}}" type="submit"><i class="fa fa-backward"></i></a>
                     </div>
                 </div>
             </div>
