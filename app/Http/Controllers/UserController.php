@@ -26,18 +26,6 @@ class UserController extends Controller
     {
         $id = Auth::user()->id;
         $post = $request->all();
-
-//        $user = User::where('id', $id);
-//
-//
-//        $user->update([
-////            'password' => decrypt(Hash::make($request->password)),
-//            'phone' => $request->phone,
-//            'name' => $request->name,
-//            'full_name' => $request->full_name,
-//            'note' => $request->note,
-//            'gender' => $request->gender,
-//        ]);
         $user = User::find($id);
         $user->phone = $post['phone'];
         $user->name = $post['name'];
@@ -60,6 +48,6 @@ class UserController extends Controller
             }
         }
 
-        return redirect(route('profile'))->with('sua', 'Sửa thành công,cảm ơn bạn  !!!!!!');
+        return redirect(route('profile'))->with('success', 'Sửa thông tin thành công  !!!');;;
     }
 }
