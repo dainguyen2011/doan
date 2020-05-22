@@ -96,7 +96,8 @@
     <!-- responsive CSS
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/profile.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/edit-profile.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/abcd.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/js/lienhe.js')}}">
 
