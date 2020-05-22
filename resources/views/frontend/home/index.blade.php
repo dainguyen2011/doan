@@ -108,6 +108,9 @@
                                     <div class="col-md-4">
                                         <div class="single-product">
                                             <div class="single-product-img">
+                                                @if($product->quantity ==0)
+                                                    <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                                @endif
                                                 <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                     src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                             </div>
@@ -115,8 +118,6 @@
                                                 <div class="product-content-left">
                                                     <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
                                                     </h2>
-                                                    {{--                                                        <h2><a href="{{route('product-detail',$product->id)}}">Hết hàng</a>--}}
-                                                    {{--                                                    </h2>--}}
                                                     <p>{{$product->product_name}}</p>
                                                 </div>
                                                 <div style="margin-top: 18px" class="product-content-right pull-right">

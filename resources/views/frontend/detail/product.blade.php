@@ -68,9 +68,11 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
+                                        @if($product->quantity >0)
                                         <button style="margin-top: 10px" type="submit" class="btn btn-primary"><i
                                                 class="fas fa-cart-plus"></i> Thêm hàng
                                         </button>
+                                        @endif
                                     </div>
                                 </div>
                                 {{csrf_field()}}
