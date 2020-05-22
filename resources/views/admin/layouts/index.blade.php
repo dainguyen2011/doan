@@ -113,7 +113,9 @@
                             <li class="person-info">
                                 <div class="an-sidebar-widgets">
                                     <div class="an-user-avatar">
+                                        <a href="{{route('profile')}}">
                                         <img src="{{ asset('/'.auth()->user()->avatar)}}" alt="an-user-info">
+                                        </a>
                                     </div>
                                     <div class="an-user-info">
                                         <div class="an-username">{{auth()->user()->name}}</div>
