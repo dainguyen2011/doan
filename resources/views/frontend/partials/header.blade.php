@@ -34,6 +34,9 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+{{--                                        <div>--}}
+{{--                                            <a href="{{route('detail-order')}}">Đơn hàng</a>--}}
+{{--                                        </div>--}}
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                            var  check = confirm('Bạn có chắc chắn muốn đăng xuất ?');
@@ -42,7 +45,6 @@
                                             {{ __('Đăng xuất') }}
 
                                         </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
 
                                               style="display: none;">

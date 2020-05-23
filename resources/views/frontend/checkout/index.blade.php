@@ -117,7 +117,7 @@
                                     <p><span>Tổng :</span> {{Cart::subtotal(0,3)}} vnđ</p>
                                     <p><span>Đã thanh toán :</span> {{$price_pay}} vnđ</p>
                                     <div class="col-md-4">
-                                        <a target="_blank" href="{{route('create-payment')}}"><img src="https://i0.wp.com/www.ecommerce-nation.com/wp-content/uploads/2018/01/paypal.png?fit=1000%2C600&ssl=1"></a>
+                                        <a target="_blank" href="{{route('create-payment')}}"><img src="https://img.topbank.vn/2019/11/19/8Rg4Y4ZT/paypal-ebb2.jpg"></a>
                                     </div>
                                     <div class="col-md-4"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png"></div>
                                     <div class="col-md-4"><img src="https://pluspng.com/img-png/mastercard-hd-png-mastercard-png-picture-1456.png"></div>
