@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Orders;
 use App\Product;
 use App\Category;
+use App\Rating;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -69,8 +71,18 @@ class HomeController extends Controller
             'order' => $order,
 
         ];
-//        dd($orders);
         return view('frontend.detail.detail-order', $data);
+    }
+    public function productStar($id, Request $request){
+        $product = Product::findOrFail($id);
+       Rating::create([
+           'product_id' => $product->id,
+           'user_id' => Auth::user()->id,
+           'rating' => $request->input('rating'),
+           'content' => $request->input('content')
+       ]);
+        return view('frontend.detail.product', compact('product'));
+
     }
 
 }

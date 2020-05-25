@@ -6,6 +6,7 @@ use App\Category;
 use App\Comment;
 use App\Galleries;
 use App\Product;
+use App\Rating;
 use App\User;
 use DB;
 use Illuminate\Http\Request;
@@ -18,9 +19,10 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $product->update(['views' => $product->views + 1]);
-
+        $avg_stars = round($product->rating->avg('rating'));
+        $persons =$product->rating->count();
         $detailGall = $product->gallery;
-        return view('frontend.detail.product', compact('product', 'detailGall'));
+        return view('frontend.detail.product', compact('product', 'detailGall', 'avg_stars','persons'));
     }
 
 

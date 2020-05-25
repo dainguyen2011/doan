@@ -36,4 +36,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Contact::class);
     }
+    public function rating()
+    {
+        return $this->hasMany(Rating::class,'user_id','id');
+    }
 }

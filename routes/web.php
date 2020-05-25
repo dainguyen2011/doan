@@ -34,6 +34,8 @@ Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductControlle
 // chi tiets don hang
 Route::get("detail-order", ['as' => 'detail-order', 'uses' => 'HomeController@getOrder']);
 Route::get('showDetail/{id}', ['as' => 'showDetail', 'uses' => 'ProductController@getDetailProduct']);
+//review rate
+Route::post('review/{id}', ['as' => 'review', 'uses' => 'HomeController@productStar']);
 Route::post('showDetail/{id}', 'CommentController@comment')->name('post.comment');
 Route::post('showDetail/{id}/{comment_id}', 'CommentController@reply')->name('reply.comment');
 //nút chi tiết sản phẩm

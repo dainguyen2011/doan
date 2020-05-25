@@ -28,9 +28,10 @@
           type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,300,300italic,500italic,700'
           rel='stylesheet' type='text/css'>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
 
     <script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -40,6 +41,7 @@
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/a.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/rating.css')}}">
 
     <!-- font-awesome.min CSS
     ============================================ -->
@@ -96,9 +98,8 @@
     <!-- responsive CSS
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/profile.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/abcd.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('assets/frontend/js/lienhe.js')}}">
+    <script src="{{asset('/assets/frontend/js/rating.js')}}"></script>
+    <script src="{{asset('/assets/frontend/js/rating.js')}}"></script>
 
 
 </head>
@@ -121,19 +122,15 @@
 
 
 
-<!-- JS -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 
 
 <!-- jquery-1.11.3.min js
 ============================================ -->
-<script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-1.11.3.min.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('assets/frontend/js/vendor/jquery-1.11.3.min.js') }}"></script>--}}
 
-<!-- bootstrap js
-============================================ -->
-<script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
+{{--<!-- bootstrap js--}}
+{{--============================================ -->--}}
+{{--<script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>--}}
 {{--<script type="text/javascript" src="{{ asset('assets/frontend/detail.js') }}"></script>--}}
 
 <!-- nivo slider js
