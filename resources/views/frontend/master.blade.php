@@ -97,7 +97,7 @@
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}">
 {{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/profile.css')}}">--}}
-    <link rel="stylesheet" href="{{asset('assets/frontend/css/abcd.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/abcd.css')}}">--}}
     <link rel="stylesheet" href="{{asset('assets/frontend/js/lienhe.js')}}">
 
 
@@ -134,7 +134,7 @@
 <!-- bootstrap js
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/frontend/detail.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('assets/frontend/detail.js') }}"></script>--}}
 
 <!-- nivo slider js
 ============================================ -->
@@ -167,7 +167,7 @@
 ============================================ -->
 <script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/frontend/js/main.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/frontend/css/comment.css') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('assets/frontend/css/comment.css') }}"></script>--}}
 
 <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 

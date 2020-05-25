@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <h2>Thống kê đơn hàng</h2>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-yellow">
                     <div class="panel-heading">
                         <div class="row">
@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">{{$product_count}}</div>
-                                <div><h4>Tổng sản phẩm trong kho-</h4></div>
+                                <div><h4>Tổng sản phẩm trong kho</h4></div>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-red">
                     <div class="panel-heading">
                         <div class="row">
@@ -48,7 +48,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
@@ -70,28 +70,6 @@
                     </a>
                 </div>
             </div>
-{{--            <div class="col-md-3 col-sm-6">--}}
-{{--                <div class="panel panel-green">--}}
-{{--                    <div class="panel-heading">--}}
-{{--                        <div class="row">--}}
-{{--                            <div class="col-xs-3">--}}
-{{--                                <i class="fa fa-tasks fa-5x"></i>--}}
-{{--                            </div>--}}
-{{--                            <div class="col-xs-9 text-right">--}}
-{{--                                <div class="huge">12</div>--}}
-{{--                                <div>New Tasks!</div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <a href="{{ route('list-don-hang') }}">--}}
-{{--                        <div class="panel-footer">--}}
-{{--                            <span class="pull-left">Xem chi tiết</span>--}}
-{{--                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </div>--}}
-{{--                    </a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
         </div>
     </div>
     <div class="row-fluid">
@@ -111,8 +89,8 @@
                         <tr class="text-center">
                             <th class="text-center">STT</th>
                             <th class="text-center">Tên sản phẩm bán</th>
-                            {{--                            <th class="text-center">Sản phẩm đã bán tháng</th>--}}
                             <th class="text-center">Số lượng đã bán</th>
+                            <th class="text-center">Giá tiền</th>
                             <th class="text-center">Số lượng còn lại</th>
                             <th class="text-center">Tổng tiền bán được</th>
                         </tr>
@@ -126,6 +104,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$product->product_name}}</td>
                                 <td>{{$product->pay}}</td>
+                                <td>{{number_format($product->getPrice())}}<sup>vnđ</sup></td>
                                 <td>{{$product->quantity}}</td>
                                 @foreach($product->order_product as $order_product)
 
