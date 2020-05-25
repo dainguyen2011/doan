@@ -17,7 +17,8 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('customer_id');
             $table->float('total');
-            $table->string('status');
+            $table->integer('paid');
+            $table->string('status_1');
             $table->timestamps();
             $table->softDeletes();
         });

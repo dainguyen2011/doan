@@ -34,6 +34,7 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a style="cursor: pointer" href="{{route('detail-order')}}">Thông tin đơn hàng</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                            var  check = confirm('Bạn có chắc chắn muốn đăng xuất ?');

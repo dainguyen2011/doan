@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Orders;
 use App\Product;
 use App\Category;
 use DB;
@@ -46,6 +47,30 @@ class HomeController extends Controller
         }
 
         return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
+    }
+
+    public function getOrder(Request $request)
+    {
+        $order_id = $request->input('order_id');
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $phone = $request->input('phone');
+        $order = Orders::where('id', $order_id)
+            ->WhereHas('customer', function ($qr) use ($phone, $first_name, $last_name) {
+                $qr->where('phone_number', $phone)->where('first_name', $first_name)->where('last_name', $last_name);
+            })
+            ->first();
+
+        $data = [
+            'order_id' => $order_id,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'phone' => $phone,
+            'order' => $order,
+
+        ];
+//        dd($orders);
+        return view('frontend.detail.detail-order', $data);
     }
 
 }

@@ -31,6 +31,8 @@ Route::get('search', ['as' => 'search', 'uses' => 'ProductController@getSearch']
 
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
+// chi tiets don hang
+Route::get("detail-order", ['as' => 'detail-order', 'uses' => 'HomeController@getOrder']);
 Route::get('showDetail/{id}', ['as' => 'showDetail', 'uses' => 'ProductController@getDetailProduct']);
 Route::post('showDetail/{id}', 'CommentController@comment')->name('post.comment');
 Route::post('showDetail/{id}/{comment_id}', 'CommentController@reply')->name('reply.comment');
