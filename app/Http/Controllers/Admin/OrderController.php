@@ -73,43 +73,20 @@ class OrderController extends Controller
         $delayed_count = Orders::where('status', 'cancel')->count();
         return view('admin.order.thongke', compact('product_count', 'order_count', 'ordered_count', 'delayed_count', 'orders'));
 
-//        $order_detail= DB::table('order_product')->join('orders', 'orders.id', '=', 'order_product.order_id')
-//            ->join('products','products.id', '=', 'order_product.product_id')
-//            ->where('orders.status','=','Đã xử lý')
-//            ->select('orders.id', 'order_product.product_id','order_product.product_qty','orders.created_at','products.product_name','products.quantity', DB::raw('SUM(order_product.product_qty) AS total'),DB::raw('SUM(total) AS money'))
-//            ->groupBy('order_product.product_id')
-//            ->orderBy('orders.created_at','desc')
-//            ->get();
-
-//        $order_detail=DetailOrder::with(['order'=>function($query){
-//             $query->where('status',1);
-//        }])->get();
-//
-//        $order_detail = DetailOrder::whereHas('order', function($q){
-//            $q->where('status',1);
-//        })->groupBy('product_id')->orderBy('created_at','desc')->get();
-//        dd($order_detail);
-//        return view('admin.order.thongke',compact('order_detail'));
     }
 
     public function thongkesp()
     {
         $orders = Orders::all();
+        $product_count = Product::count();
+        $order_count = Orders::where('status_1', 0)->count();
+        $ordered_count = Orders::where('status_1', 2)->count();
         $products = Product::where('pay', '>', 0)->latest()->get();
-        foreach ($products as $product) {
-            $total_price = 0;
-            foreach ($product->order_product as $item) {
-                if ($item->orders->status_1 == 2) {
-                    $total_price += $item->product_price * $item->product_qty;
-                }
-            }
-        }
         $data = [
             'products' => $products,
-            'total_price' => $total_price,
             'ordera' => $orders,
         ];
-        return view('admin.order.thongke', $data);
+        return view('admin.order.thongke', $data, compact('product_count','ordered_count','order_count','orders'));
     }
 
     public function export()

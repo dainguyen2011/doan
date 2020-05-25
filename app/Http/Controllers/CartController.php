@@ -53,7 +53,7 @@ class CartController extends Controller
         $order = new Orders();
         $order->customer_id = $customers->id;
         $order->total = str_replace(',', '', Cart::subtotal(0, 3));
-        $order->status = "pending";
+        $order->status = 0;
         $order->paid = str_replace(',', '',session('pay') ) ;
         $order->save();
         $order_id = $order->id;
