@@ -44,3 +44,13 @@
     border-width: 6px;
     margin-top: -6px;
 }
+.btn-rating {
+    padding: 2px 2px;
+    font-size: 0px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-around{
+    margin: 0 auto;
+    text-align: center;
+}

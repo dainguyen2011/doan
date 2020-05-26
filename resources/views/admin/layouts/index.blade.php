@@ -13,6 +13,10 @@
     <link href="{{asset('build/css/extra_colors.css')}}" rel="stylesheet"/>
     <link href="{{asset('build/css/bootstrap-extra.css')}}" rel="stylesheet"/>
     <script src="{{asset('build/js/main.js')}}"></script>
+{{--    <script src="{{asset('vendors/chartist/Chart.min.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/chartist/chart-bar-demo.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/chartist/chart-area-demo.js')}}"></script>--}}
+{{--    <script src="{{asset('vendors/chartist/chart-pie-demo.js')}}"></script>--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- bootstrap-wysiwyg -->
     <!-- <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"> -->

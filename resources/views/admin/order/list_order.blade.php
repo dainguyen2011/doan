@@ -42,5 +42,9 @@
             @endforeach
             </tbody>
         </table>
+        <h2>{{$visitorTraffic}}</h2>
+        <li style="text-align: center; list-style: none">
+            {{ $orders->links() }}
+        </li>
     </div>
 @endsection

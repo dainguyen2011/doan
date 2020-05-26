@@ -3,7 +3,7 @@
     <div class="how-section1">
         <div class="row">
             <div class="col-md-6 how-img">
-                <img src="https://image.ibb.co/dDW27U/Work_Section2_freelance_img1.png" class="rounded-circle img-fluid"
+                <img src="https://lh3.googleusercontent.com/proxy/aIBuvMCFnJvFDsN-5POa3D2jIKceZ0ZNqnisw9MRBFwq60Rp6o8CKBZ_xTdzM6rLdu2LmaU7stzDVZ-tZd5o05fCQvu5s_6BQarH08pv_1B6AvdoAz4HBhLts_lasZmYSlvlur8Tvv_3swS8" class="rounded-circle img-fluid"
                      alt=""/>
             </div>
             <div class="col-md-6">

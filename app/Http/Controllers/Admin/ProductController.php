@@ -15,7 +15,7 @@ class ProductController extends Controller
     //
     function getListProduct()
     {
-        $products = Product::orderBy('id', 'DESC')->paginate(10);
+        $products = Product::latest('updated_at')->paginate(10);
 
         return view('admin.product.list_product', compact('products'));
     }

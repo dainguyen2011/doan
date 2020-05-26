@@ -17,7 +17,7 @@ class OrderController extends Controller
     //
     public function getAllOrder(Request $request)
     {
-        $orders = Orders::all();
+        $orders = Orders::latest('updated_at')->paginate(10);
         return view('admin.order.list_order', compact('orders'));
     }
 
@@ -64,17 +64,6 @@ class OrderController extends Controller
         return redirect(route('list-don-hang'));
     }
 
-    public function thongke()
-    {
-        $product_count = Product::count();
-        $orders = Orders::where('status', 'pending')->get();
-        $order_count = Orders::where('status', 'processing')->count();
-        $ordered_count = Orders::where('status', 'completed')->count();
-        $delayed_count = Orders::where('status', 'cancel')->count();
-        return view('admin.order.thongke', compact('product_count', 'order_count', 'ordered_count', 'delayed_count', 'orders'));
-
-    }
-
     public function thongkesp()
     {
         $orders = Orders::all();
@@ -82,11 +71,19 @@ class OrderController extends Controller
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
         $products = Product::where('pay', '>', 0)->latest()->get();
+        $visitorTraffic = Orders::where('created_at', '>=', \Carbon\Carbon::now()->subMonth())
+            ->groupBy('date')
+            ->orderBy('date', 'DESC')
+            ->get(array(
+                DB::raw('Date(created_at) as date'),
+                DB::raw('COUNT(*) as "pay"')
+            ));
+//        dd($visitorTraffic);
         $data = [
             'products' => $products,
             'ordera' => $orders,
         ];
-        return view('admin.order.thongke', $data, compact('product_count','ordered_count','order_count','orders'));
+        return view('admin.order.thongke', $data, compact('product_count','ordered_count','order_count','orders','visitorTraffic'));
     }
 
     public function export()

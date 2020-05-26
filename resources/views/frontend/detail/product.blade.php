@@ -129,7 +129,7 @@
                             <label class="control-label" for="rating">
                                 <h3 class="field-label-header">Đánh giá sản phẩm</h3><br>
                                 <div class="col-xs-12 col-md-12 text-center">
-                                    <h1 class="rating-num">
+                                    <h1 class="rating-num" style="color: red">
                                         {{($avg_stars)}} / 5 <i
                                             class="text-danger fa fa-star"></i>
                                     </h1>
@@ -157,7 +157,7 @@
                                 <input type="text" name="rating" class="selected-rating number_rating" value="" hidden>
                             </h2>
                             @for($i = 1; $i <= 5; $i++)
-                                <button name="rating" type="button" class="btnrating btn btn-default btn-lg"
+                                <button name="rating" type="button" class="btnrating btn-default  btn-rating"
                                         data-attr="{{$i}}"
                                         id="rating-star-{{$i}}">
                                     <i class="fa fa-star" style="font-size: 11px" aria-hidden="true"></i>
