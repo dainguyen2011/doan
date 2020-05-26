@@ -31,6 +31,7 @@ Route::get('search', ['as' => 'search', 'uses' => 'ProductController@getSearch']
 
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);
+// chart
 // chi tiets don hang
 Route::get("detail-order", ['as' => 'detail-order', 'uses' => 'HomeController@getOrder']);
 Route::get('showDetail/{id}', ['as' => 'showDetail', 'uses' => 'ProductController@getDetailProduct']);

@@ -71,6 +71,8 @@ class OrderController extends Controller
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
         $products = Product::where('pay', '>', 0)->latest()->get();
+        $product_month = Product::where('pay', '>', 0)->where('updated_at', '>=', \Carbon\Carbon::now()->subMonth())->get();
+        $month = \Carbon\Carbon::now()->month;
         $visitorTraffic = Orders::where('created_at', '>=', \Carbon\Carbon::now()->subMonth())
             ->groupBy('date')
             ->orderBy('date', 'DESC')
@@ -78,12 +80,35 @@ class OrderController extends Controller
                 DB::raw('Date(created_at) as date'),
                 DB::raw('COUNT(*) as "pay"')
             ));
-//        dd($visitorTraffic);
+        $Moths = [];
+        $Datas = [];
+        $pay = [];
+        $upd = [];
+        foreach ($visitorTraffic as $item)
+        {
+            $Moths[] = $item->date;
+            $Datas[] = $item->pay;
+        }
+        foreach ($product_month as $a) {
+        $pay[] = $a->pay;
+        $upd[] = \Carbon\Carbon::parse( $a->updated_at)->format('Y-m-d');
+        }
+        dd($upd);
         $data = [
+            'upd' =>json_encode($upd),
+            'pay' =>json_encode($pay),
             'products' => $products,
             'ordera' => $orders,
+            'Months' => json_encode($Moths),
+            'Data' => json_encode($Datas),
+            'product_count' =>$product_count,
+            'order_count'=>$order_count,
+            'ordered_count' =>$ordered_count,
+            'visitorTraffic' =>$visitorTraffic,
+            'month' => $month
+
         ];
-        return view('admin.order.thongke', $data, compact('product_count','ordered_count','order_count','orders','visitorTraffic'));
+        return view('admin.order.thongke', $data);
     }
 
     public function export()
@@ -116,3 +141,4 @@ class OrderController extends Controller
         return back();
     }
 }
+

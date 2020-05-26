@@ -148,71 +148,117 @@
     </head>
     <body>
 
-    <div id="container"></div>
-
+    <div id="container" style="width: 75%;">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="http://www.chartjs.org/dist/2.7.3/Chart.bundle.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 
     <script>
+        var chartdata = {
 
-        anychart.onDocumentReady(function() {
-            // create column chart
-            var chart = anychart.column();
-            var chart1 = anychart.column();
 
-            // turn on chart animation
-            chart.animation(true);
+            type: 'bar',
+            data: {
+                labels: <?php echo $upd ?>,
+                datasets: [
+                    {
+                        label: ' Tháng <?php echo $month ?>',
+                        backgroundColor: '#b90b21',
+                        borderWidth: 1,
+                        data: <?php echo $pay ?>,
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Sản phẩm đã bán'
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Ngày bán'
+                        }
+                    }]
+                }
+            }
+        }
 
-            // set chart title text settings
-            chart.title('Top sản phẩm được bán nhiều nhất');
+        var ctx = document.getElementById('canvas').getContext('2d');
+        new Chart(ctx, chartdata);
+        chart.xAxis().title('Sản phẩm');
+        chart.yAxis().title('Sản phẩm');
 
-                @foreach($products as $product)
-            var series = chart.column([
-                    ['{{$product->product_name}}', '{{$product->pay}}'],
-                ]);
-            var series1 = chart.column([
-                ['{{$product->product_name}}', '{{$product->quantity}}'],
-            ]);
-            @endforeach
+        {{--anychart.onDocumentReady(function() {--}}
+        {{--    // create column chart--}}
+        {{--    var chart = anychart.column();--}}
+        {{--    var chart1 = anychart.column();--}}
 
-            // set series tooltip settings
-            series.tooltip().titleFormat('{%X}');
+        {{--    // turn on chart animation--}}
+        {{--    chart.animation(true);--}}
 
-            series.tooltip()
-                .position('center-top')
-                .anchor('center-bottom')
-                .offsetX(0)
-                .offsetY(5)
-                .format('{%Value}{groupsSeparator: }');
+        {{--    // set chart title text settings--}}
+        {{--    chart.title('Top sản phẩm được bán nhiều nhất');--}}
 
-            //
-            series1.tooltip().titleFormat('{%X}');
+        {{--        @foreach($products as $product)--}}
+        {{--    var series = chart.column([--}}
+        {{--            ['{{$product->product_name}}', '{{$product->pay}}'],--}}
+        {{--        ]);--}}
+        {{--    var series1 = chart.column([--}}
+        {{--        ['{{$pro '{{$duct->product_name}}',product->quantity}}'],--}}
+        {{--    ]);--}}
+        {{--    @endforeach--}}
 
-            series1.tooltip()
-                .position('center-top')
-                .anchor('center-bottom')
-                .offsetX(0)
-                .offsetY(5)
-                .format('{%Value}{groupsSeparator: }');
+        {{--    // set series tooltip settings--}}
+        {{--    series.tooltip().titleFormat('{%X}');--}}
 
-            // set scale minimum
-            chart.yScale().minimum(0);
+        {{--    // series.tooltip()--}}
+        {{--    //     .position('center-top')--}}
+        {{--    //     .anchor('center-bottom')--}}
+        {{--    //     .offsetX(0)--}}
+        {{--    //     .offsetY(5)--}}
+        {{--    //     .format('{%Value}{groupsSeparator: }');--}}
 
-            // set yAxis labels formatter
-            chart.yAxis().labels().format('{%Value}{groupsSeparator: }');
+        {{--    //--}}
+        {{--    series1.tooltip().titleFormat('{%X}');--}}
 
-            // tooltips position and interactivity settings
-            chart.tooltip().positionMode('point');
-            chart.interactivity().hoverMode('by-x');
+        {{--    series1.tooltip()--}}
+        {{--        .position('center-top')--}}
+        {{--        .anchor('center-bottom')--}}
+        {{--        .offsetX(0)--}}
+        {{--        .offsetY(5)--}}
+        {{--        .format('{%Value}{groupsSeparator: }');--}}
 
-            // // axes titles
-            chart.xAxis().title('Sản phẩm');
-            chart.yAxis().title('Đã bán');
+        {{--    // set scale minimum--}}
+        {{--    chart.yScale().minimum(0);--}}
 
-            // set container id for the chart
-            chart.container('container');
+        {{--    // set yAxis labels formatter--}}
+        {{--    chart.yAxis().labels().format('{%Value}{groupsSeparator: }');--}}
 
-            // initiate chart drawing
-            chart.draw();
-        });
+        {{--    // tooltips position and interactivity settings--}}
+        {{--    chart.tooltip().positionMode('point');--}}
+        {{--    chart.interactivity().hoverMode('by-x');--}}
+
+        {{--    // // axes titles--}}
+        {{--    chart.xAxis().title('Sản phẩm');--}}
+        {{--    chart.yAxis().title('Đã bán');--}}
+
+        {{--    // set container id for the chart--}}
+        {{--    chart.container('container');--}}
+
+        {{--    // initiate chart drawing--}}
+        {{--    chart.draw();--}}
+        {{--});--}}
 
     </script>
     </body>
