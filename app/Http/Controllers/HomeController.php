@@ -81,7 +81,14 @@ class HomeController extends Controller
            'rating' => $request->input('rating'),
            'content' => $request->input('content')
        ]);
-        return view('frontend.detail.product', compact('product'));
+        return back();
+
+    }
+    public function listRate($id, Request $request){
+        $product = Product::findOrFail($id);
+        $persons =$product->rating->count();
+        $rating = Rating::where('product_id', $product->id)->latest()->paginate(10);
+        return view('frontend.detail.list-rate', compact('product','rating','persons'));
 
     }
 

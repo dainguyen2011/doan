@@ -35,8 +35,6 @@ class CartController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'phone_number' => 'required',
-            //TODO lat nua phai lam upload product
-            //'product_image_intro' => 'required',
             'address' => 'required',
         ]);
 
@@ -47,9 +45,6 @@ class CartController extends Controller
         $customers->phone_number = $post['phone_number'];
         $customers->address = $post['address'];
         $customers->save();
-
-
-//        dd(str_replace(',', '', Cart::subtotal(0, 3)));
         $order = new Orders();
         $order->customer_id = $customers->id;
         $order->total = str_replace(',', '', Cart::subtotal(0, 3));
@@ -57,7 +52,6 @@ class CartController extends Controller
         $order->paid = str_replace(',', '',session('pay') ) ;
         $order->save();
         $order_id = $order->id;
-
         foreach (Cart::content() as $item) {
             DB::table('order_product')->insert(
                 array(
@@ -71,6 +65,11 @@ class CartController extends Controller
                 )
             );
         }
+        \Mail::send('frontend.mail.cart-check-out', compact('request','order_id'), function ($message) use ($request) {
+            $message->to($request->email, $request->first_name . $request->last_name)->subject
+            ('Thanh toán');
+            $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
+        });
         Cart::destroy();
         Session::flash('message', 'Bạn đã mua hàng thành công, cảm ơn bạn');
         session()->forget('pay');

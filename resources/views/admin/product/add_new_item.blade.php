@@ -74,7 +74,7 @@
                 </th>
             </tr>
             <tr>
-                <th>Mô tả đầy đủn</th>
+                <th>Mô tả đầy đủ</th>
                 <th>
                     <textarea placeholder="Nhập mô tả đầy đủ sản phẩm" class="form-control" id="txt" name="full_description"></textarea>
                 </th>

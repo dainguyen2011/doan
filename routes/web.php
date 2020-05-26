@@ -36,6 +36,7 @@ Route::get("detail-order", ['as' => 'detail-order', 'uses' => 'HomeController@ge
 Route::get('showDetail/{id}', ['as' => 'showDetail', 'uses' => 'ProductController@getDetailProduct']);
 //review rate
 Route::post('review/{id}', ['as' => 'review', 'uses' => 'HomeController@productStar']);
+Route::get('list-rate/{id}', ['as' => 'list-rate', 'uses' => 'HomeController@listRate']);
 Route::post('showDetail/{id}', 'CommentController@comment')->name('post.comment');
 Route::post('showDetail/{id}/{comment_id}', 'CommentController@reply')->name('reply.comment');
 //nút chi tiết sản phẩm
