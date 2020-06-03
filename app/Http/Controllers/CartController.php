@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customers;
+use App\Http\Requests\AddToCartRequest;
 use App\Orders;
 use App\Product;
 use Illuminate\Http\Request;
@@ -35,6 +36,7 @@ class CartController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'phone_number' => 'required',
+            'email' => 'required',
             'address' => 'required',
         ]);
 
@@ -43,6 +45,7 @@ class CartController extends Controller
         $customers->first_name = $post['first_name'];
         $customers->last_name = $post['last_name'];
         $customers->phone_number = $post['phone_number'];
+        $customers->email = $post['email'];
         $customers->address = $post['address'];
         $customers->save();
         $order = new Orders();
@@ -61,6 +64,8 @@ class CartController extends Controller
                     'product_size' => $item->options->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
+                    'created_at' => $item->created_at,
+                    'updated_at' => $item->updated_at,
 
                 )
             );
@@ -77,7 +82,7 @@ class CartController extends Controller
         return redirect(route('home'));
     }
 
-    public function postAddToCart($id, Request $request)
+    public function postAddToCart($id, AddToCartRequest $request)
     {
         $product = Product::find($id);
         $post = $request->all();

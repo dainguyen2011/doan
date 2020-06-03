@@ -2,6 +2,7 @@
 @section('content')
     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     <div class="view-edit-product">
+        <b><h3>Sửa sản phẩm</h3></b>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -21,7 +22,7 @@
                 <tr>
                     <th>Ảnh sản phẩm</th>
                     <th>
-                        <img class="product-image-intro-edit" src="{{url('/')}}/{{$product->product_image_intro}}">
+                        <img style="width: 100px" class="product-image-intro-edit" src="{{url('/')}}/{{$product->product_image_intro}}">
                         <input type="file" class="form-control" name="product_image_intro">
                     </th>
                 </tr>

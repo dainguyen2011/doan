@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 @section('content')
     <div class="view-gallery">
+        <b><h3>Ảnh chi tiết</h3></b>
         <h3>{{$product->product_name}}</h3>
         <table class="table table-bordered">
             <thead>

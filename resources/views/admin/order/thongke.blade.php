@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row">
             <h2>Thống kê đơn hàng</h2>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3">
                 <div class="panel panel-yellow">
                     <div class="panel-heading">
                         <div class="row">
@@ -26,8 +26,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="panel panel-red">
+            <div class="col-md-3">
+                <div class="panel panel-green">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -48,7 +48,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <div class="row">
@@ -62,6 +62,28 @@
                         </div>
                     </div>
                     <a href="{{ route('list-don-hang') }}">
+                        <div class="panel-footer">
+                            <span class="pull-left">Xem chi tiết</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-3">
+                                <i class="fa fa-shopping-cart fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{$tonkho}}</div>
+                                <div><h4>Tổng sản tồn kho</h4></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{{ route('danh-sach-san-pham') }}">
                         <div class="panel-footer">
                             <span class="pull-left">Xem chi tiết</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -84,6 +106,30 @@
                             {{ Session::get('thongbao') }}
                         </div>
                     @endif
+                        <form action="" method="get">
+                            <div class="row">
+                                <div class="col-md-3"> <select class="form-control" name="month">
+                                        <option value="1">Tháng 1</option>
+                                        <option value="2">Tháng 2</option>
+                                        <option value="3">Tháng 3</option>
+                                        <option value="4">Tháng 4</option>
+                                        <option value="5">Tháng 5</option>
+                                        <option value="6">Tháng 6</option>
+                                        <option value="7">Tháng 7</option>
+                                        <option value="8">Tháng 8</option>
+                                        <option value="9">Tháng 9</option>
+                                        <option value="10">Tháng 10</option>
+                                        <option value="11">Tháng 11</option>
+                                        <option value="12">Tháng 12</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary" type="submit">Tìm</button>
+                                </div>
+
+
+                            </div>
+                        </form>
                     <table class="table table-bordered">
                         <thead>
                         <tr class="text-center">
@@ -93,6 +139,7 @@
                             <th class="text-center">Giá tiền</th>
                             <th class="text-center">Số lượng còn lại</th>
                             <th class="text-center">Tổng tiền bán được</th>
+                            <th class="text-center">Ngày bán</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -117,6 +164,7 @@
                                 <td>
                                     {{number_format($price_product)}} <sup>vnđ</sup>
                                 </td>
+                                <td>{{date_format($product->updated_at,'d-m-yy h:i:s')}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -198,68 +246,6 @@
         new Chart(ctx, chartdata);
         chart.xAxis().title('Sản phẩm');
         chart.yAxis().title('Sản phẩm');
-
-        {{--anychart.onDocumentReady(function() {--}}
-        {{--    // create column chart--}}
-        {{--    var chart = anychart.column();--}}
-        {{--    var chart1 = anychart.column();--}}
-
-        {{--    // turn on chart animation--}}
-        {{--    chart.animation(true);--}}
-
-        {{--    // set chart title text settings--}}
-        {{--    chart.title('Top sản phẩm được bán nhiều nhất');--}}
-
-        {{--        @foreach($products as $product)--}}
-        {{--    var series = chart.column([--}}
-        {{--            ['{{$product->product_name}}', '{{$product->pay}}'],--}}
-        {{--        ]);--}}
-        {{--    var series1 = chart.column([--}}
-        {{--        ['{{$pro '{{$duct->product_name}}',product->quantity}}'],--}}
-        {{--    ]);--}}
-        {{--    @endforeach--}}
-
-        {{--    // set series tooltip settings--}}
-        {{--    series.tooltip().titleFormat('{%X}');--}}
-
-        {{--    // series.tooltip()--}}
-        {{--    //     .position('center-top')--}}
-        {{--    //     .anchor('center-bottom')--}}
-        {{--    //     .offsetX(0)--}}
-        {{--    //     .offsetY(5)--}}
-        {{--    //     .format('{%Value}{groupsSeparator: }');--}}
-
-        {{--    //--}}
-        {{--    series1.tooltip().titleFormat('{%X}');--}}
-
-        {{--    series1.tooltip()--}}
-        {{--        .position('center-top')--}}
-        {{--        .anchor('center-bottom')--}}
-        {{--        .offsetX(0)--}}
-        {{--        .offsetY(5)--}}
-        {{--        .format('{%Value}{groupsSeparator: }');--}}
-
-        {{--    // set scale minimum--}}
-        {{--    chart.yScale().minimum(0);--}}
-
-        {{--    // set yAxis labels formatter--}}
-        {{--    chart.yAxis().labels().format('{%Value}{groupsSeparator: }');--}}
-
-        {{--    // tooltips position and interactivity settings--}}
-        {{--    chart.tooltip().positionMode('point');--}}
-        {{--    chart.interactivity().hoverMode('by-x');--}}
-
-        {{--    // // axes titles--}}
-        {{--    chart.xAxis().title('Sản phẩm');--}}
-        {{--    chart.yAxis().title('Đã bán');--}}
-
-        {{--    // set container id for the chart--}}
-        {{--    chart.container('container');--}}
-
-        {{--    // initiate chart drawing--}}
-        {{--    chart.draw();--}}
-        {{--});--}}
-
     </script>
     </body>
     </html>

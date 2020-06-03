@@ -22,8 +22,9 @@ class ProductController extends Controller
         $avg_stars = round($product->rating->avg('rating'));
         $persons =$product->rating->count();
         $detailGall = $product->gallery;
+        $product_related = Product::where('category_id', $product->category_id)->where('id', '!=', $id)->limit(8)->get();
         $rating = Rating::where('product_id', $product->id)->take(5)->latest()->get();
-        return view('frontend.detail.product', compact('product', 'detailGall', 'avg_stars','persons', 'rating'));
+        return view('frontend.detail.product', compact('product','product_related', 'detailGall', 'avg_stars','persons', 'rating'));
     }
 
 

@@ -4,6 +4,7 @@
     <script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
     @if ($errors->any())
         <div class="alert alert-danger">
+            <b><h3>Thêm sản phẩm</h3></b>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>

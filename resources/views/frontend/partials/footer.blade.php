@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
                     <div class="footer-menu-area">
-                        <h2 class="footer-heading">Opening time</h2>
+                        <h4 class="footer-heading">Thời gian mở cửa</h4>
                         <div class="footer-menu opening-time">
                             <ul>
                                 <li><i class="fa fa-angle-right"></i>Monday<span>7.00 AM - 7.00 PM</span></li>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info-area">
-                        <h2 class="footer-heading">Contact Us</h2>
+                        <h4 class="footer-heading">Thông tin liên hệ</h4>
                         <div class="contact-info">
                             <div class="contanct-details">
                                 <div class="info-icon">
@@ -58,7 +58,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info-area">
+                        <h4 class="footer-heading">Chấp nhận thanh toán</h4>
+                        <div class="contact-info">
+                            <div class="contanct-details">
+                                <ul>
+                                    <li>
+                                        <a style="color: white" href="http://aobongda.net/chuyen-khoan-ngan-hang" title="Chuyển khoản ngân hàng">Chuyển khoản ngân hàng</a>
+                                    </li>
+                                    <li>
+                                        <a style="color: white" href="http://aobongda.net/visa-master-card" title="Visa, Master Card">Visa, Master Card</a>
+                                    </li>
+                                    <li>
+                                        <a style="color: white" href="http://aobongda.net/thanh-toan-khi-nhan-hang" title="Thanh toán khi nhận hàng">Thanh toán khi nhận hàng</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     <div class="footer-bottom">
@@ -66,7 +87,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <div class="copyright">
-                        Copyrignt@2018 <a href="https://freethemescloud.com/" target="_blank">Free themes Cloud </a>/ ALL RIGHTS RESERVED
+                        Copyrignt@2020 <a href="https://freethemescloud.com/" target="_blank">Free themes Cloud </a>/ ALL RIGHTS RESERVED
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
