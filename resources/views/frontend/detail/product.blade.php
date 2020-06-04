@@ -4,6 +4,15 @@
     <br>
     <div class="product-item-area">
         <div class="container">
+            @if ($errors->any())
+                <div class="alert alert-warning">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12 col-sm-8">
                     <div class="row">
@@ -19,6 +28,7 @@
                                                     style="width: 100%" class="product-image-intro"
                                                     src="{{ asset('/'.$product->product_image_intro)}}"></a></li>
                                         <br>
+                                        <div class="row">
                                         @if($product->gallery)
                                             <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img
                                                         style="width: 20%"
@@ -32,6 +42,7 @@
                                                         src="{{ asset('/'.$product->gallery->image1)}}"
                                                         alt="tab-img"></a></li>
                                         @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -51,22 +62,16 @@
                                         </div>
                                     </div>
                                     <div class="available-option">
-                                        <h2>Available Options:</h2>
+                                        <h2>Còn : {{$product->quantity}} sản phẩm</h2>
                                         <p class="quality">Số lượng</p>
-                                        <div class="section" style="padding-bottom:20px;">
-                                            <div>
-                                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span>
-                                                </div>
-                                                <input style="width: 10%" type="number" name="quality" min="1"
-                                                       value="1"/>
-                                                <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span>
-                                                </div>
-                                            </div>
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" name="quality"
+                                                   min="1" value="1" style="padding: 0px;width: 50px;" step="1">
                                         </div>
                                         <div class="size-option fix">
                                             <p>Size:</p>
                                             <select name="product_size">
-                                                <option value="Choose an option">Chọn size</option>
+                                                <option value="">Chọn size</option>
                                                 <option value="S">S</option>
                                                 <option value="M">M</option>
                                                 <option value="L">L</option>
@@ -206,6 +211,41 @@
                     @if($persons >= 5)
                         <a href="{{route('list-rate', $product->id)}}" class="rate">Xem thêm đánh giá</a>
                     @endif
+                </div>
+            </div>
+
+            <div class="product-items">
+                <h2 class="product-header" style="text-align: center">Sản phẩm cùng loại</h2>
+                <div class="row">
+                    <div id="product-slider-women" class="owl-carousel">
+                        @foreach($product_related as $product)
+                            <div class="col-md-4">
+                                <div class="single-product">
+                                    <div class="single-product-img">
+                                        @if($product->quantity ==0)
+                                            <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                        @endif
+                                        <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                    </div>
+                                    <div class="single-product-content">
+                                        <div class="product-content-left">
+                                            <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
+                                            </h2>
+                                            <p>{{$product->product_name}}</p>
+                                        </div>
+                                        <div style="margin-top: 18px" class="product-content-right pull-right">
+
+                                            <p>
+                                                <del>{{number_format($product->price)}} vnđ</del>
+                                                &nbsp; {{number_format($product->getPrice())}} vnđ
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

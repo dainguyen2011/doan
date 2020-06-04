@@ -41,7 +41,10 @@
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/a.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/profile.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/edit-profile.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/rating.css')}}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- font-awesome.min CSS
     ============================================ -->

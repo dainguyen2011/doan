@@ -78,7 +78,7 @@
 
 
                     <ul class="dropdown-menu dropdown-user" style="background: #fff;">
-                        <li class="info-user-an">{{ Auth::user()->name }}  </li>
+                        <li class="info-user-an" style="font-size: 40px">{{ Auth::user()->name }}  </li>
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i
@@ -132,6 +132,16 @@
                                     <li>
                                         <a href="{{route('danh-sach-san-pham')}}"><i
                                                 class="ion-arrow-return-right text-yellow"></i>Danh sách sản phẩm</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                        class="">Quản lý khách hàng</span></a>
+                                <ul class="nav-flyout">
+                                    <li>
+                                        <a href="{{route('danh-sach-khach-hang')}}"><i
+                                                class="ion-arrow-return-right text-yellow"></i>Danh sách khách hàng</a>
                                     </li>
                                 </ul>
                             </li>

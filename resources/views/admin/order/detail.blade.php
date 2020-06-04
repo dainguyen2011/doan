@@ -1,5 +1,6 @@
 @extends('admin.layouts.index')
 @section('content')
+    <b><h3>Thay đổi trạng thái đơn hàng</h3></b>
     <div class="view-order-detail">
         @if (Session::has('message'))
             <div class="alert alert-info">{{ Session::get('message') }}</div>

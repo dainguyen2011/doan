@@ -14,7 +14,9 @@
         <table class="table table-bordered">
             <tr>
                 <th>Tên danh mục</th>
-                <th><input type="text" class="form-control" name="category_name"></th>
+                <th>
+                    <input placeholder="Nhập tên danh mục" type="text" class="form-control" name="category_name">
+                </th>
             </tr>
             <tr>
                 <th>Danh mục cha</th>
@@ -34,13 +36,13 @@
             <tr>
                 <th>Mô tả</th>
                 <th>
-                    <textarea class="form-control" name="description"></textarea>
+                    <textarea placeholder="Nhập mô tả" class="form-control" name="description"></textarea>
                 </th>
             </tr>
             <tr>
                 <th>Yêu cầu</th>
                 <th>
-                    <input type="text" name="ordering" class="form-control">
+                    <input placeholder="Nhập yêu cầu" type="text" name="ordering" class="form-control">
                 </th>
             </tr>
             <tr>

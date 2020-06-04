@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 @section('content')
     <div class="view-edit-product">
+        <b><h3>Sửa ảnh chi tiết</h3></b>
         @if (session('success'))
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>

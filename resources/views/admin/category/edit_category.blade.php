@@ -32,7 +32,7 @@
                 <tr>
                     <th>Ảnh</th>
                     <td>
-                        <img class="image-categoy-edit" src="{{url('/')}}/{{$category->image_category}}"/>
+                        <img class="image-categoy-edit" src="{{ asset('') }}/{{ pare_url_file($category->image) }}"/>
                         <input type="file" name="image_category" class="form-control">
                     </td>
                 </tr>

@@ -7,9 +7,11 @@
         </div>
     @endif
     <div class="w3-content w3-display-container" style=".mySlides {display:none}">
+        <img class="mySlides" src="http://aobongda.net/pic/Banner/web_637236950009985208.png.ashx" alt="">
         <img class="mySlides" src="upload\products\sl1.jpg" style="width:100%">
-        <img class="mySlides" src="upload\products\sl2.jpg" style="width:100%">
-        <img class="mySlides" src="upload\products\sl3.jpg" style="width:100%">
+{{--        <img class="mySlides" src="upload\products\sl2.jpg" style="width:100%">--}}
+        <img class="mySlides" src="http://aobongda.net/pic/Banner/BANNERWE_636961920839260840.png.ashx" alt="Keep &amp; Fly X Phan Văn Đức">
+        <img class="mySlides" src="http://aobongda.net/pic/Banner/fffd_637236953611209913.png.ashx" alt="">
     </div>
     <script>
         var myIndex = 0;
@@ -54,16 +56,16 @@
                     <div class="product-items-area">
                         <div class="product-items">
                             <div class="dropdown">
-                                <button style="margin-top: 10px;background-color: #5a5c69"
+                                <button style="margin-top: 10px;background-color: #5a5c69; color: #33ff35"
                                         class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Chọn sắp xếp sản phẩm
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
                                      style="background: #ffffff">
-                                    <a class="dropdown-item" href="{{route('home', 'sx=DESC')}}">Giá từ cao đến thấp</a>
+                                    <a style="color: #33ff35" class="dropdown-item" href="{{route('home', 'sx=DESC')}}">Giá từ cao đến thấp</a>
                                     <br>
-                                    <a class="dropdown-item" href="{{route('home', 'sx=ASC')}}">Giá từ thấp đến cao</a>
+                                    <a style="color: #33ff35" class="dropdown-item" href="{{route('home', 'sx=ASC')}}">Giá từ thấp đến cao</a>
                                 </div>
                             </div>
 
@@ -77,6 +79,9 @@
                                                     @if($product->quantity ==0)
                                                         <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                                     @endif
+                                                        @if($product->sale >0)
+                                                            <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                        @endif
                                                     <a href="{{route('showDetail',$product->id)}}"><img
                                                             class="primary-img myImage"
                                                             src="{{ asset('/'.$product->product_image_intro)}}"></a>
@@ -114,6 +119,9 @@
                                                 @if($product->quantity ==0)
                                                     <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                                 @endif
+                                                    @if($product->sale >0)
+                                                        <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                    @endif
                                                 <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                     src="{{ asset('/'.$product->product_image_intro)}}"></a>
                                             </div>
@@ -154,6 +162,9 @@
                                             @if($product->quantity ==0)
                                                 <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
+                                                @if($product->sale >0)
+                                                    <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                 src="{{ asset('/'.$product->product_image_intro)}}"></a>
 

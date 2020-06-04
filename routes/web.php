@@ -107,6 +107,13 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
             Route::get("delete-gallery/{id}", ['as' => 'delete-gallery', 'uses' => 'ProductController@getDeleteGallery']);
         });
 
+        //customer
+        Route::group(['prefix' => 'khach-hang'], function () {
+            //root/admin/san-pham/danh-sach
+            Route::get("danh-sach", ['as' => 'danh-sach-khach-hang', 'uses' => "CustomerController@listCustomer"]);
+            Route::get("xoa-khach-hang/{id}", ['as' => 'xoa-khach-hang', 'uses' => 'CustomerController@deleteCustomer']);
+        });
+
 
 //
 //        Route::group(['prefix' => 'danh-muc', 'middleware'=>'check.employee'], function (){

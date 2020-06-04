@@ -7,7 +7,6 @@ if (!function_exists('upload_image')) {
      */
     function upload_image($file, $folder = '', array $extend = array())
     {
-        dd($_FILES[$file]['name']);
         $code = 1;
 // lay duong dan anh
         $baseFilename = public_path() . '/uploads/' . $_FILES[$file]['name'];

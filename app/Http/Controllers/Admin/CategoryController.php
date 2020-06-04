@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
@@ -19,7 +20,7 @@ class CategoryController extends Controller
 
     function getAddCategory()
     {
-        $list_root_category =Category::whereNull('parent')->get();
+        $list_root_category = Category::whereNull('parent')->get();
 //        $list_root_category = DB::table('categories')->where('parent', '=', null)->get();
         $list_sub_category = DB::table('categories')->where('parent', '!=', null)->get();
         return view('admin.category.add_category', compact('list_root_category', 'list_sub_category'));
@@ -39,54 +40,42 @@ class CategoryController extends Controller
         return redirect(route('list-danh-muc'));
     }
 
-    function postAddCategory(Request $request)
+    function postAddCategory(CategoryRequest $request)
     {
-        $post = $request->all();
-        $request->validate([
-            'category_name' => 'required|unique:categories|max:255',
-            'ordering' => 'required',
-            'description' => 'required'
-        ]);
-        $category = new Category();
-        $category->category_name = $post['category_name'];
-        $category->ordering = $post['ordering'];
-        $category->description = $post['description'];
-        $category->publish = 1;
-        if ($category->save()) {
-            if ($request->hasFile('image_category')) {
-                $file = $request->image_category;
-                $random = random_int(10000, 99999);
-                $file->move('upload/categories', $random . $file->getClientOriginalName());
-                $category->image_category = "upload/categories/" . $random . $file->getClientOriginalName();
-                $category->save();
+        $file['name'] = [];
+        if ($request->hasFile('image_category')) {
+            $file = upload_image('image_category');
+            if (isset($file['name'])) {
+                $file['name'];
             }
         }
-        return redirect(route('list-danh-muc'));
+        Category::create([
+            'category_name' => $request->input('category_name'),
+            'description' => $request->input('description'),
+            'ordering' => $request->input('ordering'),
+            'image' => $file['name']
+        ]);
+
+        return redirect(route('list-danh-muc'))->with('success', 'Thêm thành danh mục thành công !!!');
     }
 
-    function postEditCategory($id, Request $request)
+    function postEditCategory($id, CategoryRequest $request)
     {
-        $post = $request->all();
-        $request->validate([
-            'category_name' => 'required|unique:categories,id|max:255',
-            'ordering' => 'required',
-            'description' => 'required'
-        ]);
-        $category = Category::find($id);
-        $category->category_name = $post['category_name'];
-        $category->ordering = $post['ordering'];
-        $category->description = $post['description'];
-        $category->parent = $post['parent'];
-        $category->publish = 1;
-        if ($category->save()) {
-            if ($request->hasFile('image_category')) {
-                $file = $request->image_category;
-                $random = random_int(10000, 99999);
-                $file->move('upload/categories', $random . $file->getClientOriginalName());
-                $category->image_category = "upload/categories/" . $random . $file->getClientOriginalName();
-                $category->save();
+        $file['name'] = [];
+        if ($request->hasFile('image_category')) {
+            $file = upload_image('image_category');
+            if (isset($file['name'])) {
+                $file['name'];
             }
         }
-        return redirect(route('list-danh-muc'));
+
+        $category = Category::find($id);
+        $category->update([
+            'category_name' => $request->input('category_name'),
+            'description' => $request->input('description'),
+            'ordering' => $request->input('ordering'),
+            'image' =>$file['name']
+        ]);
+        return redirect(route('list-danh-muc'))->with('success', 'Sửa thành danh mục thành công !!!');
     }
 }
