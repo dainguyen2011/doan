@@ -9,7 +9,6 @@
     <div class="w3-content w3-display-container" style=".mySlides {display:none}">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/web_637236950009985208.png.ashx" alt="">
         <img class="mySlides" src="upload\products\sl1.jpg" style="width:100%">
-{{--        <img class="mySlides" src="upload\products\sl2.jpg" style="width:100%">--}}
         <img class="mySlides" src="http://aobongda.net/pic/Banner/BANNERWE_636961920839260840.png.ashx" alt="Keep &amp; Fly X Phan Văn Đức">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/fffd_637236953611209913.png.ashx" alt="">
     </div>
@@ -84,7 +83,7 @@
                                                         @endif
                                                     <a href="{{route('showDetail',$product->id)}}"><img
                                                             class="primary-img myImage"
-                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                                                 </div>
                                                 <div class="single-product-content">
                                                     <div class="product-content-left">
@@ -123,7 +122,7 @@
                                                         <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                                     @endif
                                                 <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
-                                                                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                                             </div>
                                             <div class="single-product-content">
                                                 <div class="product-content-left">
@@ -166,7 +165,7 @@
                                                     <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                                 @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
-                                                                                                src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                                                                src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
 
                                         </div>
                                         <div class="single-product-content">

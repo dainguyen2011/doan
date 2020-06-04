@@ -21,7 +21,7 @@
                     <td>{{$item->address}}</td>
                     <td>{{$item->phone_number}}</td>
                     <th nowrap="">
-                        <a onclick="return confirm('Bạn có muốn xóa không?')"  class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                        <a  href="{{route('xoa-khach-hang',$item->id)}}" onclick="return confirm('Bạn có muốn xóa không?')"  class="btn btn-danger"><i class="fa fa-trash"></i></a>
                     </th>
                 </tr>
             @endforeach

@@ -66,6 +66,7 @@ class OrderController extends Controller
 
     public function thongkesp(Request $request)
     {
+        $month = $request->month ? $request->month : \Carbon\Carbon::now()->month;
         $orders = Orders::all();
         $product_count = Product::count();
         $order_count = Orders::where('status_1', 0)->count();
@@ -83,7 +84,6 @@ class OrderController extends Controller
         $grouped = $product_month->groupBy(function ($item, $key) {
             return \Carbon\Carbon::parse($item->updated_at)->format('Y-m-d');
         })->toArray();
-        $month = \Carbon\Carbon::now()->month;
         $tonkho = DB::table('products')->sum('quantity');
         $pay = [];
         $upd = [];

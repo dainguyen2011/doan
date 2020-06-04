@@ -22,8 +22,8 @@
                 <tr>
                     <th>Ảnh sản phẩm</th>
                     <th>
-                        <img style="width: 100px" class="product-image-intro-edit" src="{{url('/')}}/{{$product->product_image_intro}}">
-                        <input type="file" class="form-control" name="product_image_intro">
+                        <img style="width: 100px" class="product-image-intro-edit"  src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}">
+                        <input type="file" value="{{$product->product_image_intro}}" class="form-control" name="product_image_intro">
                     </th>
                 </tr>
                 <tr>

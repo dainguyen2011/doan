@@ -1,6 +1,24 @@
 @extends('admin.layouts.index')
 @section('content')
     <div class="view-list-product">
+        @if (session('success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('warning'))
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('warning') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ session('error') }}
+            </div>
+        @endif
         <b><h3>Danh sách sản phẩm</h3></b>
         <table class="table table-bordered">
             <thead>
@@ -22,7 +40,7 @@
                     <td>{{$loop->iteration}}</td>
                     <td style="width: 100px">{{$product->product_name}}</td>
                     <td style="width: 100px"><a  href="{{route('showDetail',$product->id)}}"><img style="width: 100px"  class="product-image-intro"
-                                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                                                                  src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                     </td>
                     <td nowrap="">{{$product->quantity}}</td>
                     @if($product->category_id ==8)

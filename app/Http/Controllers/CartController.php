@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Customers;
 use App\Http\Requests\AddToCartRequest;
+use App\Http\Requests\PostPayNowRequest;
+use App\OrderProduct;
 use App\Orders;
 use App\Product;
 use Illuminate\Http\Request;
@@ -30,47 +32,44 @@ class CartController extends Controller
         }
     }
 
-    public function postPayNow(Request $request)
+    public function postPayNow(PostPayNowRequest $request)
     {
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'phone_number' => 'required',
-            'email' => 'required',
-            'address' => 'required',
+        $customer = Customers::where('first_name', $request->first_name)
+            ->where('last_name', $request->last_name)
+            ->where('phone_number', $request->phone_number)
+            ->where('address', $request->address)
+            ->where('email', $request->email)->first();
+        if (!$customer) {
+            $new_customer = Customers::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'phone_number' => $request->phone_number,
+                'email' => $request->email,
+                'address' => $request->address,
+            ]);
+        }
+        $order = Orders::create([
+            'status_1' => 0,
+            'paid' => str_replace(',', '', session('pay')),
+            'customer_id' => $customer ? $customer->id : $new_customer->id,
+            'total' => str_replace(',', '', Cart::subtotal(0, 3))
         ]);
-
-        $post = $request->all();
-        $customers = new Customers();
-        $customers->first_name = $post['first_name'];
-        $customers->last_name = $post['last_name'];
-        $customers->phone_number = $post['phone_number'];
-        $customers->email = $post['email'];
-        $customers->address = $post['address'];
-        $customers->save();
-        $order = new Orders();
-        $order->customer_id = $customers->id;
-        $order->total = str_replace(',', '', Cart::subtotal(0, 3));
-        $order->status_1 = 0;
-        $order->paid = str_replace(',', '',session('pay') ) ;
-        $order->save();
-        $order_id = $order->id;
-        foreach (Cart::content() as $item) {
-            DB::table('order_product')->insert(
-                array(
+        if ($order) {
+            foreach (Cart::content() as $item) {
+                OrderProduct::insert([
                     'product_id' => $item->id,
-                    'order_id' => $order_id,
+                    'order_id' => $order->id,
                     'product_name' => $item->name,
                     'product_size' => $item->options->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
                     'created_at' => $item->created_at,
                     'updated_at' => $item->updated_at,
-
-                )
-            );
+                ]);
+            }
         }
-        \Mail::send('frontend.mail.cart-check-out', compact('request','order_id'), function ($message) use ($request) {
+        $order_id = $order->id;
+        \Mail::send('frontend.mail.abcd', compact('request', 'order_id'), function ($message) use ($request) {
             $message->to($request->email, $request->first_name . $request->last_name)->subject
             ('Thanh toán');
             $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));

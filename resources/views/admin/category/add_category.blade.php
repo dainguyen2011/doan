@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
+    <h2> Thêm danh mục</h2>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -49,7 +50,7 @@
                 <td colspan="2">
                     <div class="pull-right">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i></button>
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-backward"></i></button>
+                        <a class="btn btn-danger" href="{{route('list-danh-muc')}}"><i class="fa fa-backward"></i></a>
                     </div>
                 </td>
             </tr>

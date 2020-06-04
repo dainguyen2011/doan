@@ -63,58 +63,52 @@ class ProductController extends Controller
 
     function postAddProduct(ProductRequest $request)
     {
-        $post = $request->all();
-        $productModel = new Product();
-        $productModel->product_name = $post['product_name'];
-        $productModel->category_id = $post['category_id'];
-        $productModel->publish = $post['publish'];
-        $productModel->price = $post['price'];
-        $productModel->sale = $post['sale'];
-        $productModel->ordering = $post['ordering'];
-        $productModel->quantity = $post['quantity'];
-        $productModel->description = $post['description'];
-        $productModel->full_description = $post['full_description'];
-        $productModel->created_at = date('Y-m-d H:i:s');
-        $productModel->updated_at = date('Y-m-d H:i:s');
-        if ($productModel->save()) {
-            if ($request->hasFile('product_image_intro')) {
-                $file = $request->product_image_intro;
-                // nếu cần validate file upload lên thì sử dụng mấy biến này
-                $file_name = $file->getClientOriginalName();
-                $extension_file = $file->getClientOriginalExtension();
-                $temp_file = $file->getRealPath();
-                $file_size = $file->getSize();
-                $file_type = $file->getMimeType();
-                $random = random_int(10000, 50000);
-                $file->move('upload/products', $random . $file->getClientOriginalName());
-                $productModel->product_image_intro = "upload/products/" . $random . $file->getClientOriginalName();
-                $productModel->save();
+        $file['name'] = [];
+        if ($request->hasFile('product_image_intro')) {
+            $file = upload_image('product_image_intro');
+            if (isset($file['name'])) {
+                $file['name'];
             }
         }
-        return redirect(route('danh-sach-san-pham'));
+        Product::create([
+            'product_name' => $request->input('product_name'),
+            'category_id' => $request->input('category_id'),
+            'publish' => $request->input('publish'),
+            'price' => $request->input('price'),
+            'sale' => $request->input('sale'),
+            'ordering' => $request->input('ordering'),
+            'quantity' => $request->input('quantity'),
+            'description' => $request->input('description'),
+            'created_at' => \Carbon\Carbon::now(),
+            'updated_at' => \Carbon\Carbon::now(),
+            'full_description' => $request->input('full_description'),
+            'product_image_intro' => $file['name']
+
+        ]);
+        return redirect(route('danh-sach-san-pham'))->with('success', 'Thêm sản phẩm thành công !!!');
     }
+
     function postAddImageProduct($product_id, Request $request)
     {
-        $post = $request->all();
         $request->validate([
             'image' => 'required',
 
         ]);
         $productModel = Product::find($product_id);
-        $d=Galleries::all();
+        $d = Galleries::all();
         $modelGalleries = new Galleries();
         if ($request->hasFile('image') && $request->hasFile('image1')) {
-            if($request->file('image')->isValid()&&$request->file('image')->isValid()) {
+            if ($request->file('image')->isValid() && $request->file('image')->isValid()) {
                 try {
-                    $modelGalleries->product_id=$productModel->id;
+                    $modelGalleries->product_id = $productModel->id;
                     $file = $request->file('image');
                     $name = rand(11111, 99999) . '.' . $file->getClientOriginalExtension();
-                    $modelGalleries->image= $request->file('image')->move("upload/products", $name);
+                    $modelGalleries->image = $request->file('image')->move("upload/products", $name);
                     $file1 = $request->file('image1');
                     $name1 = rand(11111, 99999) . '.' . $file1->getClientOriginalExtension();
-                    $modelGalleries->image1= $request->file('image1')->move("upload/products", $name1);
+                    $modelGalleries->image1 = $request->file('image1')->move("upload/products", $name1);
                     $modelGalleries->save();
-                    return redirect(route('list-image',['product_id'=>$product_id,'modelGalleries'=>$modelGalleries]));
+                    return redirect(route('list-image', ['product_id' => $product_id, 'modelGalleries' => $modelGalleries]));
                 } catch (\Exception $e) {
                 }
             }
@@ -125,34 +119,27 @@ class ProductController extends Controller
 
     function postEditProduct($id, ProductRequest $request)
     {
-        $post = $request->all();
-        $productModel = Product::find($id);
-        $productModel->product_name = $post['product_name'];
-        $productModel->category_id = $post['category_id'];
-        $productModel->publish = $post['publish'];
-        $productModel->price = $post['price'];
-        $productModel->sale = $post['sale'];
-        $productModel->ordering = $post['ordering'];
-        $productModel->quantity = $post['quantity'];
-        $productModel->description = $post['description'];
-        $productModel->full_description = $post['full_description'];
-        $productModel->created_at = date('Y-m-d H:i:s');
-        $productModel->updated_at = date('Y-m-d H:i:s');
-        if ($productModel->save()) {
-            if ($request->hasFile('product_image_intro')) {
-                $file = $request->product_image_intro;
-                // nếu cần validate file upload lên thì sử dụng mấy biến này
-                $file_name = $file->getClientOriginalName();
-                $extension_file = $file->getClientOriginalExtension();
-                $temp_file = $file->getRealPath();
-                $file_size = $file->getSize();
-                $file_type = $file->getMimeType();
-                $random = random_int(10000, 50000);
-                $file->move('upload/products', $random . $file->getClientOriginalName());
-                $productModel->product_image_intro = "upload/products/" . $random . $file->getClientOriginalName();
-                $productModel->save();
+        $file['name'] = [];
+        if ($request->hasFile('product_image_intro')) {
+            $file = upload_image('product_image_intro');
+            if (isset($file['name'])) {
+                $file['name'];
             }
         }
-        return redirect(route('danh-sach-san-pham'));
+
+        $productModel = Product::find($id);
+        $productModel->update([
+            'product_name' => $request->input('product_name'),
+            'category_id' => $request->input('category_id'),
+            'publish' => $request->input('publish'),
+            'price' => $request->input('price'),
+            'sale' => $request->input('sale'),
+            'ordering' => $request->input('ordering'),
+            'quantity' => $request->input('quantity'),
+            'description' => $request->input('description'),
+            'full_description' => $request->input('full_description'),
+            'product_image_intro' => $file['name'] ? $file['name'] : $productModel->product_image_intro,
+        ]);
+        return redirect(route('danh-sach-san-pham'))->with('success', 'Sửa thành sản phẩm thành công !!!');;
     }
 }

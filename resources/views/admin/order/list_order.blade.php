@@ -5,7 +5,7 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Mã sản phẩm</th>
+                <th>Số thứ tự</th>
 
                 <th>Tên khách hàng</th>
                 <th>Trạng thái</th>
@@ -43,7 +43,6 @@
             @endforeach
             </tbody>
         </table>
-{{--        <h2>{{$visitorTraffic}}</h2>--}}
         <li style="text-align: center; list-style: none">
             {{ $orders->links() }}
         </li>

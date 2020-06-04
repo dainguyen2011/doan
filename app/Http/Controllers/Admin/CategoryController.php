@@ -21,7 +21,6 @@ class CategoryController extends Controller
     function getAddCategory()
     {
         $list_root_category = Category::whereNull('parent')->get();
-//        $list_root_category = DB::table('categories')->where('parent', '=', null)->get();
         $list_sub_category = DB::table('categories')->where('parent', '!=', null)->get();
         return view('admin.category.add_category', compact('list_root_category', 'list_sub_category'));
     }
@@ -74,7 +73,7 @@ class CategoryController extends Controller
             'category_name' => $request->input('category_name'),
             'description' => $request->input('description'),
             'ordering' => $request->input('ordering'),
-            'image' =>$file['name']
+            'image' => $file['name'] ? $file['name'] : $category->image,
         ]);
         return redirect(route('list-danh-muc'))->with('success', 'Sửa thành danh mục thành công !!!');
     }

@@ -129,25 +129,27 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
         Route::post("post-sua-danh-muc/{id}", ['as' => 'post-sua-danh-muc', 'uses' => "CategoryController@postEditCategory"]);
         //root/admin/danh-muc/xoa-danh-muc
         Route::get("xoa-danh-muc/{id}", ['as' => 'xoa-danh-muc', 'uses' => 'CategoryController@getDeleteCategory']);
+
+
+        Route::group(['prefix' => 'don-hang'], function () {
+            //root/admin/danh-muc/list-don-hang
+            Route::get("list-don-hang", ['as' => 'list-don-hang', 'uses' => "OrderController@getAllOrder"]);
+            //root/admin/danh-muc/chi-tiet-don-hang
+            Route::get("chi-tiet-don-hang/{id}", ['as' => 'chi-tiet-don-hang', 'uses' => "OrderController@getOrderDetail"]);
+            //root/admin/danh-muc/chi-tiet-don-hang
+            Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
+            //root/admin/danh-muc/xoa-don-ha
+            Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
+
+            Route::get("change-status/{id}", ['as' => 'change-status', 'uses' => 'OrderController@changeStatus']);
+        });
+        Route::get("export", ['as' => 'export', 'uses' => "OrderController@export"]);
+        Route::group(['prefix' => 'thong-ke'], function () {
+            Route::get("list-thong-ke", ['as' => 'list-thong-ke', 'uses' => "OrderController@thongke"]);
+            Route::get("list-thong-ke-sp", ['as' => 'list-thong-ke-sp', 'uses' => "OrderController@thongkesp"]);
+        });
     });
 
-    Route::group(['prefix' => 'don-hang'], function () {
-        //root/admin/danh-muc/list-don-hang
-        Route::get("list-don-hang", ['as' => 'list-don-hang', 'uses' => "OrderController@getAllOrder"]);
-        //root/admin/danh-muc/chi-tiet-don-hang
-        Route::get("chi-tiet-don-hang/{id}", ['as' => 'chi-tiet-don-hang', 'uses' => "OrderController@getOrderDetail"]);
-        //root/admin/danh-muc/chi-tiet-don-hang
-        Route::post("update-order/{id}", ['as' => 'post-edit-order', 'uses' => 'OrderController@updateOrder']);
-        //root/admin/danh-muc/xoa-don-ha
-        Route::get("xoa-don-hang/{id}", ['as' => 'xoa-don-hang', 'uses' => 'OrderController@getDeleteOrder']);
-
-        Route::get("change-status/{id}", ['as' => 'change-status', 'uses' => 'OrderController@changeStatus']);
-    });
-    Route::get("export", ['as' => 'export', 'uses' => "OrderController@export"]);
-    Route::group(['prefix' => 'thong-ke'], function () {
-        Route::get("list-thong-ke", ['as' => 'list-thong-ke', 'uses' => "OrderController@thongke"]);
-        Route::get("list-thong-ke-sp", ['as' => 'list-thong-ke-sp', 'uses' => "OrderController@thongkesp"]);
-    });
     Route::group(['prefix' => 'comment'], function () {
         //root/admin/danh-muc/list-don-hang
         Route::get("list-comment", ['as' => 'list-comment', 'uses' => "CommentController@getComment"]);

@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 
 @section('content')
+    <h2>Danh sách danh mục</h2>
     @if (session('success'))
         <div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -38,7 +39,7 @@
                     <td>{{$category->category_name}}</td>
                     <td>{{$category->parent}}</td>
                     <td><img style="width: 100px;" class="image-category" src="{{ asset('') }}/{{ pare_url_file($category->image) }}"></td>
-                    <td>{{$category->description}}</td>
+                    <td>{!! $category->description !!}</td>
                     <th><a href="{{route('sua-danh-muc',$category->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a><a
                             onclick="return confirm('Bạn có muốn xóa không?')"     href="{{route('xoa-danh-muc',$category->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a></th>
                 </tr>

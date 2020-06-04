@@ -1,6 +1,7 @@
 @extends('admin.layouts.index')
 @section('content')
     <div class="view-edit-category">
+        <h2>Sửa danh mục</h2>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -32,8 +33,8 @@
                 <tr>
                     <th>Ảnh</th>
                     <td>
-                        <img class="image-categoy-edit" src="{{ asset('') }}/{{ pare_url_file($category->image) }}"/>
-                        <input type="file" name="image_category" class="form-control">
+                        <img  class="image-categoy-edit" src="{{ asset('') }}/{{ pare_url_file($category->image) }}"/>
+                        <input value="{{$category->image}}" type="file" name="image_category" class="form-control">
                     </td>
                 </tr>
                 <tr>

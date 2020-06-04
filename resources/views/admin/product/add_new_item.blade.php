@@ -16,18 +16,18 @@
         <table class="table table-bordered">
             <tr>
                 <th>Tên sản phẩm</th>
-                <th><input placeholder="Nhập tên sản phẩm" type="text" class="form-control" name="product_name"></th>
+                <th><input placeholder="Nhập tên sản phẩm" value="{{ old('product_name') }}" type="text" class="form-control" name="product_name"></th>
             </tr>
             <tr>
                 <th>Ảnh sản phẩm</th>
                 <th>
-                    <input placeholder="Nhập ảnh" type="file" class="form-control" name="product_image_intro">
+                    <input placeholder="Nhập ảnh" value="{{ old('product_image_intro') }}" type="file" class="form-control" name="product_image_intro">
                 </th>
             </tr>
             <tr>
                 <th>Danh mục</th>
                 <th>
-                    <select  name="category_id">
+                    <select   name="category_id">
                         <option value="8">Áo clb</option>
                         <option value="9">Áo đội tuyển</option>
                         <option value="10">Áo không logo</option>
@@ -46,26 +46,26 @@
             <tr>
                 <th>Giá</th>
                 <th>
-                    <input placeholder="Nhập giá sản phẩm" type="number" name="price" class="form-control">
+                    <input value="{{ old('price') }}" placeholder="Nhập giá sản phẩm" type="number" name="price" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Giá sale</th>
                 <th>
-                    <input placeholder="Nhập giá sale sản phẩm" type="number" name="sale" class="form-control">
+                    <input value="{{ old('sale') }}" placeholder="Nhập giá sale sản phẩm" type="number" name="sale" class="form-control">
                 </th>
             </tr>
 
             <tr>
                 <th>Yêu cầu</th>
                 <th>
-                    <input placeholder="Nhập ưu tiên sản phẩm" type="number" name="ordering" class="form-control">
+                    <input value="{{ old('ordering') }}" placeholder="Nhập ưu tiên sản phẩm" type="number" name="ordering" class="form-control">
                 </th>
             </tr>
             <tr>
                 <th>Số lượng</th>
                 <th>
-                    <input placeholder="Nhập số lượng sản phẩm" type="number" name="quantity" class="form-control">
+                    <input value="{{ old('quantity') }}" placeholder="Nhập số lượng sản phẩm" type="number" name="quantity" class="form-control">
                 </th>
             </tr>
             <tr>
@@ -77,7 +77,7 @@
             <tr>
                 <th>Mô tả đầy đủ</th>
                 <th>
-                    <textarea placeholder="Nhập mô tả đầy đủ sản phẩm" class="form-control" id="txt" name="full_description"></textarea>
+                    <textarea  placeholder="Nhập mô tả đầy đủ sản phẩm" class="form-control" id="txt" name="full_description"></textarea>
                 </th>
             </tr>
             <tr>

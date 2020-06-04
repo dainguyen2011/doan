@@ -13,6 +13,7 @@ class Customers extends Model
         'last_name',
         'phone_number',
         'address',
+        'email',
     ];
 
     public function orders()

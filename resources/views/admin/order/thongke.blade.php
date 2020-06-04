@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">{{$tonkho}}</div>
-                                <div><h4>Tổng sản tồn kho</h4></div>
+                                <div><h4>Tổng sản phẩm tồn kho</h4></div>
                             </div>
                         </div>
                     </div>

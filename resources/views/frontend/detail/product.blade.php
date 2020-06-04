@@ -26,7 +26,7 @@
                                         <li role="presentation" class="active"><a href="#img-one" role="tab"
                                                                                   data-toggle="tab"><img
                                                     style="width: 100%" class="product-image-intro"
-                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a></li>
+                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a></li>
                                         <br>
                                         <div class="row">
                                         @if($product->gallery)
@@ -131,6 +131,26 @@
                     <form action="{{route('review', $product->id)}}" method="post" id="#selected_rating">
                         @csrf
                         <div class="form-group" id="rating-ability-wrapper">
+                            <div>
+                                @if (session('success'))
+                                    <div class="alert alert-success alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                                @if (session('warning'))
+                                    <div class="alert alert-warning alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        {{ session('warning') }}
+                                    </div>
+                                @endif
+                                @if (session('error'))
+                                    <div class="alert alert-danger alert-dismissible">
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                        {{ session('error') }}
+                                    </div>
+                                @endif
+                            </div>
                             <label class="control-label" for="rating">
                                 <h3 class="field-label-header">Đánh giá sản phẩm</h3><br>
                                 <div class="col-xs-12 col-md-12 text-center">
@@ -225,8 +245,11 @@
                                         @if($product->quantity ==0)
                                             <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                         @endif
+                                        @if($product->sale >0)
+                                            <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                        @endif
                                         <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
-                                                                                            src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                                     </div>
                                     <div class="single-product-content">
                                         <div class="product-content-left">

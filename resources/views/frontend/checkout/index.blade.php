@@ -45,7 +45,7 @@
                                         Họ<sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="first_name" type="text" class="form-control">
+                                        <input value="{{ old('first_name') }}" name="first_name" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -53,7 +53,7 @@
                                         Tên <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="last_name" type="text" class="form-control">
+                                        <input value="{{ old('last_name') }}"  name="last_name" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -61,7 +61,7 @@
                                         Địa chỉ <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="address" type="text" class="form-control">
+                                        <input value="{{ old('address') }}" name="address" type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -69,7 +69,7 @@
                                         Email <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="email" type="email" class="form-control">
+                                        <input value="{{ old('email') }}" name="email" type="email" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -77,7 +77,7 @@
                                         Số điện thoại <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input name="phone_number" type="number" class="form-control">
+                                        <input value="{{ old('phone_number') }}" name="phone_number" type="number" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -85,12 +85,6 @@
                                     <button style="margin: 10px" class="btn btn-primary pull-right">
                                         THANH TOÁN
                                     </button>
-{{--                                    @if($price_pay == null)--}}
-{{--                                        <a href="{{route('create-payment')}}" style="margin: 10px"--}}
-{{--                                           class="btn btn-primary pull-right">--}}
-{{--                                            THANH TOÁN QUA THẺ ATM--}}
-{{--                                        </a>--}}
-{{--                                    @endif--}}
                                 </div>
                                 {{csrf_field()}}
                             </form>

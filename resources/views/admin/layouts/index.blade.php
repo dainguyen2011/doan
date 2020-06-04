@@ -5,28 +5,16 @@
     <title>Trang quản trịn Admin</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <!-- Bootstrap -->
     <link href="{{asset('vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet"/>
-    <!-- Custom styling plus plugins -->
     <link rel="stylesheet" href="{{asset('build/css/main.css')}}">
     <link href="{{asset('vendors/ionicons-master/css/ionicons.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('build/css/extra_colors.css')}}" rel="stylesheet"/>
     <link href="{{asset('build/css/bootstrap-extra.css')}}" rel="stylesheet"/>
     <script src="{{asset('build/js/main.js')}}"></script>
-{{--    <script src="{{asset('vendors/chartist/Chart.min.js')}}"></script>--}}
-{{--    <script src="{{asset('vendors/chartist/chart-bar-demo.js')}}"></script>--}}
-{{--    <script src="{{asset('vendors/chartist/chart-area-demo.js')}}"></script>--}}
-{{--    <script src="{{asset('vendors/chartist/chart-pie-demo.js')}}"></script>--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <!-- bootstrap-wysiwyg -->
-    <!-- <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet"> -->
-    <!-- Font Awesome -->
     <link href="{{asset('vendors/Font-Awesome-master/css/font-awesome.min.css')}}" rel="stylesheet">
-    <!-- NProgress -->
     <link href="{{asset('vendors/nprogress/nprogress.css')}}" rel="stylesheet">
-    <!-- Custom styling -->
     <link href="{{asset('build/css/custom-dashboard3.css')}}" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3674109-28"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -48,28 +36,18 @@
         <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega">
 
             <div style="font-family: 'Times New Roman'" class="navbar-header">
-                <!-- <button type="button" class="navbar-toggle" data-toggle="toggle" data-target="#sidebar-wrappe" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>-->
                 <a class="navbar-brand" id="bHeader" href="{{route('home')}}">
-                    <i class="ion-arrow-expand"> </i> Quản lý sản phẩm
+                    Quản lý cửa hàng
                 </a>
 
             </div>
 
 
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a></li>
                 <li><a href="#" onclick="toggleFullScreen(document.documentElement)"><i class="fa fa-arrows"></i></a>
                 </li>
 
-                <!--<li><a href="#contact"><i class="ion-map"></i></a></li>-->
-
             </ul>
-            <!-- </div>-->
             <ul class="nav navbar-nav navbar-right ">
                 <li>
                     <a href="#" class="dropdown-toggle user" data-toggle="dropdown" aria-expanded="false">
@@ -97,13 +75,10 @@
 
             </ul>
 
-            <!--/.nav-collapse -->
         </nav>
 
     </div>
-    <!-- Fixed navbar -->
 
-    <!-- Sidebar -->
     <div class="sidemenu">
         <div id="sidebar-wrapper">
 
@@ -126,7 +101,8 @@
                                 </div>
                             </li>
                             <li>
-                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                <a><i class="fa fa-product-hunt text-green"></i>
+                                    <span
                                         class="">Quản lý sản phẩm</span></a>
                                 <ul class="nav-flyout">
                                     <li>
@@ -136,7 +112,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                <a><i class="fa fa-users text-green"></i> <span
                                         class="">Quản lý khách hàng</span></a>
                                 <ul class="nav-flyout">
                                     <li>
@@ -147,7 +123,7 @@
                             </li>
                             @if(Auth::check())
                                 <li>
-                                    <a href="{{route('list-danh-muc')}}"><i class="ion-paintbrush text-green"></i> <span
+                                    <a href="{{route('list-danh-muc')}}"><i class="fa fa-list-alt text-green"></i> <span
                                             class="">Quản lý danh mục</span></a>
                                     <ul class="nav-flyout">
                                         <li>
@@ -158,7 +134,7 @@
                                 </li>
                             @endif
                             <li>
-                                <a href="{{route('list-don-hang')}}"><i class="fa fa-shopping-bag text-green"></i> <span
+                                <a href="{{route('list-don-hang')}}"><i class="fa fa-shopping-cart text-green"></i> <span
                                         class="">Quản lý đơn hàng</span></a>
                                 <ul class="nav-flyout">
                                     <li>
@@ -168,7 +144,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a><i class="fa fa-shopping-bag text-green"></i> <span
+                                <a><i class="fa fa-filter text-green"></i> <span
                                         class="">Thống kê</span></a>
                                 <ul class="nav-flyout">
                                     <li>

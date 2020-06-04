@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RatingRequest;
 use App\Orders;
 use App\Product;
 use App\Category;
@@ -73,7 +74,7 @@ class HomeController extends Controller
         ];
         return view('frontend.detail.detail-order', $data);
     }
-    public function productStar($id, Request $request){
+    public function productStar($id, RatingRequest $request){
         $product = Product::findOrFail($id);
        Rating::create([
            'product_id' => $product->id,
