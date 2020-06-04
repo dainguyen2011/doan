@@ -62,9 +62,9 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
                                      style="background: #ffffff">
-                                    <a style="color: #33ff35" class="dropdown-item" href="{{route('home', 'sx=DESC')}}">Giá từ cao đến thấp</a>
+                                    <a style="color: #104c11" class="dropdown-item" href="{{route('home', 'sx=DESC')}}">Giá từ cao đến thấp</a>
                                     <br>
-                                    <a style="color: #33ff35" class="dropdown-item" href="{{route('home', 'sx=ASC')}}">Giá từ thấp đến cao</a>
+                                    <a style="color: #104c11" class="dropdown-item" href="{{route('home', 'sx=ASC')}}">Giá từ thấp đến cao</a>
                                 </div>
                             </div>
 

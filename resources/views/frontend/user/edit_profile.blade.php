@@ -15,7 +15,7 @@
             <div class="preview text-center">
                 <img class="preview-img" src="{{url('/')}}/{{Auth::user()->avatar}}" alt="Preview Image" width="200"
                      height="200"/>
-                <label for="image"><i style="color: red; display: contents" class="fas fa-pencil"></i> </label>
+                <label for="image"><i style="color: red; display: contents" class="fas fa-camera"></i> </label>
                 <input id="image" class="form-control" type="file" style="display: none" name="avatar"/>
                 <span class="Error"></span>
             </div>

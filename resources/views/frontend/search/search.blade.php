@@ -19,7 +19,7 @@
                                         <div class="single-product">
                                             <div class="single-product-img">
                                                 <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
-                                                                                                    src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
 
                                             </div>
                                             <div class="single-product-content">
