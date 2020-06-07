@@ -37,9 +37,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $sx = $request->input('sx', 'ASC');
-
         $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
         $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
+        $new_products = Product::latest('updated_at')->orderBy('price', $sx)->get()->take(5);
         $aologo_products = Product::where('category_id', 10)->orderBy('price', $sx)->get();
         foreach ($aoclb_products as $item) {
             $item['price_sale'] = $item->price * (100 - $item->sale) / 100;
@@ -49,7 +49,7 @@ class HomeController extends Controller
             $aoclb_products = $aoclb_products->sortByDesc('price_sale');
         }
 
-        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products'));
+        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products','new_products'));
     }
 
     public function getOrder(Request $request)

@@ -76,10 +76,15 @@ class OrderController extends Controller
         })
             ->where('pay', '>', 0)
             ->latest()->get();
-        $product_month = Product::when($request->month, function ($qr) use ($request) {
-            $qr->whereMonth('updated_at', $request->month);
+//        $product_month = Product::when($request->month, function ($qr) use ($request) {
+//            $qr->whereMonth('updated_at', $request->month);
+//        })
+//            ->where('pay', '>', 0)->oldest('updated_at')
+//            ->get();
+        $product_month = OrderProduct::when($request->month, function ($qr) use ($request) {
+            $qr->whereMonth('created_at', $request->month);
         })
-            ->where('pay', '>', 0)->oldest('updated_at')
+            ->where('product_qty', '>', 0)->oldest('created_at')
             ->get();
         $grouped = $product_month->groupBy(function ($item, $key) {
             return \Carbon\Carbon::parse($item->updated_at)->format('Y-m-d');
@@ -91,8 +96,8 @@ class OrderController extends Controller
             $upd[] = \Carbon\Carbon::parse($key)->format('Y-m-d');
             $total_pay = 0;
             foreach ($a as $item) {
-                if (!empty($item['pay']));
-                $total_pay += $item['pay'];
+                if (!empty($item['product_qty']));
+                $total_pay += $item['product_qty'];
             }
             array_push($pay,$total_pay);
         }

@@ -46,6 +46,8 @@ Route::get("product-detail/{id}", ['as' => 'product-detail', 'uses' => "ProductC
 Route::get("product-galleries/{product_id}", ['as' => 'galleries', 'uses' => "ProductController@getGalleryProduct"]);
 //thêm hàng
 Route::post("add-to-cart/{id}", ['as' => 'add-to-cart', 'uses' => "CartController@postAddToCart"]);
+//update cart
+Route::post('update_cart_quality','CartController@update_cart_quality');
 //page mua hàng
 Route::get("gio-hang", ['as' => 'gio-hang', 'uses' => "CartController@index"]);
 //thanh toán

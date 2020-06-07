@@ -77,6 +77,7 @@
     <!-- animate CSS
    ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/detail.css')}}">
 
     <!-- jquery-ui-slider CSS
     ============================================ -->

@@ -13,7 +13,7 @@
                             </div>
                             <div class="col-xs-9 text-right">
                                 <div class="huge">{{$product_count}}</div>
-                                <div><h4>Tổng sản phẩm trong kho</h4></div>
+                                <div><h4>Tổng mẫu sản phẩm trong kho</h4></div>
                             </div>
                         </div>
                     </div>

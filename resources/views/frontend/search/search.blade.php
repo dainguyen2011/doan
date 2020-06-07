@@ -18,6 +18,12 @@
                                     <div class="col-md-4">
                                         <div class="single-product">
                                             <div class="single-product-img">
+                                                @if($product->quantity ==0)
+                                                    <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                                @endif
+                                                @if($product->sale >0)
+                                                    <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                @endif
                                                 <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                     src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
 

@@ -35,9 +35,9 @@
     <div class="navmenu">
         <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega">
 
-            <div style="font-family: 'Times New Roman'" class="navbar-header">
+            <div style="font-family: Arial" class="navbar-header">
                 <a class="navbar-brand" id="bHeader" href="{{route('home')}}">
-                    Quản lý cửa hàng
+                    Trang chủ
                 </a>
 
             </div>
@@ -50,13 +50,13 @@
             </ul>
             <ul class="nav navbar-nav navbar-right ">
                 <li>
-                    <a href="#" class="dropdown-toggle user" data-toggle="dropdown" aria-expanded="false">
+                    <a style="font-family: Arial" href="#" class="dropdown-toggle user" data-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} <i class="fa fa-user"></i>
                     </a>
 
 
                     <ul class="dropdown-menu dropdown-user" style="background: #fff;">
-                        <li class="info-user-an" style="font-size: 40px">{{ Auth::user()->name }}  </li>
+                        <li class="info-user-an" style="font-size: 15px">{{ Auth::user()->name }}  </li>
                         <li>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i
@@ -166,7 +166,7 @@
     <!-- Sidebar -->
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <div class="container-fluid">
+        <div class="container-fluid" style="font-family: Arial">
             @yield('content')
         </div>
     </div>

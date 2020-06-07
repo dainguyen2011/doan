@@ -8,7 +8,7 @@
                         <div class="footer-logo">
                             <a href="{{route('home')}}"><img src="{{asset('assets/frontend/img/logoaobongda.png')}}" alt="logo"></a>
                         </div>
-                        <p>Hệ thống bán lẻ đồ thể thao aobongda.net là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
+                        <p>Hệ thống bán lẻ đồ thể thao aobongda.com là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
@@ -16,11 +16,11 @@
                         <h4 class="footer-heading">Thời gian mở cửa</h4>
                         <div class="footer-menu opening-time">
                             <ul>
-                                <li><i class="fa fa-angle-right"></i>Monday<span>7.00 AM - 7.00 PM</span></li>
-                                <li><i class="fa fa-angle-right"></i>Tuesday<span>7.00 AM - 7.00 PM</span></li>
-                                <li><i class="fa fa-angle-right"></i>Wednesday<span>7.00 AM - 7.00 PM</span></li>
-                                <li><i class="fa fa-angle-right"></i>Thursday <span>7.00 AM - 7.00 PM</span></li>
-                                <li><i class="fa fa-angle-right"></i>Friday<span>7.00 AM - 7.00 PM</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 2<span>7.00 Sáng - 7.00 Tối</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 3<span>7.00 Sáng - 7.00 Tối</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 4<span>7.00 Sáng - 7.00 Tối</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 5 <span>7.00 Sáng - 7.00 Tối</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 6<span>7.00 Sáng - 7.00 Tối</span></li>
                             </ul>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>10 Hoàng Công Chất, Bắc Từ Liêm, Hà Nội</p>
+                                    <p>137 Phan Bá Vành, Bắc Từ Liêm, Hà Nội</p>
                                 </div>
                             </div>
                         </div>

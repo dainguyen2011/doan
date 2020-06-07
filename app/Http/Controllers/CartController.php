@@ -63,8 +63,6 @@ class CartController extends Controller
                     'product_size' => $item->options->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
-                    'created_at' => $item->created_at,
-                    'updated_at' => $item->updated_at,
                 ]);
             }
         }
@@ -101,6 +99,12 @@ class CartController extends Controller
     public function removeItemCart($id, Request $request)
     {
         Cart::remove($id);
-        return redirect(route('gio-hang'));
+        return redirect(route('gio-hang'))->with('success','Bạn đã xóa thành công !!');
+    }
+    public function update_cart_quality(Request $request){
+        $rowId = $request->rowId_cart;
+        $qty= $request->cart_quality;
+        Cart::update($rowId,$qty);
+        return redirect(route('gio-hang'))->with('success','Bạn đã cập nhật giỏ hàng thành công !!');
     }
 }

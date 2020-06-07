@@ -14,63 +14,71 @@
                 </div>
             @endif
             <div class="row">
-                <div class="col-md-12 col-sm-8">
-                    <div class="row">
-                        <div class="col-md-7 col-sm-7">
-                            <div class="product-item-tab">
-                                <!-- Tab panes -->
-                                <!-- Nav tabs -->
-                                <div class="single-tab-img">
-                                    <div class="nav nav-tabs" role="tablist">
+                <div class="container-fliud">
+                    <div class="wrapper row">
+                            <div class="preview col-md-6">
 
-                                        <li role="presentation" class="active"><a href="#img-one" role="tab"
-                                                                                  data-toggle="tab"><img
-                                                    style="width: 100%" class="product-image-intro"
-                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a></li>
-                                        <br>
-                                        <div class="row">
-                                        @if($product->gallery)
-                                            <li role="presentation"><a href="#img-two" role="tab" data-toggle="tab"><img
-                                                        style="width: 20%"
-                                                        src="{{ asset('/'.$product->gallery->image)}}"
-                                                        alt="tab-img"></a></li>
-                                        @endif
-                                        @if($product->gallery)
-                                            <li role="presentation" class="tab-last-li"><a href="#img-three" role="tab"
-                                                                                           data-toggle="tab"><img
-                                                        style="width: 20%"
-                                                        src="{{ asset('/'.$product->gallery->image1)}}"
-                                                        alt="tab-img"></a></li>
-                                        @endif
-                                        </div>
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane active" id="pic-1"><img
+                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/>
                                     </div>
+                                    @if($product->gallery)
+                                        <div class="tab-pane" id="pic-2"><img
+                                                src="{{ asset('/'.$product->gallery->image)}}"/></div>
+                                    @endif
+                                    @if($product->gallery)
+                                        <div class="tab-pane" id="pic-3"><img
+                                                src="{{ asset('/'.$product->gallery->image1)}}"/></div>
+                                    @endif
                                 </div>
-                            </div>
+                                <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
+                                                src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/></a>
+                                    </li>
+                                    @if($product->gallery)
+                                        <li><a data-target="#pic-2" data-toggle="tab"><img
+                                                    src="{{ asset('/'.$product->gallery->image)}}"/></a></li>
+                                    @endif
+                                    @if($product->gallery)
+                                        <li><a data-target="#pic-3" data-toggle="tab"><img
+                                                    src="{{ asset('/'.$product->gallery->image1)}}"/></a></li>
+                                    @endif
+                                </ul>
                         </div>
-                        <div class="col-md-5 col-sm-5">
+                        <div class="col-md-6">
                             <form action="{{route('add-to-cart',$product->id)}}" method="post">
                                 <div class="product-tab-content">
                                     <div class="product-tab-header">
                                         <h3>{{$product->product_name}}</h3>
                                         <div class="prices">
+                                            <b> Giá tiền: </b>
                                             <span class="prices">{{number_format($product->getPrice())}}</span><span
                                                 class="currency"> vnđ</span>
                                         </div>
                                         <div class="prices">
                                             <i class="fas fa-eye"></i>
+                                            <b>Lượt xem: </b>
                                             <span class="prices">{{number_format($product->views)}} <sup>Luợt xem</sup></span>
                                         </div>
                                     </div>
                                     <div class="available-option">
                                         <h2>Còn : {{$product->quantity}} sản phẩm</h2>
-                                        <p class="quality">Số lượng</p>
+                                        <div class="col-md-3">
+                                        <b class="quality">Số lượng</b>
+                                        </div>
+                                        <div class="col-md-3">
                                         <div class="quantity">
                                             <input type="number" size="4" class="input-text qty text" name="quality"
                                                    min="1" value="1" style="padding: 0px;width: 50px;" step="1">
                                         </div>
-                                        <div class="size-option fix">
-                                            <p>Size:</p>
-                                            <select name="product_size">
+                                        </div>
+                                    </div>
+                                    <div class="available-option">
+                                        <div class="col-md-3">
+                                            <b>Size:</b>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <select class="input-text" name="product_size">
                                                 <option value="">Chọn size</option>
                                                 <option value="S">S</option>
                                                 <option value="M">M</option>
@@ -80,8 +88,11 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
+                                        <br>
+                                    </div>
+                                    <div class="available-option">
                                         @if($product->quantity >0)
-                                            <button style="margin-top: 10px" type="submit" class="btn btn-primary"><i
+                                            <button type="submit" class="btn btn-primary"><i
                                                     class="fas fa-cart-plus"></i> Thêm hàng
                                             </button>
                                         @endif
@@ -97,7 +108,7 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active">
-                                        <a href="#description" role="tab" data-toggle="tab">Mô tả sản phẩm</a>
+                                        <a href="#description" role="tab" data-toggle="tab"><b>Mô tả sản phẩm</b></a>
                                     </li>
                                 </ul>
                                 <!-- Tab panes -->
@@ -243,10 +254,12 @@
                                 <div class="single-product">
                                     <div class="single-product-img">
                                         @if($product->quantity ==0)
-                                            <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                            <span
+                                                style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                         @endif
                                         @if($product->sale >0)
-                                            <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                            <span
+                                                style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                         @endif
                                         <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                             src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>

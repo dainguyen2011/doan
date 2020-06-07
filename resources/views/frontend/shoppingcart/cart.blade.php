@@ -40,15 +40,24 @@
                                     <td class="th-product">
                                         {{$item->name}}
                                     </td>
-                                    <td class="th-qty">
-                                        {{$item->qty}}
+                                    <td class="cart_quantity">
+                                        <form action="{{URL::to('/update_cart_quality')}}" method="post"
+                                              class="cart_quantity_button">
+                                            {{csrf_field()}}
+                                            <input style="width: 50px" class="cart_quantity_input" type="number"
+                                                   name="cart_quality" value="{{$item->qty}}">
+                                            <input type="hidden" value="{{$item->rowId}}" name="rowId_cart"
+                                                   class="form-control">
+                                            <button style="margin-left: 10px; color: green;" type="submit" name="update_qty"><i
+                                                    class="fa fa-edit"></i></button>
+                                        </form>
                                     </td>
                                     <td class="th-size">{{$item->options->size }}</td>
                                     <td class="th-price">{{number_format($item->price)}} vnđ</td>
                                     <td class="th-total">{{number_format($item->price*$item->qty)}} vnđ</td>
                                     <td class="th-delete">
                                         <form action="{{route('remove-item-cart',$item->rowId)}}" onclick="return confirm('Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?')" method="post">
-                                        <button><i class="fa fa-trash"></i></button>
+                                        <button><i style="color: red" class="fa fa-trash"></i></button>
                                             {{csrf_field()}}
                                         </form>
                                     </td>

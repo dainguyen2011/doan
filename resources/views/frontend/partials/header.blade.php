@@ -72,9 +72,9 @@
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="search-chart-list">
                         <div class="header-search">
-                            <form action="search">
-                                <input type="text" name="key" placeholder="Nhập tên áo cần tìm"/>
-                                <button style="height: 35px;" type="button"><i class="fa fa-search"></i></button>
+                            <form action="{{route('search')}}">
+                                <input type="text" name="key" placeholder="Nhập tên áo cần tìm"  value="{{ isset($key) ? $key : old('key') }}"/>
+                                <button style="height: 35px;" type="submit"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
                     </div>

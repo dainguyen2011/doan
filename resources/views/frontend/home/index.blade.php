@@ -8,7 +8,6 @@
     @endif
     <div class="w3-content w3-display-container" style=".mySlides {display:none}">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/web_637236950009985208.png.ashx" alt="">
-        <img class="mySlides" src="upload\products\sl1.jpg" style="width:100%">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/BANNERWE_636961920839260840.png.ashx" alt="Keep &amp; Fly X Phan Văn Đức">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/fffd_637236953611209913.png.ashx" alt="">
     </div>
@@ -67,88 +66,130 @@
                                     <a style="color: #104c11" class="dropdown-item" href="{{route('home', 'sx=ASC')}}">Giá từ thấp đến cao</a>
                                 </div>
                             </div>
-
-                            <h2 class="product-header" style="text-align: center">ÁO CÂU LẠC BỘ</h2>
-                            <div class="row">
-                                <div id="product-slider" class="owl-carousel">
-                                    @foreach($aoclb_products as $product)
-                                        <div class="col-md-4">
-                                            <div class="single-product">
-                                                <div class="single-product-img">
-                                                    @if($product->quantity ==0)
-                                                        <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
-                                                    @endif
-                                                        @if($product->sale >0)
-                                                            <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
-                                                        @endif
-                                                    <a href="{{route('showDetail',$product->id)}}"><img
-                                                            class="primary-img myImage"
-                                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
-                                                </div>
-                                                <div class="single-product-content">
-                                                    <div class="product-content-left">
-                                                        <h2><a style="font-weight: bold"
-                                                               href="{{route('product-detail',$product->id)}}">MUA
-                                                                HÀNG</a></h2>
-                                                        <p>{{$product->product_name}}</p>
-                                                    </div>
-                                                    <div style="font-size: medium"
-                                                         class="product-content-right pull-right">
-                                                        <p>
-                                                            <del>{{number_format($product->price)}} vnđ</del>
-                                                            &nbsp; {{number_format($product->getPrice())}} vnđ
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
                         </div>
                     </div>
-                    <div class="product-items">
-                        <h2 class="product-header" style="text-align: center">ÁO ĐỘI TUYỂN</h2>
-                        <div class="row">
-                            <div id="product-slider-women" class="owl-carousel">
-                                @foreach($aodoituyen_products as $product)
-                                    <div class="col-md-4">
-                                        <div class="single-product">
-                                            <div class="single-product-img">
-                                                @if($product->quantity ==0)
-                                                    <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
-                                                @endif
-                                                    @if($product->sale >0)
-                                                        <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
-                                                    @endif
-                                                <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
-                                                                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
-                                            </div>
-                                            <div class="single-product-content">
-                                                <div class="product-content-left">
-                                                    <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
-                                                    </h2>
-                                                    <p>{{$product->product_name}}</p>
-                                                </div>
-                                                <div style="margin-top: 18px" class="product-content-right pull-right">
 
-                                                    <p>
-                                                        <del>{{number_format($product->price)}} vnđ</del>
-                                                        &nbsp; {{number_format($product->getPrice())}} vnđ
-                                                    </p>
-                                                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="product-items">
+                    <h2 class="product-header" style="text-align: center">Sản phẩm mới nhất</h2>
+                    <div class="row">
+                        <div id="product-slider" class="owl-carousel">
+                            @foreach($new_products as $product)
+                                <div class="col-md-4">
+                                    <div class="single-product">
+                                        <div class="single-product-img">
+                                            @if($product->quantity ==0)
+                                                <span
+                                                    style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                            @endif
+                                            @if($product->sale >0)
+                                                <span
+                                                    style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                            @endif
+                                            <a href="{{route('showDetail',$product->id)}}"><img
+                                                    class="primary-img myImage"
+                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
+                                        </div>
+                                        <div class="single-product-content">
+                                            <div class="product-content-left">
+                                                <h2><a style="font-weight: bold"
+                                                       href="{{route('product-detail',$product->id)}}">MUA
+                                                        HÀNG</a></h2>
+                                                <p>{{$product->product_name}}</p>
+                                            </div>
+                                            <div style="font-size: medium"
+                                                 class="product-content-right pull-right">
+                                                <p>
+                                                    <del>{{number_format($product->price)}} vnđ</del>
+                                                    &nbsp; {{number_format($product->getPrice())}} vnđ
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="arrivals-area single-add">
-                    <a href="#"> <img style="height: 100px ;display: none"
-                                      src="{{asset('assets/frontend/img/banner/banner.jpg')}}"
-                                      alt="arrivals"> </a>
+                <div class="product-items">
+                    <h2 class="product-header" style="text-align: center">ÁO CÂU LẠC BỘ</h2>
+                    <div class="row">
+                        <div id="product-slider" class="owl-carousel">
+                            @foreach($aoclb_products as $product)
+                                <div class="col-md-4">
+                                    <div class="single-product">
+                                        <div class="single-product-img">
+                                            @if($product->quantity ==0)
+                                                <span
+                                                    style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                            @endif
+                                            @if($product->sale >0)
+                                                <span
+                                                    style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                            @endif
+                                            <a href="{{route('showDetail',$product->id)}}"><img
+                                                    class="primary-img myImage"
+                                                    src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
+                                        </div>
+                                        <div class="single-product-content">
+                                            <div class="product-content-left">
+                                                <h2><a style="font-weight: bold"
+                                                       href="{{route('product-detail',$product->id)}}">MUA
+                                                        HÀNG</a></h2>
+                                                <p>{{$product->product_name}}</p>
+                                            </div>
+                                            <div style="font-size: medium"
+                                                 class="product-content-right pull-right">
+                                                <p>
+                                                    <del>{{number_format($product->price)}} vnđ</del>
+                                                    &nbsp; {{number_format($product->getPrice())}} vnđ
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="product-items">
+                    <h2 class="product-header" style="text-align: center">ÁO ĐỘI TUYỂN</h2>
+                    <div class="row">
+                        <div id="product-slider-women" class="owl-carousel">
+                            @foreach($aodoituyen_products as $product)
+                                <div class="col-md-4">
+                                    <div class="single-product">
+                                        <div class="single-product-img">
+                                            @if($product->quantity ==0)
+                                                <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                            @endif
+                                            @if($product->sale >0)
+                                                <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                            @endif
+                                            <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
+                                                                                                src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
+                                        </div>
+                                        <div class="single-product-content">
+                                            <div class="product-content-left">
+                                                <h2><a href="{{route('product-detail',$product->id)}}">MUA HÀNG</a>
+                                                </h2>
+                                                <p>{{$product->product_name}}</p>
+                                            </div>
+                                            <div style="margin-top: 18px" class="product-content-right pull-right">
+
+                                                <p>
+                                                    <del>{{number_format($product->price)}} vnđ</del>
+                                                    &nbsp; {{number_format($product->getPrice())}} vnđ
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
                 <div class="product-items">
                     <h2 class="product-header" style="text-align: center">ÁO KHÔNG LOGO</h2>
@@ -161,9 +202,9 @@
                                             @if($product->quantity ==0)
                                                 <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
-                                                @if($product->sale >0)
-                                                    <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
-                                                @endif
+                                            @if($product->sale >0)
+                                                <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                            @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                 src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
 

@@ -32,7 +32,7 @@
                                                 @endif
                                                 <a href="{{route('showDetail',$product->id)}}"><img
                                                         class="primary-img myImage"
-                                                        src="{{ asset('/'.$product->product_image_intro)}}"></a>
+                                                        src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                                             </div>
                                             <div class="single-product-content">
                                             <div class="product-content-left">

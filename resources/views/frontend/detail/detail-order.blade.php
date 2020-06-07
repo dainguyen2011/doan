@@ -54,6 +54,7 @@
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Số điện thoại</th>
                     <th scope="col">Trạng thái đơn hàng</th>
+                    <th scope="col">Đã thanh toán</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -72,6 +73,7 @@
                         @if($order->status_1 == 2 )
                             <td>Đã xử lý</td>
                         @endif
+                        <td>{{number_format($order->paid) }} vnđ</td>
                     </tr>
                 @endif
                 </tbody>
