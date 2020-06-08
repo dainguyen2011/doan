@@ -21,7 +21,7 @@
                 <tr>
                     <th>Danh mục cha</th>
                     <td>
-                        <select name="parent">
+                        <select class="form-control" name="parent">
                             <option value="" {{ $category->parent == "" ? " selected" : "" }}>Root</option>
                             @foreach($list_root_category as $item_category)
                                 <option

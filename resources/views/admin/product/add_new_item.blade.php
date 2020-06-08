@@ -27,7 +27,7 @@
             <tr>
                 <th>Danh mục</th>
                 <th>
-                    <select   name="category_id">
+                    <select class="form-control"  name="category_id">
                         <option value="8">Áo clb</option>
                         <option value="9">Áo đội tuyển</option>
                         <option value="10">Áo không logo</option>
@@ -37,7 +37,7 @@
             <tr>
                 <th>Publish</th>
                 <th>
-                    <select name="publish">
+                    <select class="form-control" name="publish">
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>

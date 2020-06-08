@@ -22,7 +22,7 @@
             <tr>
                 <th>Danh mục cha</th>
                 <td>
-                    <select name="parent">
+                    <select class="form-control" name="parent">
                         <option value="">Khách</option>
                         @foreach($list_root_category as $category)
                             <option value="{{$category->id}}">{{$category->category_name}}</option>

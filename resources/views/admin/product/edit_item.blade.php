@@ -29,7 +29,7 @@
                 <tr>
                     <th>Danh mục</th>
                     <th>
-                        <select name="category_id">
+                        <select class="form-control" name="category_id">
                             <option value="">Chọn danh mục</option>
                             @foreach($parent_categories as $category)
                                 <optgroup label="{{$category->category_name}}">
@@ -47,7 +47,7 @@
                 <tr>
                     <th>Publish</th>
                     <th>
-                        <select name="publish">
+                        <select class="form-control" name="publish">
                             <option <?php echo $product->publish == 1 ? ' selected ' : '' ?> value="1">Yes</option>
                             <option <?php echo $product->publish == 0 ? ' selected ' : '' ?> value="0">No</option>
                         </select>

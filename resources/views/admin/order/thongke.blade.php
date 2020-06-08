@@ -214,15 +214,15 @@
     <script>
         var chartdata = {
 
-
             type: 'bar',
             data: {
-                labels: <?php echo $upd ?>,
+                labels: <?php echo $upd?>,
                 datasets: [
                     {
                         label: ' Tháng <?php echo $month ?>',
                         backgroundColor: '#b90b21',
                         borderWidth: 1,
+
                         data: <?php echo $pay ?>,
                     }
                 ]
