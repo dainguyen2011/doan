@@ -53,7 +53,7 @@
                                         Tên <sup>*</sup>
                                     </label>
                                     <div class="col-md-9">
-                                        <input value="{{ old('last_name') }}"  name="last_name" type="text" class="form-control">
+                                        <input value="{{ old('last_name') }}"  name="last_name" type="text" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="form-group">

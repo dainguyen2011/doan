@@ -71,10 +71,15 @@ class OrderController extends Controller
         $product_count = Product::count();
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
-        $products = Product:: when($request->month, function ($qr) use ($request) {
+//        $products = Product:: when($request->month, function ($qr) use ($request) {
+//            $qr->whereMonth('updated_at', $request->month);
+//        })
+//            ->where('pay', '>', 0)
+//            ->latest()->get();
+        $products = OrderProduct::with('product')->when($request->month, function ($qr) use ($request) {
             $qr->whereMonth('updated_at', $request->month);
         })
-            ->where('pay', '>', 0)
+            ->where('product_qty', '>', 0)
             ->latest()->get();
 //        $product_month = Product::when($request->month, function ($qr) use ($request) {
 //            $qr->whereMonth('updated_at', $request->month);
@@ -87,7 +92,7 @@ class OrderController extends Controller
             ->where('product_qty', '>', 0)->oldest('created_at')
             ->get();
         $grouped = $product_month->groupBy(function ($item, $key) {
-            return \Carbon\Carbon::parse($item->updated_at)->format('Y-m-d');
+            return \Carbon\Carbon::parse($item->created_at)->format('Y-m-d');
         })->toArray();
         $tonkho = DB::table('products')->sum('quantity');
         $pay = [];
@@ -96,20 +101,20 @@ class OrderController extends Controller
             $upd[] = \Carbon\Carbon::parse($key)->format('Y-m-d');
             $total_pay = 0;
             foreach ($a as $item) {
-                if (!empty($item['product_qty']));
-                $total_pay += $item['product_qty'];
+                if (!empty($item['product_qty'])) ;
+                $total_pay += ($item['product_qty'] * $item['product_price']);
             }
-            array_push($pay,$total_pay);
+            array_push($pay, $total_pay);
         }
         $data = [
-            'upd' =>json_encode($upd),
+            'upd' => json_encode($upd),
             'pay' => json_encode($pay),
             'products' => $products,
             'ordera' => $orders,
-            'product_count' =>$product_count,
-            'order_count'=>$order_count,
-            'tonkho' =>$tonkho,
-            'ordered_count' =>$ordered_count,
+            'product_count' => $product_count,
+            'order_count' => $order_count,
+            'tonkho' => $tonkho,
+            'ordered_count' => $ordered_count,
             'month' => $month
 
         ];

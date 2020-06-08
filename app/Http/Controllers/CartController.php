@@ -73,10 +73,9 @@ class CartController extends Controller
             $message->from(env('MAIL_USERNAME'), env('MAIL_FROM_NAME'));
         });
         Cart::destroy();
-        Session::flash('message', 'Bạn đã mua hàng thành công, cảm ơn bạn');
         session()->forget('pay');
         session(['pay', 0]);
-        return redirect(route('home'));
+        return view("frontend.pay-success");
     }
 
     public function postAddToCart($id, AddToCartRequest $request)

@@ -106,30 +106,30 @@
                             {{ Session::get('thongbao') }}
                         </div>
                     @endif
-                        <form action="" method="get">
-                            <div class="row">
-                                <div class="col-md-3"> <select class="form-control" name="month">
-                                        <option value="1">Tháng 1</option>
-                                        <option value="2">Tháng 2</option>
-                                        <option value="3">Tháng 3</option>
-                                        <option value="4">Tháng 4</option>
-                                        <option value="5">Tháng 5</option>
-                                        <option value="6">Tháng 6</option>
-                                        <option value="7">Tháng 7</option>
-                                        <option value="8">Tháng 8</option>
-                                        <option value="9">Tháng 9</option>
-                                        <option value="10">Tháng 10</option>
-                                        <option value="11">Tháng 11</option>
-                                        <option value="12">Tháng 12</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <button class="btn btn-primary" type="submit">Tìm</button>
-                                </div>
-
-
+                    <form action="" method="get">
+                        <div class="row">
+                            <div class="col-md-3"><select class="form-control" name="month">
+                                    <option value="1">Tháng 1</option>
+                                    <option value="2">Tháng 2</option>
+                                    <option value="3">Tháng 3</option>
+                                    <option value="4">Tháng 4</option>
+                                    <option value="5">Tháng 5</option>
+                                    <option value="6">Tháng 6</option>
+                                    <option value="7">Tháng 7</option>
+                                    <option value="8">Tháng 8</option>
+                                    <option value="9">Tháng 9</option>
+                                    <option value="10">Tháng 10</option>
+                                    <option value="11">Tháng 11</option>
+                                    <option value="12">Tháng 12</option>
+                                </select>
                             </div>
-                        </form>
+                            <div class="col-md-3">
+                                <button class="btn btn-primary" type="submit">Tìm</button>
+                            </div>
+
+
+                        </div>
+                    </form>
                     <table class="table table-bordered">
                         <thead>
                         <tr class="text-center">
@@ -144,27 +144,30 @@
                         </thead>
                         <tbody>
                         @foreach($products as $key => $product)
+{{--                            @dd(date_format($productcreated_at))--}}
                             @php
                                 $price_product = 0;
                             @endphp
                             <tr class="text-center" style="height: 60px;">
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$product->product_name}}</td>
-                                <td>{{$product->pay}}</td>
-                                <td>{{number_format($product->getPrice())}}<sup>vnđ</sup></td>
-                                <td>{{$product->quantity}}</td>
-                                @foreach($product->order_product as $order_product)
+                                <td>{{$product->product->product_name}}</td>
+                                <td>{{$product->product_qty}}</td>
+                                <td>{{number_format($product->product_price)}}<sup>vnđ</sup></td>
+                                <td>{{$product->product->quantity}}</td>
+                                <td>{{number_format($product->product_qty* $product->product_price)}} vnđ</td>
+{{--                                @foreach($product->order_product as $order_product)--}}
+{{--                              --}}
 
-                                    @if($order_product->orders->status_1 == 2)
-                                        @php
-                                            $price_product +=  $order_product->product_qty * $order_product->product_price;
-                                        @endphp
-                                    @endif
-                                @endforeach
-                                <td>
-                                    {{number_format($price_product)}} <sup>vnđ</sup>
-                                </td>
-                                <td>{{date_format($product->updated_at,'d-m-yy h:i:s')}}</td>
+{{--                                    @if($order_product->orders->status_1 == 2)--}}
+{{--                                        @php--}}
+{{--                                            $price_product +=  $order_product->product_qty * $order_product->product_price;--}}
+{{--                                        @endphp--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                                <td>--}}
+{{--                                    {{number_format($price_product)}} <sup>vnđ</sup>--}}
+{{--                                </td>--}}
+                                <td>{{$product->created_at}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -176,11 +179,17 @@
     </div>
     <html>
     <head>
-        <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-        <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-        <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
-        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
-        <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" type="text/css" rel="stylesheet">
+        <script
+            src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+        <script
+            src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+        <script
+            src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"></script>
+        <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"
+              type="text/css" rel="stylesheet">
+        <link
+            href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33"
+            type="text/css" rel="stylesheet">
         <style type="text/css">
 
             html,
@@ -222,16 +231,16 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:true
+                            beginAtZero: true
                         },
                         scaleLabel: {
                             display: true,
-                            labelString: 'Sản phẩm đã bán'
+                            labelString: 'Số tiền bán được vnđ'
                         }
                     }],
                     xAxes: [{
                         ticks: {
-                            beginAtZero:true
+                            beginAtZero: true
                         },
                         scaleLabel: {
                             display: true,
