@@ -95,6 +95,7 @@ class OrderController extends Controller
             }
             array_push($pay, $total_pay);
         }
+
         $data = [
             'upd' => json_encode($upd),
             'pay' => json_encode($pay),

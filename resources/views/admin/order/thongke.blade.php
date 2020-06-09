@@ -228,7 +228,7 @@
                 datasets: [
                     {
                         label: ' Tháng <?php echo $month ?>',
-                        backgroundColor: '#b90b21',
+                        backgroundColor: '#26A65B',
                         borderWidth: 1,
 
                         data: <?php echo $pay ?>,

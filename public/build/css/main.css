@@ -867,7 +867,7 @@ Author URL: hhttps://themeforest.net/user/sorust
                 float: left;
             }
 
-            ..navbar-nav>.notifications-menu>.dropdown-menu>li .menu,
+            .navbar-nav>.notifications-menu>.dropdown-menu>li .menu,
             .navbar-nav>.messages-menu>.dropdown-menu>li .menu,
             .navbar-nav>.tasks-menu>.dropdown-menu>li .menu {
                 max-height: 200px;
@@ -889,8 +889,8 @@ Author URL: hhttps://themeforest.net/user/sorust
             }
 
             .an-user-avatar img {
-                width: 70px;
-                height: 70px;
+                width: 122px;
+                height: 122px;
                 border-radius: 50%;
             }
 
