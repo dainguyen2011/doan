@@ -71,22 +71,12 @@ class OrderController extends Controller
         $product_count = Product::count();
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
-//        $products = Product:: when($request->month, function ($qr) use ($request) {
-//            $qr->whereMonth('updated_at', $request->month);
-//        })
-//            ->where('pay', '>', 0)
-//            ->latest()->get();
-        $products = OrderProduct::with('product')->when($request->month, function ($qr) use ($request) {
+        $products = OrderProduct::with('product','orders')->when($request->month, function ($qr) use ($request) {
             $qr->whereMonth('updated_at', $request->month);
         })
             ->where('product_qty', '>', 0)
             ->latest()->get();
-//        $product_month = Product::when($request->month, function ($qr) use ($request) {
-//            $qr->whereMonth('updated_at', $request->month);
-//        })
-//            ->where('pay', '>', 0)->oldest('updated_at')
-//            ->get();
-        $product_month = OrderProduct::when($request->month, function ($qr) use ($request) {
+        $product_month = OrderProduct::with('orders')->when($request->month, function ($qr) use ($request) {
             $qr->whereMonth('created_at', $request->month);
         })
             ->where('product_qty', '>', 0)->oldest('created_at')
@@ -101,8 +91,7 @@ class OrderController extends Controller
             $upd[] = \Carbon\Carbon::parse($key)->format('Y-m-d');
             $total_pay = 0;
             foreach ($a as $item) {
-                if (!empty($item['product_qty'])) ;
-                $total_pay += ($item['product_qty'] * $item['product_price']);
+                if ($item['product_qty'] && $item['orders']['status_1'] == 2) $total_pay += ($item['product_qty'] * $item['product_price']);
             }
             array_push($pay, $total_pay);
         }

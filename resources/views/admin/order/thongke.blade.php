@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span12">
+        <div class="panel-body">
             <div class="grid simple ">
                 <div class="grid-title">
                     <h4 style="line-height: 36px; padding-left: 10px;">Danh sách order</h4>
@@ -167,7 +167,7 @@
 {{--                                <td>--}}
 {{--                                    {{number_format($price_product)}} <sup>vnđ</sup>--}}
 {{--                                </td>--}}
-                                <td>{{$product->created_at}}</td>
+                                <td>{{date_format($product->created_at, 'd-m-yy h:i:s')}}</td>
                             </tr>
                         @endforeach
                         </tbody>
