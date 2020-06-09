@@ -98,7 +98,7 @@
         <div class="panel-body">
             <div class="grid simple ">
                 <div class="grid-title">
-                    <h4 style="line-height: 36px; padding-left: 10px;">Danh sách order</h4>
+                    <h4 style="line-height: 36px; padding-left: 10px;">Danh sách đơn hàng đã duyệt tháng <?php echo $month ?></h4>
                 </div>
                 <div class="grid-body ">
                     @if (Session::has('thongbao'))
@@ -212,7 +212,7 @@
     <body>
 
     <div id="container" style="width: 75%;">
-        <h1 style="text-align: center">Thống kê doanh thu theo ngày trong tháng <?php echo $month ?>  </h1>
+        <h4 style="text-align: center">Thống kê doanh thu theo ngày trong tháng <?php echo $month ?>  </h4>
         <canvas id="canvas"></canvas>
     </div>
     <script src="http://www.chartjs.org/dist/2.7.3/Chart.bundle.js"></script>
