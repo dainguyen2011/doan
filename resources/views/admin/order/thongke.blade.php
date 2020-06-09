@@ -108,7 +108,7 @@
                     @endif
                     <form action="" method="get">
                         <div class="row">
-                            <div class="col-md-3"><select class="form-control" name="month">
+                            <div class="col-md-3"><select class="form-control" name="month" >
                                     <option value="1">Tháng 1</option>
                                     <option value="2">Tháng 2</option>
                                     <option value="3">Tháng 3</option>
@@ -142,12 +142,12 @@
                             <th class="text-center">Ngày bán</th>
                         </tr>
                         </thead>
+                        @php
+                            $price_product = 0;
+                        @endphp
                         <tbody>
                         @foreach($products as $key => $product)
 {{--                            @dd(date_format($productcreated_at))--}}
-                            @php
-                                $price_product = 0;
-                            @endphp
                             <tr class="text-center" style="height: 60px;">
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$product->product->product_name}}</td>
@@ -158,11 +158,11 @@
 {{--                                @foreach($product->order_product as $order_product)--}}
 {{--                              --}}
 
-{{--                                    @if($order_product->orders->status_1 == 2)--}}
-{{--                                        @php--}}
-{{--                                            $price_product +=  $order_product->product_qty * $order_product->product_price;--}}
-{{--                                        @endphp--}}
-{{--                                    @endif--}}
+                                    @if($product->orders->status_1 == 2)
+                                        @php
+                                            $price_product += $product->product_qty* $product->product_price;
+                                        @endphp
+                                    @endif
 {{--                                @endforeach--}}
 {{--                                <td>--}}
 {{--                                    {{number_format($price_product)}} <sup>vnđ</sup>--}}
@@ -171,6 +171,12 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <tfoot>
+                        <tr>
+                            <th   colspan="6"><b style="margin-left: 50%;">Tổng tiền</b></th>
+                            <td>{{number_format($price_product)}} vnđ</td>
+                        </tr>
+                        </tfoot>
                     </table>
                     <a class="btn btn-warning" href="{{ route('export') }}">Xuất file</a>
                 </div>
@@ -206,12 +212,14 @@
     <body>
 
     <div id="container" style="width: 75%;">
+        <h1 style="text-align: center">Thống kê doanh thu theo ngày trong tháng <?php echo $month ?>  </h1>
         <canvas id="canvas"></canvas>
     </div>
     <script src="http://www.chartjs.org/dist/2.7.3/Chart.bundle.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 
     <script>
+
         var chartdata = {
 
             type: 'bar',
