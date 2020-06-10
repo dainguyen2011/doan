@@ -136,6 +136,8 @@ Route::group(['prefix' => 'admin', 'namespace' => "Admin", "middleware" => "auth
         Route::group(['prefix' => 'don-hang'], function () {
             //root/admin/danh-muc/list-don-hang
             Route::get("list-don-hang", ['as' => 'list-don-hang', 'uses' => "OrderController@getAllOrder"]);
+            //root/admin/in don hang
+            Route::get("print-order/{id}", ['as' => 'print-order', 'uses' => "OrderController@printOrder"]);
             //root/admin/danh-muc/chi-tiet-don-hang
             Route::get("chi-tiet-don-hang/{id}", ['as' => 'chi-tiet-don-hang', 'uses' => "OrderController@getOrderDetail"]);
             //root/admin/danh-muc/chi-tiet-don-hang

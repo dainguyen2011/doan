@@ -33,6 +33,8 @@
                     <td>{{number_format($order->paid)}} vnđ</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary"><i
                                 class="fa fa-eye"></i></a></td>
+                    <td><a  href="{{route('print-order',$order->id)}}" class="btn btn-primary"><i
+                                class="fa fa-print"></i></a></td>
                     <td>
 
                         <a onclick="return confirm('Bạn có muốn xóa không?')"

@@ -26,6 +26,13 @@ class OrderController extends Controller
         $order = Orders::find($id);
         return view('admin.order.detail', compact('order'));
     }
+    public function printOrder ($id, Request $request)
+    {
+        $order = Orders::find($id);
+//        dd($order->customer);
+        return view('admin.order.print_order', compact('order'));
+    }
+
 
     public function updateOrder($id, Request $request)
     {
