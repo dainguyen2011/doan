@@ -1,6 +1,5 @@
 @extends('admin.layouts.index')
 @section('content')
-    <div class="view-list-product">
         @if (session('success'))
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -20,7 +19,7 @@
             </div>
         @endif
         <b><h3>Danh sách sản phẩm</h3></b>
-        <table class="table table-bordered">
+        <table class="table table-bordered table-responsive">
             <thead>
             <tr>
                 <th>STT</th>
@@ -67,5 +66,4 @@
         <li style="text-align: center; list-style: none">
         {{ $products->links() }}
         </li>
-    </div>
 @endsection

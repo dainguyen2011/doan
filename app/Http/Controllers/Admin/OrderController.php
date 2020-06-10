@@ -71,7 +71,7 @@ class OrderController extends Controller
         $product_count = Product::count();
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
-        $products = OrderProduct::with('product','orders')->when($request->month, function ($qr) use ($request) {
+        $products = OrderProduct::with('product', 'orders')->when($request->month, function ($qr) use ($request) {
             $qr->whereMonth('updated_at', $request->month);
         })
             ->where('product_qty', '>', 0)

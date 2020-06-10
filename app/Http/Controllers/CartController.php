@@ -63,6 +63,8 @@ class CartController extends Controller
                     'product_size' => $item->options->size,
                     'product_price' => $item->price,
                     'product_qty' => $item->qty,
+                    'created_at' => \Carbon\Carbon::now(),
+                    'updated_at' => \Carbon\Carbon::now(),
                 ]);
             }
         }

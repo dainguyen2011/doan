@@ -26,7 +26,7 @@
                         <table class="col-md-12">
                             <thead>
                             <tr>
-                                <th class="th-product">Tên sản phẩm </th>
+                                <th class="th-product">Tên sản phẩm</th>
                                 <th class="th-qty">Số lượng</th>
                                 <th class="th-price">Size</th>
                                 <th class="th-price">Giá tiền</th>
@@ -48,7 +48,8 @@
                                                    name="cart_quality" value="{{$item->qty}}">
                                             <input type="hidden" value="{{$item->rowId}}" name="rowId_cart"
                                                    class="form-control">
-                                            <button style="margin-left: 10px; color: green;" type="submit" name="update_qty"><i
+                                            <button style="margin-left: 10px; color: green;" type="submit"
+                                                    name="update_qty"><i
                                                     class="fa fa-edit"></i></button>
                                         </form>
                                     </td>
@@ -56,8 +57,10 @@
                                     <td class="th-price">{{number_format($item->price)}} vnđ</td>
                                     <td class="th-total">{{number_format($item->price*$item->qty)}} vnđ</td>
                                     <td class="th-delete">
-                                        <form action="{{route('remove-item-cart',$item->rowId)}}" onclick="return confirm('Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?')" method="post">
-                                        <button><i style="color: red" class="fa fa-trash"></i></button>
+                                        <form action="{{route('remove-item-cart',$item->rowId)}}"
+                                              onclick="return confirm('Bạn có muốn xóa sản phẩm khỏi giỏ hàng không?')"
+                                              method="post">
+                                            <button><i style="color: red" class="fa fa-trash"></i></button>
                                             {{csrf_field()}}
                                         </form>
                                     </td>
@@ -74,7 +77,7 @@
                     </div>
                     <div class="cart-button pull-right">
                         @if(Cart::count() > 0)
-                        <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
+                            <a type="button" class="btn btn-primary" href="{{route('thanh-toan')}}">THANH TOÁN</a>
                         @endif
                         <a type="button" class="btn btn-info" href="{{route('home')}}">TIẾP TỤC MUA HÀNG</a>
                     </div>

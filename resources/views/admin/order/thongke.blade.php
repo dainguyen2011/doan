@@ -167,7 +167,7 @@
 {{--                                <td>--}}
 {{--                                    {{number_format($price_product)}} <sup>vnđ</sup>--}}
 {{--                                </td>--}}
-                                <td>{{date_format($product->created_at, 'd-m-yy h:i:s')}}</td>
+                                <td>{{$product->created_at}}</td>
                             </tr>
                         @endforeach
                         </tbody>
