@@ -29,8 +29,10 @@ class OrderController extends Controller
     public function printOrder ($id, Request $request)
     {
         $order = Orders::find($id);
-//        dd($order->customer);
-        return view('admin.order.print_order', compact('order'));
+        foreach ($order->orderProducts as $a){
+            $ten_ao = $a->product->product_name;
+        }
+        return view('admin.order.print_order', compact('order','ten_ao'));
     }
 
 

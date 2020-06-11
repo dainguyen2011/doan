@@ -1,37 +1,55 @@
-<table class="table table-bordered table-responsive" onClick="window.print()">
-    <thead>
-    <tr>
-        <th>STT</th>
-{{--        <th>Tên khách hàng</th>--}}
-{{--        <th>Tên sản phẩm</th>--}}
-{{--        <th>Ảnh</th>--}}
-{{--        <th>Số lượng</th>--}}
-{{--        <th>Danh mục</th>--}}
-{{--        <th>Tổng tiền</th>--}}
-        <th>Đã Thanh toán</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr>
-{{--            @foreach($item as $a)--}}
-{{--            <td>{{$a->customer->first_name ." ".$a->customer->last_name}}</td>--}}
-{{--            @endforeach--}}
-{{--            <td style="width: 100px">{{$item->product->product_name}}</td>--}}
-{{--            <td style="width: 100px"><a  href="{{route('showDetail',$product->id)}}"><img style="width: 100px"  class="product-image-intro"--}}
-{{--                                                                                          src="{{ asset('') }}/{{ pare_url_file($item->product->product_image_intro) }}"></a>--}}
-{{--            </td>--}}
-{{--            <td nowrap="">{{$item->orderProducts->product_qty}}</td>--}}
-{{--            @if($item->product->category_id ==8)--}}
-{{--                <td nowrap="">Áo câu lạc bộ</td>--}}
-{{--            @endif--}}
-{{--            @if($item->product->category_id ==9)--}}
-{{--                <td nowrap="">Áo đội tuyển</td>--}}
-{{--            @endif--}}
-{{--            @if($item->product->category_id ==10)--}}
-{{--                <td nowrap="">Áo không logo</td>--}}
-{{--            @endif--}}
-            <td nowrap="">{{number_format($order->total)}} vnđ</td>
-            <td nowrap="">{{number_format($order->paid)}} vnđ</td>
-        </tr>
-    </tbody>
-</table>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>In</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body onload="window.print()">
+<div class="col-md-12 col-sm-5">
+
+            <h2>In hóa đơn</h2>
+
+
+                    <table>
+                        <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Tổng tiền</th>
+                            <th>Thanh toán</th>
+                            <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
+                        </tr>
+                        <tr>
+                            <td>{{$order->id}}</td>
+                            <td>{{$order->customer->first_name ." ".$order->customer->last_name}}</td>
+                            <td>{{$ten_ao}}</td>
+                            <td>{{number_format($order->total)}} <sup>vnđ</sup></td>
+                            <td>{{number_format($order->paid)}} <sup>vnđ</sup></td>
+                            <td>{{$order->customer->phone_number}}</td>
+                            <td>{{$order->customer->address}}</td>
+                        </tr>
+                    </table>
+</div>
+</body>
+</html>
