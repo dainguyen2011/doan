@@ -8,19 +8,25 @@
     <title>In</title>
     <style>
         table {
-            font-family: arial, sans-serif;
+            width:100%;
+        }
+        table, th, td {
+            border: 1px solid black;
             border-collapse: collapse;
-            width: 100%;
         }
-
-        td, th {
-            border: 1px solid #dddddd;
+        th, td {
+            padding: 15px;
             text-align: left;
-            padding: 8px;
         }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
+        table#t01 tr:nth-child(even) {
+            background-color: #eee;
+        }
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t01 th {
+            background-color: black;
+            color: white;
         }
     </style>
 </head>
