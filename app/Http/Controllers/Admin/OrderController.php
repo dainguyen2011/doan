@@ -29,11 +29,12 @@ class OrderController extends Controller
     public function printOrder ($id, Request $request)
     {
         $order = Orders::find($id);
+        $date_bill = \Carbon\Carbon::now();
         foreach ($order->orderProducts as $a){
             $ten_ao = $a->product->product_name;
             $so_luong = $a->product_qty;
         }
-        return view('admin.order.print_order', compact('order','ten_ao','so_luong'));
+        return view('admin.order.print_order', compact('order','ten_ao','so_luong','date_bill'));
     }
 
 

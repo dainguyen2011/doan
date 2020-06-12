@@ -25,32 +25,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body onload="window.print()">
-{{--<div class="col-md-12 col-sm-5">--}}
-
-{{--            <h2>In hóa đơn</h2>--}}
-
-
-{{--                    <table>--}}
-{{--                        <tr>--}}
-{{--                            <th>Mã đơn hàng</th>--}}
-{{--                            <th>Tên khách hàng</th>--}}
-{{--                            <th>Tên sản phẩm</th>--}}
-{{--                            <th>Tổng tiền</th>--}}
-{{--                            <th>Thanh toán</th>--}}
-{{--                            <th>Số điện thoại</th>--}}
-{{--                            <th>Địa chỉ</th>--}}
-{{--                        </tr>--}}
-{{--                        <tr>--}}
-{{--                            <td>{{$order->id}}</td>--}}
-{{--                            <td>{{$order->customer->first_name ." ".$order->customer->last_name}}</td>--}}
-{{--                            <td>{{$ten_ao}}</td>--}}
-{{--                            <td>{{number_format($order->total)}} <sup>vnđ</sup></td>--}}
-{{--                            <td>{{number_format($order->paid)}} <sup>vnđ</sup></td>--}}
-{{--                            <td>{{$order->customer->phone_number}}</td>--}}
-{{--                            <td>{{$order->customer->address}}</td>--}}
-{{--                        </tr>--}}
-{{--                    </table>--}}
-{{--</div>--}}
 <section id="form">
     <div class="container pt-5 pb-5">
         <div class="row">
@@ -58,7 +32,7 @@
                 <img src="http://aobongda.com/Uploads/Module/htmlcontent/logo.png">
             </div>
             <div class="col-md-12 text-center">
-                <h3 class="text-uppercase">Hóa đơn thanh toán
+                <h3 style="color: #b91f1f" class="text-uppercase">Hóa đơn thanh toán
                 </h3>
                 <div class="row">
                     <div class="col-md-12">
@@ -82,11 +56,11 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <h5 class="text-left">Tổng tiền</h5>
-                                    <input readonly type="email" class="form-control" value="{{number_format($order->total)}}">
+                                    <input readonly type="email" class="form-control" value="{{number_format($order->total). " vnđ"}}">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <h5 class="text-left">Thanh toán</h5>
-                                    <input readonly type="email" class="form-control" value="{{number_format($order->paid)}}">
+                                    <input readonly type="email" class="form-control" value="{{number_format($order->paid). " vnđ"}}">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <h5 class="text-left">Số điện thoại</h5>
@@ -96,7 +70,9 @@
                                     <h5 class="text-left">Địa chỉ</h5>
                                     <input readonly type="email" class="form-control" value="{{$order->customer->address}}">
                                 </div>
+                                <p>Ngày xuất hóa đơn: {{$date_bill}}</p>
                             </div>
+                            <h4 style="float: right; color: #36b91a">Địa chỉ: 137 Phan Bá Vành, Bắc Từ Liêm, TP Hà Nội</h4>
                         </form>
                     </div>
                 </div>
