@@ -31,8 +31,9 @@ class OrderController extends Controller
         $order = Orders::find($id);
         foreach ($order->orderProducts as $a){
             $ten_ao = $a->product->product_name;
+            $so_luong = $a->product_qty;
         }
-        return view('admin.order.print_order', compact('order','ten_ao'));
+        return view('admin.order.print_order', compact('order','ten_ao','so_luong'));
     }
 
 
