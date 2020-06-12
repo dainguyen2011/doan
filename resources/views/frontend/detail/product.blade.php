@@ -16,34 +16,34 @@
             <div class="row">
                 <div class="container-fliud">
                     <div class="wrapper row">
-                            <div class="preview col-md-6">
+                        <div class="preview col-md-6">
 
-                                <div class="preview-pic tab-content">
-                                    <div class="tab-pane active" id="pic-1"><img
-                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/>
-                                    </div>
-                                    @if($product->gallery)
-                                        <div class="tab-pane" id="pic-2"><img
-                                                src="{{ asset('/'.$product->gallery->image)}}"/></div>
-                                    @endif
-                                    @if($product->gallery)
-                                        <div class="tab-pane" id="pic-3"><img
-                                                src="{{ asset('/'.$product->gallery->image1)}}"/></div>
-                                    @endif
+                            <div class="preview-pic tab-content">
+                                <div class="tab-pane active" id="pic-1"><img
+                                        src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/>
                                 </div>
-                                <ul class="preview-thumbnail nav nav-tabs">
-                                    <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
-                                                src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/></a>
-                                    </li>
-                                    @if($product->gallery)
-                                        <li><a data-target="#pic-2" data-toggle="tab"><img
-                                                    src="{{ asset('/'.$product->gallery->image)}}"/></a></li>
-                                    @endif
-                                    @if($product->gallery)
-                                        <li><a data-target="#pic-3" data-toggle="tab"><img
-                                                    src="{{ asset('/'.$product->gallery->image1)}}"/></a></li>
-                                    @endif
-                                </ul>
+                                @if($product->gallery)
+                                    <div class="tab-pane" id="pic-2"><img
+                                            src="{{ asset('/'.$product->gallery->image)}}"/></div>
+                                @endif
+                                @if($product->gallery)
+                                    <div class="tab-pane" id="pic-3"><img
+                                            src="{{ asset('/'.$product->gallery->image1)}}"/></div>
+                                @endif
+                            </div>
+                            <ul class="preview-thumbnail nav nav-tabs">
+                                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img
+                                            src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"/></a>
+                                </li>
+                                @if($product->gallery)
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img
+                                                src="{{ asset('/'.$product->gallery->image)}}"/></a></li>
+                                @endif
+                                @if($product->gallery)
+                                    <li><a data-target="#pic-3" data-toggle="tab"><img
+                                                src="{{ asset('/'.$product->gallery->image1)}}"/></a></li>
+                                @endif
+                            </ul>
                         </div>
                         <div class="col-md-6">
                             <form action="{{route('add-to-cart',$product->id)}}" method="post">
@@ -68,13 +68,13 @@
                                     <div class="available-option">
                                         <h2>Còn : {{$product->quantity}} sản phẩm</h2>
                                         <div class="col-md-3">
-                                        <b class="quality">Số lượng</b>
+                                            <b class="quality">Số lượng</b>
                                         </div>
                                         <div class="col-md-3">
-                                        <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" name="quality"
-                                                   min="1" value="1" style="padding: 0px;width: 50px;" step="1">
-                                        </div>
+                                            <div class="quantity">
+                                                <input type="number" size="4" class="input-text qty text" name="quality"
+                                                       min="1" value="1" style="padding: 0px;width: 50px;" step="1">
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="available-option">
@@ -108,35 +108,35 @@
                                                 <td>73</td>
                                                 <td>49</td>
                                                 <td>163 - 170</td>
-                                                <td>66 - 74 </td>
+                                                <td>66 - 74</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">M</th>
                                                 <td>76</td>
                                                 <td>52</td>
                                                 <td>168 - 175</td>
-                                                <td>70 - 78 </td>
+                                                <td>70 - 78</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">L</th>
                                                 <td>78</td>
                                                 <td>55</td>
                                                 <td>175 - 180</td>
-                                                <td>76 - 84 </td>
+                                                <td>76 - 84</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">XL</th>
                                                 <td>81</td>
                                                 <td>57</td>
                                                 <td>180 - 185</td>
-                                                <td>80 - 88 </td>
+                                                <td>80 - 88</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">XXL</th>
                                                 <td>84</td>
                                                 <td>80</td>
                                                 <td>185 - 190</td>
-                                                <td>84 - 92 </td>
+                                                <td>84 - 92</td>
                                             </tr>
                                             </tbody>
                                         </table>
