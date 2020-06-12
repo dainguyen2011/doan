@@ -92,7 +92,54 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
-                                        <img style="margin-top: 20%" src="https://yousport.vn/Media/Blog/cach-chon-size-quan-ao-bong-da/chon-size-ao-bong-da-nam.png">
+                                        <table style="margin-top: 20%" class="table">
+                                            <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Size</th>
+                                                <th scope="col">Dài áo (cm)</th>
+                                                <th scope="col">Ngang áo (cm)</th>
+                                                <th scope="col">Chiều cao (cm)</th>
+                                                <th scope="col">Cân nặng (kg)</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">S</th>
+                                                <td>73</td>
+                                                <td>49</td>
+                                                <td>163 - 170</td>
+                                                <td>66 - 74 </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">M</th>
+                                                <td>76</td>
+                                                <td>52</td>
+                                                <td>168 - 175</td>
+                                                <td>70 - 78 </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">L</th>
+                                                <td>78</td>
+                                                <td>55</td>
+                                                <td>175 - 180</td>
+                                                <td>76 - 84 </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">XL</th>
+                                                <td>81</td>
+                                                <td>57</td>
+                                                <td>180 - 185</td>
+                                                <td>80 - 88 </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">XXL</th>
+                                                <td>84</td>
+                                                <td>80</td>
+                                                <td>185 - 190</td>
+                                                <td>84 - 92 </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                         <br>
                                     </div>
                                     <div class="available-option">

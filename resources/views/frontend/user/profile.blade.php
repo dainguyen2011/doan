@@ -28,7 +28,7 @@
                                 <div class="row">
                                     <div
                                         class="col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-                                        <img  class="img-circle img-responsive"
+                                        <img class="img-circle img-responsive"
                                              src="{{ asset('/'.auth()->user()->avatar)}}">
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@
                                     <div class="col-xs-6 col-sm-3 col-md-2 col-lg-3 social-btn-holder">
                                         <a title="github" class="btn btn-social btn-block btn-github"
                                            href="{{route('edit-profile',Auth::user()->id)}}">
-                                            <i class="fa fa-edit"></i> Sửa thông tin
+                                            Sửa thông tin
                                         </a>
                                     </div>
                                 </div>
