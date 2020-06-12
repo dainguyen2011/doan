@@ -12,6 +12,8 @@
                 <th>Tổng tiền</th>
                 <th>Đã thanh toán</th>
                 <th>Xem</th>
+                <th>In hóa đơn</th>
+                <th>Xóa</th>
             </tr>
             </thead>
             <tbody>
@@ -31,7 +33,7 @@
                     {{--                    <td> {{ $order->getStatus($order->status_1)['name'] }}</td>--}}
                     <td>{{number_format($order->total)}} vnđ</td>
                     <td>{{number_format($order->paid)}} vnđ</td>
-                    <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-primary"><i
+                    <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-dark"><i
                                 class="fa fa-eye"></i></a></td>
                     <td><a  href="{{route('print-order',$order->id)}}" class="btn btn-primary"><i
                                 class="fa fa-print"></i></a></td>

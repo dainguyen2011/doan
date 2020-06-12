@@ -92,6 +92,11 @@ class HomeController extends Controller
         return view('frontend.detail.list-rate', compact('product','rating','persons'));
 
     }
-
+    public function deleteOrder($id, Request $request)
+    {
+        $orders = Orders::find($id);
+        $orders->delete();
+        return redirect(route('home'));
+    }
 
 }

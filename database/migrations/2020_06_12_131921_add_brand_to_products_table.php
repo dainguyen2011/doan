@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPaidToOrdersTable extends Migration
+class AddBrandToProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddPaidToOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->double('paid')->nullable();;
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('brand')->nullable();
+            $table->string('address')->nullable();
         });
     }
 
@@ -25,8 +26,9 @@ class AddPaidToOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn('paid');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('brand');
+            $table->dropColumn('address');
         });
     }
 }

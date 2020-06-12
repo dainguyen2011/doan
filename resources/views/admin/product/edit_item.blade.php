@@ -78,6 +78,18 @@
                     </th>
                 </tr>
                 <tr>
+                    <th>Thương hiệu</th>
+                    <th>
+                        <input type="text" name="brand" value="{{$product->brand}}" class="form-control">
+                    </th>
+                </tr>
+                <tr>
+                    <th>Yêu cầu</th>
+                    <th>
+                        <input type="text" name="address" value="{{$product->address}}" class="form-control">
+                    </th>
+                </tr>
+                <tr>
                     <th>Số lượng</th>
                     <th>
                         <input type="number" name="quantity" value="{{$product->quantity}}" class="form-control">

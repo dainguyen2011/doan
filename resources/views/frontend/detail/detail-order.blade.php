@@ -74,10 +74,18 @@
                             <td>Đã xử lý</td>
                         @endif
                         <td>{{number_format($order->paid) }} vnđ</td>
+                        <th nowrap="">
+                            @if($order->status_1 ==0)
+                            <a onclick="return confirm('Bạn có hủy đơn hàng này không ?')" href="{{route('xoa-don-hang-client',$order->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            @endif
+                        </th>
                     </tr>
                 @endif
                 </tbody>
             </table>
+            @if($order->status_1 ==0)
+                <h4 style="text-align: center">Đơn hàng của bạn sẽ đựơc xử lý trong vòng 72h tới</h4>
+            @endif
         </div>
     </div>
 @endsection

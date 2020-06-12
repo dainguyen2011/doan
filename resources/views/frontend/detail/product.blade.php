@@ -60,6 +60,10 @@
                                             <b>Lượt xem: </b>
                                             <span class="prices">{{number_format($product->views)}} <sup>Luợt xem</sup></span>
                                         </div>
+                                        <div class="prices">
+                                            <b>Nhãn hiệu: </b>
+                                            <span class="prices">{{$product->brand}}</span>
+                                        </div>
                                     </div>
                                     <div class="available-option">
                                         <h2>Còn : {{$product->quantity}} sản phẩm</h2>
@@ -88,6 +92,7 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
+                                        <img style="margin-top: 20%" src="https://yousport.vn/Media/Blog/cach-chon-size-quan-ao-bong-da/chon-size-ao-bong-da-nam.png">
                                         <br>
                                     </div>
                                     <div class="available-option">

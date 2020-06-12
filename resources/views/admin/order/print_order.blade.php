@@ -11,7 +11,7 @@
             width:100%;
         }
         table, th, td {
-            border: 1px solid black;
+            border: 1px solid #0bb91d;
             border-collapse: collapse;
         }
         th, td {

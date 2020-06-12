@@ -34,6 +34,7 @@ Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductControlle
 // chart
 // chi tiets don hang
 Route::get("detail-order", ['as' => 'detail-order', 'uses' => 'HomeController@getOrder']);
+Route::get("xoa-don-hang-client/{id}", ['as' => 'xoa-don-hang-client', 'uses' => 'HomeController@deleteOrder']);
 Route::get('showDetail/{id}', ['as' => 'showDetail', 'uses' => 'ProductController@getDetailProduct']);
 //review rate
 Route::post('review/{id}', ['as' => 'review', 'uses' => 'HomeController@productStar']);

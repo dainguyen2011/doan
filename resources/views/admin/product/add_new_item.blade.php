@@ -63,6 +63,18 @@
                 </th>
             </tr>
             <tr>
+                <th>Thương hiệu</th>
+                <th>
+                    <input value="{{ old('brand') }}" placeholder="Nhập thương hiệu sản phẩm" type="text" name="brand" class="form-control">
+                </th>
+            </tr>
+            <tr>
+                <th>Địa chỉ nhập</th>
+                <th>
+                    <input value="{{ old('address') }}" placeholder="Nhập địa chỉ sản phẩm" type="text" name="address" class="form-control">
+                </th>
+            </tr>
+            <tr>
                 <th>Số lượng</th>
                 <th>
                     <input value="{{ old('quantity') }}" placeholder="Nhập số lượng sản phẩm" type="number" name="quantity" class="form-control">
