@@ -29,7 +29,7 @@
     <div class="container pt-5 pb-5">
         <div class="row">
             <div>
-                <img src="http://aobongda.com/Uploads/Module/htmlcontent/logo.png">
+               <a  href="{{route('list-don-hang')}}"> <img src="http://aobongda.com/Uploads/Module/htmlcontent/logo.png"></a>
             </div>
             <div class="col-md-12 text-center">
                 <h3 style="color: #b91f1f" class="text-uppercase">Hóa đơn thanh toán
@@ -74,6 +74,7 @@
                             </div>
                             <h4 style="float: right; color: #36b91a">Địa chỉ: 137 Phan Bá Vành, Bắc Từ Liêm, TP Hà Nội</h4>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -81,4 +82,5 @@
     </div>
 </section>
 </body>
+{{--<a class="btn btn-primary" href="{{route('list-don-hang')}}">Quay lại</a>--}}
 </html>

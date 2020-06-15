@@ -5,7 +5,7 @@
         <h3 style="text-align: center;">Thanh toán hóa đơn thành công</h3>
         <br><br>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                         <h4>Cảm ơn bạn đã tin dùng sản phẩm của chúng tôi. Đơn hàng sẽ giao đến bạn một cách sớm nhất.</h4>
                         <span>Mọi thắc mắc xin liên hệ</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="btn btn-sx btn-success"><i class="fab fa-facebook"></i></button>&nbsp;

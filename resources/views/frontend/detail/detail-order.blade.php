@@ -86,6 +86,11 @@
             @if($order->status_1 ==0)
                 <h4 style="text-align: center">Đơn hàng của bạn sẽ đựơc xử lý trong vòng 72h tới</h4>
             @endif
+            @if($order->status_1 ==2)
+                <h4 style="text-align: center">Bạn sẽ nhận được hàng trong vòng 72 ngày tới kể từ ngày {{date_format($order->updated_at,'d-m-Y')}}</h4>
+                <h4 style="text-align: center">Bạn có thể đổi trả trong vòng 48h sau khi nhận hàng</h4>
+
+                @endif
         </div>
     </div>
 @endsection
