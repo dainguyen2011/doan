@@ -94,7 +94,7 @@
                                         </div>
                                         <table style="margin-top: 20%" class="table">
                                             <thead class="thead-dark">
-                                            <tr>
+                                            <tr style="background-color: black; color: white">
                                                 <th scope="col">Size</th>
                                                 <th scope="col">Dài áo (cm)</th>
                                                 <th scope="col">Ngang áo (cm)</th>

@@ -84,6 +84,12 @@
                     </th>
                 </tr>
                 <tr>
+                    <th>Nơi sản xuất</th>
+                    <th>
+                        <input type="text" name="brand" value="{{$product->address}}" class="form-control">
+                    </th>
+                </tr>
+                <tr>
                     <th>Yêu cầu</th>
                     <th>
                         <input type="text" name="address" value="{{$product->address}}" class="form-control">
