@@ -25,7 +25,7 @@
                             @endfor
                         </p>
                         <div class="clearfix"></div>
-                        <p>{{$rate->content}}</p>
+                        <p>{!! $rate->content !!}</p>
                     </div>
                 </div>
             @endforeach

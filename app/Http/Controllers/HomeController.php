@@ -39,7 +39,9 @@ class HomeController extends Controller
         $sx = $request->input('sx', 'ASC');
         $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
         $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
-        $new_products = Product::latest('updated_at')->orderBy('price', $sx)->get()->take(5);
+        $new_products = Product::when($sx, function ($qr) use ($sx) {
+            $qr->orderBy('price', $sx);
+        })->get()->take(5);
         $aologo_products = Product::where('category_id', 10)->orderBy('price', $sx)->get();
         foreach ($aoclb_products as $item) {
             $item['price_sale'] = $item->price * (100 - $item->sale) / 100;
@@ -49,7 +51,7 @@ class HomeController extends Controller
             $aoclb_products = $aoclb_products->sortByDesc('price_sale');
         }
 
-        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products','new_products'));
+        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products', 'new_products'));
     }
 
     public function getOrder(Request $request)
@@ -74,24 +76,29 @@ class HomeController extends Controller
         ];
         return view('frontend.detail.detail-order', $data);
     }
-    public function productStar($id, RatingRequest $request){
+
+    public function productStar($id, RatingRequest $request)
+    {
         $product = Product::findOrFail($id);
-       Rating::create([
-           'product_id' => $product->id,
-           'user_id' => Auth::user()->id,
-           'rating' => $request->input('rating'),
-           'content' => $request->input('content')
-       ]);
+        Rating::create([
+            'product_id' => $product->id,
+            'user_id' => Auth::user()->id,
+            'rating' => $request->input('rating'),
+            'content' => $request->input('content')
+        ]);
         return back();
 
     }
-    public function listRate($id, Request $request){
+
+    public function listRate($id, Request $request)
+    {
         $product = Product::findOrFail($id);
-        $persons =$product->rating->count();
+        $persons = $product->rating->count();
         $rating = Rating::where('product_id', $product->id)->latest()->paginate(10);
-        return view('frontend.detail.list-rate', compact('product','rating','persons'));
+        return view('frontend.detail.list-rate', compact('product', 'rating', 'persons'));
 
     }
+
     public function deleteOrder($id, Request $request)
     {
         $orders = Orders::find($id);
