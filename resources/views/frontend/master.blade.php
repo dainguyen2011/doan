@@ -90,8 +90,8 @@
     <!-- main CSS
     ============================================ -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/main.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/gt.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/frontend/css/mot.css')}}">--}}
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/comment.css')}}">
+
 
     <!-- style CSS
     ============================================ -->

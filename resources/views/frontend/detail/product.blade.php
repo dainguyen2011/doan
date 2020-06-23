@@ -173,11 +173,90 @@
                                 <hr>
                                 <div class="comment-box-wrapper" style="font-size: 100px ">
 
-                                    <h3>Các bình luận</h3>
-                                    <div class="fb-comments"
-                                         data-href="http://localhost:8000/showDetail/{{$product->id}}" data-width="1000"
-                                         data-numposts="10"></div>
+                                    <div class="related-products-wrapper">
+                                        <h2 class="related-products-title">Hỏi và đáp ({{$totalComment}} Bình luận)</h2>
+{{--                                        <form action="{{route('comment',$product->id)}}" method="post" style="border:1px solid" multiple="">--}}
+{{--                                            @csrf--}}
+{{--                                            <input name="name" id="comment" placeholder="mời bạn để lại câu hỏi" style="width: 100%;font-size: 11px;" rows="4" />--}}
+{{--                                            <div style="float: right;margin: 10px;"><input type="submit" value="Gửi"></div>--}}
+{{--                                        </form>--}}
+                                        <form action="{{route('comment',$product->id)}}" method="post" style="border:1px solid" multiple="">
+                                            @csrf
+                                            <fieldset>
+                                                <textarea name="name" id="comment" placeholder="Mời bạn để lại bình luận" style="width: 100%;font-size: 14px" rows="4"></textarea>
+                                                <div style="float: right;margin: 10px;font-size: 13px"><input type="submit" value="Gửi"></div>
+                                            </fieldset>
+                                        </form>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                @foreach($comment as $comment)
+                                                    <div class="comment-box-wrapper" style="width: 700px;">
+                                                        <div class="comment-box">
+                                                <span style="width:50px;height: 50px; background: #dddddd;border-radius: 50px;text-align: center;padding-top: 10px">
+                                                  </span>
+                                                            <div class="comment-content">
+                                                                <div class="commenter-head"><span class="commenter-name"><a href="" style="font-size: 20px" >{{$comment->user->name}}</a></span>
+                                                                    <span style="font-size: 13px" class="comment-date"><i style="font-size: 13px" class="fa fa-clock"></i>
+                                                          {{$comment->caculateMinute()}}
+                                                        </span></div>
+                                                                <div class="comment-body" style="width: 600px;">
+                                                                    <span class="comment" style="font-size: 13px">{{$comment->name}}</span>
+                                                                </div>
+                                                                <div class="comment-footer" style="font-size: 12px">
+                                                                    <span class="comment-reply">{{count($comment->commentreplys)}} comment</span>
+                                                                    <a href="{{route('delete-comment-font',$comment->id)}}">delete</a>
+                                                                    <span style="cursor: pointer" href="" class="comment-action" onclick="togglereplay111({{$comment->id}})">Reply</span>
+                                                                </div>
+                                                                <div class="reply-form-{{$comment->id}} hidden">
+                                                                    <form action="{{route('rep-comment',[$comment->id,$product->id])}}" method="post" style="border:1px solid" multiple="">
+                                                                        @csrf
+                                                                        <fieldset>
+                                                                            <textarea name="name" id="comment" placeholder="bạn để lại bình luận" style="width: 100%;" rows="2"></textarea>
+                                                                            <div style="float: right;margin: 10px;"><input type="submit" value="Gửi"></div>
+                                                                        </fieldset>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="nested-comments">
+                                                            <div class="comment-box-wrapper"  style="width: 600px">
+                                                                @if(!empty($comment->commentreplys))
+                                                                    @foreach($comment->commentreplys as $cp)
+                                                                        <div class="comment-box" style="margin-bottom: 10px">
+                                                                <span style="width:50px;height: 50px; background: #dddddd;border-radius: 50px;text-align: center;padding-top: 10px;">
+                                                                </span>
+                                                                            <div class="comment-content">
+                                                                                <div class="commenter-head"><span class="commenter-name"><a style="font-size: 13px" href="" >{{$cp->user->name}}</a></span> <span style="font-size: 13px" class="comment-date"><i class="fa fa-clock"></i>
+                                                                          {{$comment->caculateMinute()}}
+                                                                    </span></div>
+                                                                                <div class="comment-body" style="width: 500px">
+                                                                                    <span style="font-size: 13px" class="comment">@if(!$cp->user_reply_id) @ {{$cp->comment->user->name}} @else @ {{$cp->userrep->name}} @endif    &nbsp{{$cp->name}}</span>
+                                                                                </div>
+                                                                                <div style="font-size: 13px" class="comment-footer">
+                                                                                    <a  href="{{route('delete-comment-reply',$cp->id)}}">delete</a>
+                                                                                    <span class="comment-reply"> <span style="cursor: pointer" class="" onclick="toggle({{$cp->id}})">Reply</span></span>
+                                                                                </div>
+                                                                                <div class="rep-comment-{{$cp->id}} hidden">
+                                                                                    <form action="{{route('repuser-comment',[$cp->comment_id,$product->id,$cp->user_id,$cp->id])}}" method="post" style="border:1px solid" multiple="">
+                                                                                        @csrf
+                                                                                        <fieldset>
+                                                                                            <textarea name="name" id="comment" placeholder="trả lời bình luận" style="width: 100%;" rows="2"></textarea>
+                                                                                            <div style="float: right;margin: 10px;"><input type="submit" value="Gửi"></div>
+                                                                                        </fieldset>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    @endforeach
+                                                                @endif
 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
 
@@ -341,6 +420,19 @@
 
     <div id="fb-root"></div>
     <script language="javascript">
+        function togglereplay111(id){
+            $('.reply-form-'+id).toggleClass('hidden');
+        }
+        function toggle(id){
+            $('.rep-comment-'+id).toggleClass('hidden');
+        }
+        function changeImage($id){
+            let $image=document.getElementById('image-change').getAttribute('src');
+            let $imagePath=document.getElementById($id).getAttribute('src');
+            document.getElementById('image-change').setAttribute('src',$imagePath);
+            document.getElementById($id).setAttribute('src',$image);
+        }
+
 
         CKEDITOR.replace('txt');
 

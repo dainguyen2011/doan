@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CommentReply;
 use App\Galleries;
 
 
@@ -11,29 +12,77 @@ use App\Product;
 use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
+{  public function addComment($id, Request $request)
 {
-//    public function comment($id, ReplyCommentRequest $request)
-//    {
-//        $product = Product::findOrFail($id);
-//
-//        Comment::create([
-//            'product_id' => $product->id,
-//            'user_id' => auth()->user()->id,
-//            'body' => $request->body,
-//        ]);
-//
-//        return back()->with('thongbao', 'Bình luận thành công,cảm ơn bạn dã phản hồi !!!!!!');
-//        return view('frontend.detail.product', compact('product', 'detailGall', 'comments'))->with('thongbao', 'Bình luận thành công');
-//    }
-//    public function reply(ReplyCommentRequest $request, $product_id, $comment_id){
-//
-//        Comment::create([
-//            'user_id' => auth()->user()->id,
-//            'reply_id' =>$comment_id,
-//            'product_id' =>$product_id,
-//            'body' =>$request->body,
-//        ]);
-//        return back()->with('thongbao', 'Trả lời bình luận thành công,cảm ơn bạn dã phản hồi !!!!!!');
-//    }
+    if (auth()->user()) {
+        Comment::create([
+            'user_id' => auth()->user()->id,
+            'name' => $request->name,
+            'product_id' => $id,
+        ]);
+        return redirect()->back();
+    } else {
+        return redirect()->back()->with('thongbao', 'bạn phải đăng nhập để bình luận');
+    }
 
+}
+
+    public function replycomment($comment_id, $product_id, Request $request)
+    {
+        if (auth()->user()) {
+            CommentReply::create([
+                'user_id' => auth()->user()->id,
+                'name' => $request->name,
+                'product_id' => $product_id,
+                'comment_id' => $comment_id,
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back()->with('thongbao', 'bạn phải đăng nhập để bình luận');
+        }
+    }
+    public function replycommentuser($comment_id, $product_id,$reply_id,$cp_id, Request $request)
+    {
+
+        if (auth()->user()) {
+            CommentReply::create([
+                'user_id' => auth()->user()->id,
+                'name' => $request->name,
+                'product_id' => $product_id,
+                'comment_id' => $comment_id,
+                'user_reply_id'=>$reply_id,
+                'comment_reply_id'=>$cp_id,
+            ]);
+            return redirect()->back();
+        } else {
+            return redirect()->back()->with('thongbao', 'bạn phải đăng nhập để bình luận');
+        }
+    }
+    public function create()
+    {
+
+    }
+//    public function produceShow()
+//    {
+//        $produce=Produce::first();
+//        $product=Product::limit(6)->get();
+//        return view('fronend.asset.produce',compact('produce','product'));
+//    }
+    public function destroyComment($id)
+    {
+        $comment=Comment::find($id);
+        if(auth()->user()->id==$comment->user->id){
+            CommentReply::where('comment_id',$comment->id)->delete();
+            $comment->delete();
+        }
+        return redirect()->back();
+
+    }
+    public function delete($id){
+        $comment_reply=CommentReply::find($id);
+        if(auth()->user()->id==$comment_reply->user->id){
+            $comment_reply->delete();
+        }
+        return redirect()->back();
+    }
 }

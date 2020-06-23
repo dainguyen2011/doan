@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Comment;
 use App\Galleries;
+use App\CommentReply;
 use App\Product;
 use App\Rating;
 use App\User;
@@ -18,13 +19,15 @@ class ProductController extends Controller
     public function getDetailProduct($id, Request $request)
     {
         $product = Product::find($id);
+        $totalComment = count($product->comments) + count(CommentReply::where('product_id', $id)->get());
         $product->update(['views' => $product->views + 1]);
         $avg_stars = round($product->rating->avg('rating'));
         $persons =$product->rating->count();
         $detailGall = $product->gallery;
+        $comment = Comment::where('product_id', $id)->orderBy('id', 'desc')->get();
         $product_related = Product::where('category_id', $product->category_id)->where('id', '!=', $id)->limit(8)->get();
         $rating = Rating::where('product_id', $product->id)->take(5)->latest()->get();
-        return view('frontend.detail.product', compact('product','product_related', 'detailGall', 'avg_stars','persons', 'rating'));
+        return view('frontend.detail.product', compact('product','totalComment','comment','product_related', 'detailGall', 'avg_stars','persons', 'rating'));
     }
 
 

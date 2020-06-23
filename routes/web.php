@@ -28,6 +28,12 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('search', ['as' => 'search', 'uses' => 'ProductController@getSearch']);
 //feed
+// comment
+Route::post('comment/{id}','CommentController@addComment')->name('comment');
+Route::post('comment/{comment_id}/{product_id}','CommentController@replycomment')->name('rep-comment');
+Route::post('comment/{comment_id}/{product_id}/{user_id}/{cp_id}','CommentController@replycommentuser')->name('repuser-comment');
+Route::get('delete-comment/{id}','CommentController@destroyComment')->name('delete-comment-font');
+Route::get('delete-comment-reply/{id}','CommentController@delete')->name('delete-comment-reply');
 
 //xoa galery
 Route::get("xoa-galery/{id}", ['as' => 'xoa-galery', 'uses' => 'ProductController@xoaGalery']);

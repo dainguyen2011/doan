@@ -1,7 +1,3 @@
-body{
-    background : red ;
-    margin:10px 10px;
-}
 .comments-section{
     background:#fff;
 }
@@ -42,7 +38,7 @@ body{
     border-radius: 4px;
     box-shadow:none;
 }
-.comment-box-wrapper{
+.comment-box-wrapper-1{
     display:flex;
     flex-direction:column;
     width:100%;
