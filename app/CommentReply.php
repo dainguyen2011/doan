@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CommentReply extends Model
 {
-    protected $table = 'comment_replys';
+    protected $table = 'comment_replies';
     protected $fillable = ['user_id', 'comment_id', 'name', 'product_id', 'user_reply_id', 'comment_reply_id'];
 
     public function comment()
