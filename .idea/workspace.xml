@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="" />
+    <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/doan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_195359_create_comments_table.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +17,28 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -117,6 +144,8 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/srmklive/paypal" />
+      <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZTIJqzWSUWCJ3N0m5LOLLh5qR2" />
@@ -128,16 +157,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/TYPESCRIPT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ĐA\doan" />
       <recent name="C:\xampp\htdocs\doan\public" />
       <recent name="C:\xampp\htdocs\doan" />
       <recent name="C:\xampp\htdocs\doan\public\upload\products" />
       <recent name="C:\xampp\htdocs\doan\resources" />
-      <recent name="C:\xampp\htdocs\doan\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -163,6 +198,7 @@
       <workItem from="1585461391999" duration="24000" />
       <workItem from="1585709046439" duration="206000" />
       <workItem from="1585872373303" duration="13000" />
+      <workItem from="1618451201811" duration="2389000" />
     </task>
     <servers />
   </component>
@@ -170,25 +206,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585059104567">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1618453606644">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585059104567" />
-    <state x="460" y="277" key="ComposerInitDialogKey" timestamp="1584859823822">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1618453606644" />
+    <state x="184" y="86" key="DiffContextDialog" timestamp="1618453604929">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="460" y="277" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1584859823822" />
-    <state x="841" y="119" key="FileChooserDialogImpl" timestamp="1585461413577">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1618453604929" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1618453082314">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="841" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585461413577" />
-    <state x="499" y="179" key="NewPhpClassDialog" timestamp="1585056352476">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="499" y="179" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1585056352476" />
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585872374308">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585872374308" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1618453082314" />
   </component>
 </project>
