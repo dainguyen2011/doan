@@ -56,9 +56,8 @@
                                                 class="currency"> vnđ</span>
                                         </div>
                                         <div class="prices">
-                                            <i class="fas fa-eye"></i>
                                             <b>Lượt xem: </b>
-                                            <span class="prices">{{number_format($product->views)}} <sup>Luợt xem</sup></span>
+                                            <span class="prices">{{number_format($product->views)}}<i class="fas fa-eye"></i></span>
                                         </div>
                                         <div class="prices">
                                             <b>Nhãn hiệu: </b>
