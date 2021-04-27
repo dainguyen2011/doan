@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->float('price_input')->nullable();
             $table->integer('views');
+            $table->float('pay');
             $table->timestamps();
             $table->softDeletes();
         });
