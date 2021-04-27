@@ -32,7 +32,7 @@ class RatingRequest extends FormRequest
     {
         return [
             'rating.required' => 'Vui lòng chọn sao',
-            'content.required' => 'Vui nhập nội dung đánh giá',
+            'content.required' => 'Vui lòng nhập nội dung đánh giá',
 
         ];
     }
