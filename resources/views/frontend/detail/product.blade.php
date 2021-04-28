@@ -91,6 +91,7 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
+                                        <span>(*bắt buộc chọn size)</span>
                                         <table style="margin-top: 20%" class="table">
                                             <thead class="thead-dark">
                                             <tr style="background-color: black; color: white">
