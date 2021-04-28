@@ -37,6 +37,17 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="full_name" class="col-md-4 col-form-label text-md-right">{{ __('Giới tính') }}</label>
+                            @if ($errors->has('gender'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                            @endif
+                            <label><input type="radio" name="gender" required value="1" checked/> Nam</label>
+                            <label><input type="radio" name="gender" required value="2"/> Nữ</label>
+                            <label><input type="radio" name="gender" required value="3"/> Khác</label>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>

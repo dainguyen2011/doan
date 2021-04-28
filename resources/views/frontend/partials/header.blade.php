@@ -7,7 +7,7 @@
                     <div class="header-top-left">
                         <div class="header-top-menu">
                         </div>
-                        <p>Welcome visitor!</p>
+                        <p>Công ty cổ phần may mặc Bach Duong Diamond !</p>
                     </div>
                 </div>
                 <div class="col-md-8 col-sm-8 col-xs-12">
@@ -65,7 +65,7 @@
             <div class="row">
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="header-logo">
-                        <a href="{{route('home')}}"><img src="{{asset('assets/frontend/img/logoaobongda.png')}}"
+                        <a href="{{route('home')}}"><img width="150px" id="logo1" src="{{asset('assets/frontend/img/logo1.png')}}"
                                                          alt="logo"></a>
                     </div>
                 </div>
