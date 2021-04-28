@@ -8,7 +8,6 @@
     @endif
     <div class="w3-content w3-display-container" style=".mySlides {display:none}">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/web_637236950009985208.png.ashx" alt="">
-        <img class="mySlides" src="http://aobongda.net/pic/Banner/BANNERWE_636961920839260840.png.ashx" alt="Keep &amp; Fly X Phan Văn Đức">
         <img class="mySlides" src="http://aobongda.net/pic/Banner/fffd_637236953611209913.png.ashx" alt="">
     </div>
     <script>

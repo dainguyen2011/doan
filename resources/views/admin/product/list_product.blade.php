@@ -43,15 +43,7 @@
                                                                                              src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                 </td>
                 <td nowrap="">{{$product->quantity}}</td>
-                @if($product->category_id ==8)
-                    <td nowrap="">Áo câu lạc bộ</td>
-                @endif
-                @if($product->category_id ==9)
-                    <td nowrap="">Áo đội tuyển</td>
-                @endif
-                @if($product->category_id ==10)
-                    <td nowrap="">Áo không logo</td>
-                @endif
+                <td nowrap=""value="8">Áo clb</td>
                 <td nowrap="">{{number_format($product->price)}} vnđ</td>
                 <td nowrap="">{{number_format($product->getPrice())}} vnđ</td>
                 {{--                    <td style="width: 100px">{!! $product->description  !!}</td>--}}

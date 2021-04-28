@@ -75,7 +75,7 @@ class CommentController extends Controller
             CommentReply::where('comment_id',$comment->id)->delete();
             $comment->delete();
         }
-        return redirect()->back();
+        return redirect()->back()->with('mes', 'bạn đã xóa comment');
 
     }
     public function delete($id){

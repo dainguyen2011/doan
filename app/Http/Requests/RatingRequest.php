@@ -26,13 +26,15 @@ class RatingRequest extends FormRequest
         return [
             'rating' => 'required',
             'content' => 'required',
+            'contented' => 'required',
         ];
     }
     public function messages()
     {
         return [
             'rating.required' => 'Vui lòng chọn sao',
-            'content.required' => 'Vui nhập nội dung đánh giá',
+            'content.required' => 'Vui lòng nhập nội dung đánh giá',
+            'contented.required' => 'Cảm ơn bạn đã đánh giá sản phẩm !',
 
         ];
     }

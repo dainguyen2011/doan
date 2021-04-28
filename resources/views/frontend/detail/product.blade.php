@@ -56,9 +56,8 @@
                                                 class="currency"> vnđ</span>
                                         </div>
                                         <div class="prices">
-                                            <i class="fas fa-eye"></i>
                                             <b>Lượt xem: </b>
-                                            <span class="prices">{{number_format($product->views)}} <sup>Luợt xem</sup></span>
+                                            <span class="prices">{{number_format($product->views)}}<i class="fas fa-eye"></i></span>
                                         </div>
                                         <div class="prices">
                                             <b>Nhãn hiệu: </b>
@@ -92,6 +91,7 @@
                                                 <option value="XXXL">XXXL</option>
                                             </select>
                                         </div>
+                                        <span>(*bắt buộc chọn size)</span>
                                         <table style="margin-top: 20%" class="table">
                                             <thead class="thead-dark">
                                             <tr style="background-color: black; color: white">
@@ -242,6 +242,11 @@
                                                                                         <fieldset>
                                                                                             <textarea name="name" id="comment" placeholder="trả lời bình luận" style="width: 100%;" rows="2"></textarea>
                                                                                             <div style="float: right;margin: 10px;"><input type="submit" value="Gửi"></div>
+                                                                                            @if (session('mes'))
+                                                                                                <div class="alert alert-success">
+                                                                                                    <p>{{ session('mes') }}</p>
+                                                                                                </div>
+                                                                                            @endif
                                                                                         </fieldset>
                                                                                     </form>
                                                                                 </div>
@@ -335,13 +340,13 @@
                             <textarea id="txt" class="form-control" required
                                       name="content"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" style="margin-left: 50%">Đánh giá</button>
+                            <button type="submit"  class="btn btn-primary" style="margin-left: 50%">Đánh giá</button>
                         </div>
                     </form>
                 @endif
             </div>
             <div class="row">
-                <h3>{{$persons .' '}} đánh giá {{$product->product_name}}</h3>
+                <h3>{{$persons .' '}}người đã đánh giá sản phẩm: {{$product->product_name}}</h3>
                 <div class="row">
                     @foreach($rating as $rate)
                         <div class="row" style="margin-top: 5%">
