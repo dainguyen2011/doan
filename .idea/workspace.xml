@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="" />
+    <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/doan.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/doan.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_195359_create_comments_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +19,14 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -25,7 +40,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
@@ -41,8 +55,6 @@
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/symfony/mime" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
@@ -67,10 +79,8 @@
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
-      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
@@ -117,6 +127,13 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
+      <path value="$PROJECT_DIR$/vendor/srmklive/paypal" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZTIJqzWSUWCJ3N0m5LOLLh5qR2" />
@@ -128,16 +145,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/TYPESCRIPT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project_Filnally\doan" />
       <recent name="C:\xampp\htdocs\doan\public" />
       <recent name="C:\xampp\htdocs\doan" />
       <recent name="C:\xampp\htdocs\doan\public\upload\products" />
       <recent name="C:\xampp\htdocs\doan\resources" />
-      <recent name="C:\xampp\htdocs\doan\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -163,6 +180,8 @@
       <workItem from="1585461391999" duration="24000" />
       <workItem from="1585709046439" duration="206000" />
       <workItem from="1585872373303" duration="13000" />
+      <workItem from="1619104633083" duration="1525000" />
+      <workItem from="1619268508096" duration="1338000" />
     </task>
     <servers />
   </component>
@@ -170,25 +189,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585059104567">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1619608261259">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585059104567" />
-    <state x="460" y="277" key="ComposerInitDialogKey" timestamp="1584859823822">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1619608261259" />
+    <state x="477" y="178" key="NewPhpClassDialog" timestamp="1619105924851">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="460" y="277" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1584859823822" />
-    <state x="841" y="119" key="FileChooserDialogImpl" timestamp="1585461413577">
+    <state x="477" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1619105924851" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1619106091316">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="841" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585461413577" />
-    <state x="499" y="179" key="NewPhpClassDialog" timestamp="1585056352476">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1619106091316" />
+    <state x="403" y="155" key="git4idea.merge.GitPullDialog" timestamp="1619608272349">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="179" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1585056352476" />
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585872374308">
+    <state x="403" y="155" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1619608272349" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1619269455819">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585872374308" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1619269455819" />
   </component>
 </project>
