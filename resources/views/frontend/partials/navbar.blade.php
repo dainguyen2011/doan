@@ -28,12 +28,7 @@
                             @endforeach
                             <li><a href="{{route('gioi-thieu')}}"> Giới thiệu</a></li>
                             <li><a href="{{route('contact')}}"> Liên Hệ</a></li>
-                            @if(Auth::check())
-                                <li><a href="{{route('profile')}}"> Thông tin tài khoản</a></li>
-                            @endif
-                            @if(auth::user() && auth::user()->type == "admin")
-                                <li><a href="{{route('danh-sach-san-pham')}}"> Trang quản trị</a></li>
-                            @endif
+                            <li><a href="{{route('detail-order')}}">Thông tin đơn hàng</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -62,7 +57,7 @@
                         <p><i class="fa fa-dollar"></i></p>
                     </div>
                     <div class="sigle-support-content">
-                        <h2>FREE SHIPPING </h2>
+                        <h2>PRICE </h2>
                         <p>Giá cả hợp lý</p>
                     </div>
                 </div>
