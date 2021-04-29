@@ -60,12 +60,11 @@
                                             <span class="prices">{{number_format($product->views)}}<i class="fas fa-eye"></i></span>
                                         </div>
                                         <div class="prices">
-                                            <b>Nhãn hiệu: </b>
+                                            <b>Thương hiệu: </b>
                                             <span class="prices">{{$product->brand}}</span>
                                         </div>
                                     </div>
                                     <div class="available-option">
-                                        <h2>Còn : {{$product->quantity}} sản phẩm</h2>
                                         <div class="col-md-3">
                                             <b class="quality">Số lượng</b>
                                         </div>

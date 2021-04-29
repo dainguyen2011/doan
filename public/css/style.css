@@ -156,9 +156,6 @@ body{
 .search-chart-list{
 	float: right;
 }
-#logo1{
-    border-radius: 50%;
-}
 .catagori-menu{
 	float:left;
 }
@@ -743,7 +740,7 @@ i.nivo-next-icon{}
 	margin-bottom: 5px;
 }
 .product-content-left a{
-	color: #ff0300;
+	color: yellowgreen;
     font-weight: bold;
 }
 .product-content-left a:hover{
@@ -3212,4 +3209,118 @@ body.home-2{
 .shop-social-button a:hover{
 	background:#2B82AD;
 	color:#fff;
+}
+.nhapnhay {
+
+    background-color: #004A7F;
+
+    -webkit-border-radius: 10px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    font-family: Arial;
+
+    font-size: 20px;
+
+    padding: 5px 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+}
+@-webkit-keyframes glowing {
+    0% { background-color: #004A7F; -webkit-box-shadow: 0 0 3px #004A7F; }
+    50% { background-color: #0094FF; -webkit-box-shadow: 0 0 10px #0094FF; }
+    100% { background-color: #004A7F; -webkit-box-shadow: 0 0 3px #004A7F; }
+}
+
+@-moz-keyframes glowing {
+    0% { background-color: #004A7F; -moz-box-shadow: 0 0 3px #004A7F; }
+    50% { background-color: #0094FF; -moz-box-shadow: 0 0 10px #0094FF; }
+    100% { background-color: #004A7F; -moz-box-shadow: 0 0 3px #004A7F; }
+}
+
+@-o-keyframes glowing {
+    0% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+    50% { background-color: #0094FF; box-shadow: 0 0 10px #0094FF; }
+    100% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+}
+
+@keyframes glowing {
+    0% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+    50% { background-color: #0094FF; box-shadow: 0 0 10px #0094FF; }
+    100% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+}
+
+.nhapnhay {
+    -webkit-animation: glowing 300ms infinite;
+    -moz-animation: glowing 300ms infinite;
+    -o-animation: glowing 300ms infinite;
+    animation: glowing 300ms infinite;
+}
+.nhapnhay2 {
+
+    background-color: red;
+
+    -webkit-border-radius: 10px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    color: red;
+
+    cursor: pointer;
+
+    display: inline-block;
+
+    font-family: Arial;
+
+    font-size: 20px;
+
+    padding: 5px 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+}
+@-webkit-keyframes glowing1 {
+    0% { background-color: red; -webkit-box-shadow: 0 0 3px red; }
+    50% { background-color: red; -webkit-box-shadow: 0 0 10px red; }
+    100% { background-color: red; -webkit-box-shadow: 0 0 3px red; }
+}
+
+@-moz-keyframes glowing1 {
+    0% { background-color: red; -moz-box-shadow: 0 0 3px red; }
+    50% { background-color: red; -moz-box-shadow: 0 0 10px red; }
+    100% { background-color: red; -moz-box-shadow: 0 0 3px red; }
+}
+
+@-o-keyframes glowing1 {
+    0% {background-color: red; box-shadow: 0 0 3px red; }
+    50% { background-color: red; box-shadow: 0 0 10px red; }
+    100% { background-color: red; box-shadow: 0 0 3px red; }
+}
+
+@keyframes glowing1 {
+    0% { background-color: red; box-shadow: 0 0 3px red; }
+    50% { background-color: red; box-shadow: 0 0 10px red; }
+    100% { background-color: red; box-shadow: 0 0 3px red   ; }
+}
+
+.nhapnhay2 {
+    -webkit-animation: glowing1 300ms infinite;
+    -moz-animation: glowing1 300ms infinite;
+    -o-animation: glowing1 300ms infinite;
+    animation: glowing1 300ms infinite;
 }

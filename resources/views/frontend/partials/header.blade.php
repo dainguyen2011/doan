@@ -29,8 +29,8 @@
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <i class="fas fa-user-circle">&nbsp;
-                                            {{ Auth::user()->name }}</i> <span
+                                        <h4 class="fas fa-user-circle">&nbsp;
+                                            {{ Auth::user()->name }}</h4> <span
                                             class="caret"></span>
                                     </a>
 

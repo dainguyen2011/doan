@@ -52,7 +52,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_phone">Số điện thoại</label>
-                                    <input style="width: 300px" id="form_phone" type="tel" name="phone"
+                                    <input style="width: 300px" id="form_phone" type="number" name="phone"
                                            class="form-control" placeholder="Nhập số điện thoại">
                                     <div class="help-block with-errors"></div>
                                 </div>

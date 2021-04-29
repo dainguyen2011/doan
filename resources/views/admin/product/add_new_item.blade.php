@@ -28,9 +28,9 @@
                 <th>Danh mục</th>
                 <th>
                     <select class="form-control"  name="category_id">
-                        <option value="8">Áo clb</option>
-                        <option value="9">Áo đội tuyển</option>
-                        <option value="10">Áo không logo</option>
+                        @foreach($categories as $category)
+                        <option value="1">{{$category->ordering}}</option>
+                            @endforeach
                     </select>
                 </th>
             </tr>

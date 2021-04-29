@@ -20,21 +20,6 @@
                 </th>
             </tr>
             <tr>
-                <th>Danh mục cha</th>
-                <td>
-                    <select class="form-control" name="parent">
-                        <option value="">Khách</option>
-                        @foreach($list_root_category as $category)
-                            <option value="{{$category->id}}">{{$category->category_name}}</option>
-                        @endforeach
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Ảnh</th>
-                <td><input type="file" name="image_category" class="form-control"></td>
-            </tr>
-            <tr>
                 <th>Mô tả</th>
                 <th>
                     <textarea placeholder="Nhập mô tả" class="form-control" name="description"></textarea>
@@ -43,7 +28,13 @@
             <tr>
                 <th>Yêu cầu</th>
                 <th>
-                    <input placeholder="Nhập yêu cầu" type="text" name="ordering" class="form-control">
+                    <input placeholder="Nhập yêu cầu" type="number" name="ordering" class="form-control">
+                </th>
+            </tr>
+            <tr>
+                <th>Publish</th>
+                <th>
+                    <input placeholder="Nhập publish" type="number" name="publish" class="form-control">
                 </th>
             </tr>
             <tr>
