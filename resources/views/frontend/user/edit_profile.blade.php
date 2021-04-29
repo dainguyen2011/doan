@@ -51,9 +51,9 @@
             </div>
             <div class="form-group-user">
                 <label>Giới tính:</label><br/>
-                <label><input type="radio" name="gender" required value="1" checked/> Nam</label>
-                <label><input type="radio" name="gender" required value="2"/> Nữ</label>
-                <label><input type="radio" name="gender" required value="3"/> Khác</label>
+                <label><input type="radio" name="gender" required value="0" /> Nam</label>
+                <label><input type="radio" name="gender" required value="1"/> Nữ</label>
+                <label><input type="radio" name="gender" required value="2"/> Khác</label>
                 <span class="Error"></span>
             </div>
             <div class="form-group-user">

@@ -45,7 +45,7 @@
                                             <p itemprop="email"><i class="fa fa-envelope"></i>
                                                 Email: {{Auth::user()->email}}</p>
                                             <p><span
-                                                    itemprop="affiliation">Giới tính: {{Auth::user()->gender ? 'nam' : 'nữ'}}</span>
+                                                    itemprop="affiliation">Giới tính: {{Auth::user()->gender = 1687 ? 'nam' : 'nữ'}}</span>
                                             </p>
                                             <p><span
                                                     itemprop="affiliation">Số điện thoại: {{Auth::user()->phone}}</span>

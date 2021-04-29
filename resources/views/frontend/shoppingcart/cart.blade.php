@@ -49,8 +49,7 @@
                                             <input type="hidden" value="{{$item->rowId}}" name="rowId_cart"
                                                    class="form-control">
                                             <button style="margin-left: 10px; color: green;" type="submit"
-                                                    name="update_qty"><i
-                                                    class="fa fa-edit"></i></button>
+                                                    name="update_qty">Cập nhật</button>
                                         </form>
                                     </td>
                                     <td class="th-size">{{$item->options->size }}</td>

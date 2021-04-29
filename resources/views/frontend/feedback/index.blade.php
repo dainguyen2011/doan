@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_phone">Phone</label>
-                                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                                    <input id="form_phone" type="number" name="phone" class="form-control" placeholder="Please enter your phone">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

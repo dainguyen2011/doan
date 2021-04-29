@@ -37,7 +37,7 @@
 
             <div style="font-family: Arial" class="navbar-header">
                 <a class="navbar-brand" id="bHeader" href="{{route('home')}}">
-                    Trang chủ
+                    <i class="fa fa-arrow-circle-left"></i>  Trang chủ
                 </a>
 
             </div>
@@ -58,9 +58,14 @@
                     <ul class="dropdown-menu dropdown-user" style="background: #fff;">
                         <li class="info-user-an" style="font-size: 15px">{{ Auth::user()->name }}  </li>
                         <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i
-                                    class="fa fa-sign-out fa-fw"></i> {{ __('Đăng xuất') }}</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                           var  check = confirm('Bạn có chắc chắn muốn đăng xuất ?');
+                                           if (check){
+                                                     document.getElementById('logout-form').submit();}"><i class="fa fa-sign-out fa-fw"></i>
+                                {{ __('Đăng xuất') }}
+
+                            </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                   style="display: none;">
@@ -95,8 +100,7 @@
                                         <img src="{{ asset('/'.auth()->user()->avatar)}}" alt="an-user-info">
                                     </div>
                                     <div class="an-user-info">
-                                        <div class="an-username">{{auth()->user()->name}}</div>
-                                        <div class="an-permision">{{auth()->user()->type}}</div>
+                                        <div class="an-username">Xin chào, {{auth()->user()->name}} {{auth()->user()->type}}</div>
                                     </div>
                                 </div>
                             </li>

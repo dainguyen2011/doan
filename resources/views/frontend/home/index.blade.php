@@ -80,11 +80,11 @@
                                     <div class="single-product">
                                         <div class="single-product-img">
                                             @if($product->quantity ==0)
-                                                <span
+                                                <span class="nhapnhay2"
                                                     style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
                                             @if($product->sale >0)
-                                                <span
+                                                <span class="nhapnhay"
                                                     style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                             @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img
@@ -101,7 +101,9 @@
                                             <div style="font-size: medium"
                                                  class="product-content-right pull-right">
                                                 <p>
+                                                    @if($product->sale > 0)
                                                     <del>{{number_format($product->price)}} vnđ</del>
+                                                    @endif
                                                     &nbsp; {{number_format($product->getPrice())}} vnđ
                                                 </p>
                                             </div>
@@ -113,7 +115,7 @@
                     </div>
                 </div>
                 <div class="product-items">
-                    <h2 class="product-header" style="text-align: center">ÁO CÂU LẠC BỘ</h2>
+                    <h2 class="product-header" style="text-align: center">Đầm dã ngoại, siêu thoáng mát </h2>
                     <div class="row">
                         <div id="product-slider" class="owl-carousel">
                             @foreach($aoclb_products as $product)
@@ -154,7 +156,7 @@
                     </div>
                 </div>
                 <div class="product-items">
-                    <h2 class="product-header" style="text-align: center">ÁO ĐỘI TUYỂN</h2>
+                    <h2 class="product-header" style="text-align: center">Denim Jackets &  Áo khoác</h2>
                     <div class="row">
                         <div id="product-slider-women" class="owl-carousel">
                             @foreach($aodoituyen_products as $product)
@@ -191,7 +193,7 @@
                     </div>
                 </div>
                 <div class="product-items">
-                    <h2 class="product-header" style="text-align: center">ÁO KHÔNG LOGO</h2>
+                    <h2 class="product-header" style="text-align: center">Áo Khoác & Áo Jackets</h2>
                     <div class="row">
                         <div id="product-slider-women" class="owl-carousel">
                             @foreach($aologo_products as $product)

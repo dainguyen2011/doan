@@ -120,10 +120,10 @@ body{
 .subscribe-area .input-group input {
   width: 78%;
 }
-	
+
 }
 
- 
+
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
 .header-top-menu {
@@ -654,7 +654,7 @@ i.nivo-prev-icon, i.nivo-next-icon {
 }
 
 }
- 
+
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 .container {width:450px}
@@ -695,7 +695,7 @@ i.nivo-prev-icon, i.nivo-next-icon {
 }
 .item-action-icon a {
   width: 45px;
-}	
+}
 .single-team-member:hover .team-member-action {
   top: 71%;
 }
@@ -708,6 +708,6 @@ i.nivo-prev-icon, i.nivo-next-icon {
 .shopping-summary button {
   clear: both;
 }
- 
+
 }
- 
+
