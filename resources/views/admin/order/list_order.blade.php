@@ -30,7 +30,7 @@
                     @if($order->status_1 == 2 )
                         <td>Đã xử lý</td>
                     @endif
-                    {{--                    <td> {{ $order->getStatus($order->status_1)['name'] }}</td>--}}
+{{--                                        <td> {{ $order->getStatus($order->status_1)['name'] }}</td>--}}
                     <td>{{number_format($order->total)}} vnđ</td>
                     <td>{{number_format($order->paid)}} vnđ</td>
                     <td><a href="{{route('chi-tiet-don-hang',$order->id)}}" class="btn btn-dark"><i
