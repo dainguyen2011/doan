@@ -29,18 +29,10 @@
                 <tr>
                     <th>Danh mục</th>
                     <th>
-                        <select class="form-control" name="category_id">
-                            <option value="">Chọn danh mục</option>
-                            @foreach($parent_categories as $category)
-                                <optgroup label="{{$category->category_name}}">
-                                    @foreach($subcategories as $sub_category)
-                                        @if ($sub_category->parent==$category->id)
-                                            <option
-                                                {{ $product->category_id == $sub_category->id ? " selected " : "" }} value="{{$sub_category->id}}">{{$sub_category->category_name}}</option>
-                                        @endif
-                                    @endforeach
-                                </optgroup>
-                            @endforeach
+                        <select class="form-control"  name="category_id">
+                            <option value="8">Đầm DÃ NGOẠI</option>
+                            <option value="9">DENIM JACKETS & ÁO KHOÁC</option>
+                            <option value="10">ÁO KHOÁC & ÁO JACKETS</option>
                         </select>
                     </th>
                 </tr>

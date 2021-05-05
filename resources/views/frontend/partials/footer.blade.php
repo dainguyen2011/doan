@@ -8,7 +8,7 @@
                         <div class="footer-logo">
                             <a href="{{route('home')}}"><img id="logo" src="{{asset('assets/frontend/img/logo2.png')}}" alt="logo"></a>
                         </div>
-                        <p>Hệ thống bán lẻ đồ thể thao aobongda.com là đơn vị chuyên sản xuất và phân phối các sản phẩm thể thao chuyên nghiệp. Tại đây bạn có thể dễ dàng mua Quần áo và dụng cụ thể thao chất lượng cao, chính hãng</p>
+                        <p>Hệ thống website chỉ cung cấp các sản phẩm độc quyền của công ty thời trang Bach Duong Diamond, chuyên cung cấp các sản phẩm thời trang của phụ nữ nhằm nâng vẻ đẹp và giá trị của các chị em !!!</p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 hidden-sm hidden-xs">
@@ -16,11 +16,13 @@
                         <h4 class="footer-heading">Thời gian mở cửa</h4>
                         <div class="footer-menu opening-time">
                             <ul>
-                                <li><i class="fa fa-angle-right"></i>Thứ 2<span>7.00 Sáng - 7.00 Tối</span></li>
-                                <li><i class="fa fa-angle-right"></i>Thứ 3<span>7.00 Sáng - 7.00 Tối</span></li>
-                                <li><i class="fa fa-angle-right"></i>Thứ 4<span>7.00 Sáng - 7.00 Tối</span></li>
-                                <li><i class="fa fa-angle-right"></i>Thứ 5 <span>7.00 Sáng - 7.00 Tối</span></li>
-                                <li><i class="fa fa-angle-right"></i>Thứ 6<span>7.00 Sáng - 7.00 Tối</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 2<span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 3<span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 4<span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 5 <span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 6<span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Thứ 7<span>24/24</span></li>
+                                <li><i class="fa fa-angle-right"></i>Chủ nhật<span>24/24</span></li>
                             </ul>
                         </div>
                     </div>
@@ -34,8 +36,8 @@
                                     <i class="fa fa-phone"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>0988580741</p>
-                                    <p>0354121536</p>
+                                    <p>0389795079</p>
+                                    <p>0582284769</p>
                                 </div>
                             </div>
                             <div class="contanct-details">
@@ -43,8 +45,8 @@
                                     <i class="far fa-envelope"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>thedai201198@gmail.com</p>
-                                    <p>giangpham060398@gmail.com</p>
+                                    <p>phamlebachduong@gmail.com</p>
+                                    <p>hungngo98@gmail.com</p>
                                 </div>
                             </div>
                             <div class="contanct-details">
@@ -52,7 +54,7 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-content">
-                                    <p>137 Phan Bá Vành, Bắc Từ Liêm, Hà Nội</p>
+                                    <p>km19, khu công nghiệp kandmark, thành phố Hải Dương, Tỉnh Hải Dương</p>
                                 </div>
                             </div>
                         </div>

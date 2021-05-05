@@ -29,6 +29,13 @@ class HomeController extends Controller
         return view('frontend.gioithieu');
     }
 
+    public function danhmuc(Request $request)
+    {
+        $sx = $request->input('sx', 'ASC');
+        $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
+        return view('frontend.danhmuc', compact('aoclb_products'));
+    }
+
     /**
      * Show the application dashboard.
      *

@@ -29,6 +29,15 @@
                             <li><a href="{{route('gioi-thieu')}}"> Giới thiệu</a></li>
                             <li><a href="{{route('contact')}}"> Liên Hệ</a></li>
                             <li><a href="{{route('detail-order')}}">Thông tin đơn hàng</a></li>
+                            <li><div class="dropdown">
+                                    <a class="dropbtn">Danh mục</a>
+                                    <div class="dropdown-content">
+                                        <a href="{{route('danh-muc')}}">đầm dã ngoại</a>
+                                        <a >DENIM JACKETS & ÁO KHOÁC</a>
+                                        <a >ÁO KHOÁC & ÁO JACKETS</a>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>

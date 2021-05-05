@@ -66,6 +66,7 @@ Route::post("dang-nhap", ['as' => 'dang-nhap', 'uses' => "CartController@removeI
 Route::post("dang-ky", ['as' => 'dang-ky', 'uses' => "CartController@removeItemCart"]);
 Route::post("tim-kiem", ['as' => 'tim-kiem', 'uses' => "CartController@removeItemCart"]);
 //TODO làm sau giới thiệu liên hệ
+Route::get("danh-muc", ['as' => 'danh-muc', 'uses' => "HomeController@danhmuc"]);
 Route::get("gioi-thieu", ['as' => 'gioi-thieu', 'uses' => "HomeController@gioithieu"]);
 Route::get("contact", ['as' => 'contact', 'uses' => "ContactController@view"]);
 Route::post("contact", ['as' => 'contact', 'uses' => "ContactController@postcontact"]);
@@ -74,8 +75,8 @@ Route::post("lien-he", ['as' => 'lien-he', 'uses' => "CartController@removeItemC
 Route::get("profile", ['as' => 'profile', 'uses' => "UserController@getprofile"]);
 Route::get("edit-profile", ['as' => 'edit-profile', 'uses' => "UserController@geteditprofile"]);
 Route::post("edit-profile", ['as' => 'update-profile', 'uses' => "UserController@getpostprofile"]);
-//TODO làm sau
-Route::get("danh-muc/{id}", ['as' => 'danh-muc', 'uses' => "ProductController@getProductsById"]);
+////TODO làm sau
+//Route::get("categories/{id}", ['as' => 'categories', 'uses' => "ProductController@getCategoriesById"]);
 
 //Thanh toán
 //Route::view('/checkout', 'checkout-page');
