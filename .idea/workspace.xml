@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/danhmuc.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/order/list_order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/order/list_order.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/detail/detail-order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/detail/detail-order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/add_new_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/add_new_item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product/list_product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product/list_product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +162,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/frontend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -168,11 +173,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ĐA\doan\resources\views\frontend" />
+      <recent name="C:\ĐA\doan\resources\views\frontend\categories" />
       <recent name="C:\ĐA\doan" />
       <recent name="C:\xampp\htdocs\doan\public" />
       <recent name="C:\xampp\htdocs\doan" />
-      <recent name="C:\xampp\htdocs\doan\public\upload\products" />
-      <recent name="C:\xampp\htdocs\doan\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -201,7 +206,7 @@
       <workItem from="1618451201811" duration="2959000" />
       <workItem from="1618539220858" duration="8753000" />
       <workItem from="1618563680457" duration="2067000" />
-      <workItem from="1620098719601" duration="11953000" />
+      <workItem from="1620098719601" duration="28601000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1618453695047</created>
@@ -280,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620115486017</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="all">
+      <created>1620124243834</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620124243834</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,10 +310,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619518989024" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1620115485331">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1620124243344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1620115485331" />
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1620124243344" />
     <state x="184" y="86" key="DiffContextDialog" timestamp="1619518260719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -310,14 +322,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1619507380099" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619693616518">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1620124250410">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619693616518" />
-    <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1620115633009">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1620124250410" />
+    <state x="656" y="252" width="607" height="536" key="find.popup" timestamp="1620199058302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1620115633009" />
+    <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1620199058302" />
     <state x="680" y="311" key="git4idea.merge.GitPullDialog" timestamp="1619434335805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
