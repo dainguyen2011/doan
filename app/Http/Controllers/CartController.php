@@ -13,7 +13,7 @@ use \Cart;
 use \DB;
 use \Session;
 
-class CartController extends Controller
+class  CartController extends Controller
 {
     //
     public function index()
@@ -77,7 +77,7 @@ class CartController extends Controller
         Cart::destroy();
         session()->forget('pay');
         session(['pay', 0]);
-        return view("frontend.pay-success");
+        return view("frontend.pay-success", compact('customer', 'order', 'order_id'));
     }
 
     public function postAddToCart($id, AddToCartRequest $request)

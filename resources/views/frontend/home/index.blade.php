@@ -76,7 +76,7 @@
                     <div class="row">
                         <div id="product-slider" class="owl-carousel">
                             @foreach($new_products as $product)
-                                <div class="col-md-9">
+                                <div class="col-md-4">
                                     <div class="single-product">
                                         <div class="single-product-img">
                                             @if($product->quantity ==0)

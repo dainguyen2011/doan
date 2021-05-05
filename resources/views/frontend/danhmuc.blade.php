@@ -53,25 +53,21 @@
                     <div class="product-items-area">
                         <div class="product-items">
                             <div class="dropdown">
-                                <button style="margin-top: 10px;background-color: #5a5c69; color: #33ff35"
-                                        class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="dropbtn">
                                     Chọn sắp xếp sản phẩm
                                 </button>
-                                <h3>Đầm dã ngoại, siêu thoáng mát</h3>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                                     style="background: #ffffff">
-                                    <a style="color: #104c11" class="dropdown-item" href="{{route('danh-muc', 'sx=DESC')}}">Giá từ cao đến thấp</a>
+                                <div class="dropdown-content">
+                                    <a href="{{route('danh-muc', 'sx=DESC')}}">Giá từ cao đến thấp</a>
                                     <br>
-                                    <a style="color: #104c11" class="dropdown-item" href="{{route('danh-muc', 'sx=ASC')}}">Giá từ thấp đến cao</a>
+                                    <a href="{{route('danh-muc', 'sx=ASC')}}">Giá từ thấp đến cao</a>
                                 </div>
+                                <h3>Đầm dã ngoại, siêu thoáng mát</h3>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-
                 @foreach($aoclb_products as $product)
                     <div class="col-md-3">
                         <div class="single-product">
@@ -106,7 +102,9 @@
                         </div>
                     </div>
                 @endforeach
-
         </div>
+    </div>
+    <div>
+
     </div>
 @endsection
