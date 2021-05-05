@@ -6,7 +6,7 @@
                 <div class="col-md-3 col-sm-12">
                     <div class="footer-info-card">
                         <div class="footer-logo">
-                            <a href="{{route('home')}}"><img id="logo" src="{{asset('assets/frontend/img/logo2.png')}}" alt="logo"></a>
+                            <a href="{{route('home')}}"><img id="logo" src="{{asset('assets/frontend/img/logo1.jpg')}}" alt="logo"></a>
                         </div>
                         <p>Hệ thống website chỉ cung cấp các sản phẩm độc quyền của công ty thời trang Bach Duong Diamond, chuyên cung cấp các sản phẩm thời trang của phụ nữ nhằm nâng vẻ đẹp và giá trị của các chị em !!!</p>
                     </div>

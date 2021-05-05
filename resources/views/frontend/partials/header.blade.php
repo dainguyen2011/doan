@@ -72,7 +72,7 @@
                 <div class="col-md-2 col-sm-2 col-xs-12">
                     <div class="header-logo">
                         <a href="{{route('home')}}"><img width="150px" id="logo1"
-                                                         src="{{asset('assets/frontend/img/logo1.png')}}"
+                                                         src="{{asset('assets/frontend/img/logo1.jpg')}}"
                                                          alt="logo"></a>
                     </div>
                 </div>
