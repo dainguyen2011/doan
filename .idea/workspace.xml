@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RatingRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RatingRequest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +198,8 @@
       <workItem from="1618451201811" duration="2959000" />
       <workItem from="1618539220858" duration="8753000" />
       <workItem from="1618563680457" duration="2067000" />
+      <workItem from="1619941673048" duration="677000" />
+      <workItem from="1620220577316" duration="408000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1618453695047</created>
@@ -281,9 +281,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1619690992589" />
-    <state x="680" y="311" key="git4idea.merge.GitPullDialog" timestamp="1619434335805">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="484" y="218" key="git4idea.merge.GitPullDialog" timestamp="1620220975318">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="484" y="218" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1620220975318" />
     <state x="680" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619434335805" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1619515119811">
       <screen x="0" y="0" width="1920" height="1040" />
