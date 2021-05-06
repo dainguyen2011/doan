@@ -18,6 +18,7 @@ class ProductController extends Controller
     //
     public function getDetailProduct($id, Request $request)
     {
+        $categories = Category::all();
         $product = Product::find($id);
         $totalComment = count($product->comments) + count(CommentReply::where('product_id', $id)->get());
         $product->update(['views' => $product->views + 1]);
@@ -27,7 +28,7 @@ class ProductController extends Controller
         $comment = Comment::where('product_id', $id)->orderBy('id', 'desc')->get();
         $product_related = Product::where('category_id', $product->category_id)->where('id', '!=', $id)->limit(8)->get();
         $rating = Rating::where('product_id', $product->id)->take(5)->latest()->get();
-        return view('frontend.detail.product', compact('product','totalComment','comment','product_related', 'detailGall', 'avg_stars','persons', 'rating'));
+        return view('frontend.detail.product', compact('product','totalComment','comment','product_related', 'detailGall', 'avg_stars','persons', 'rating', 'categories'));
     }
 
 
@@ -40,10 +41,11 @@ class ProductController extends Controller
     }
     public function getSearch(Request $request)
     {
+        $categories = Category::all();
         $key = $request->input('key');
         $search = Product::where('product_name', 'like', '%' . $request->input('key') . '%')->get();
 
-        return view('frontend.search.search', compact('search', 'key'));
+        return view('frontend.search.search', compact('search', 'key', 'categories'));
     }
     public function xoaGalery($id, Request $request)
     {

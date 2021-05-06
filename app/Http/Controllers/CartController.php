@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Customers;
 use App\Http\Requests\AddToCartRequest;
 use App\Http\Requests\PostPayNowRequest;
@@ -19,6 +17,10 @@ class  CartController extends Controller
     public function index()
     {
         return view("frontend.shoppingcart.cart");
+    }
+    public function paysuccess()
+    {
+        return view("frontend.paysuccess");
     }
 
     public function payNow()

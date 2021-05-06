@@ -11,11 +11,19 @@ use App\Product;
 
 class CategoryController extends Controller
 {
-    //
+    // BE
     function getListCategory()
     {
         $categories = Category::all();
         return view('admin.category.list_category', compact('categories'));
+    }
+//    FE
+    function danhmuc($id)
+    {
+        $categories = Category::all();
+        $nameCategories = Category::where('category_name', $id);
+        $id_categories = Category::join('categories');
+        return view('frontend.danhmuc', compact('categories', 'nameCategories'));
     }
 
     function getAddCategory()
@@ -41,18 +49,10 @@ class CategoryController extends Controller
 
     function postAddCategory(CategoryRequest $request)
     {
-        $file['name'] = [];
-        if ($request->hasFile('image_category')) {
-            $file = upload_image('image_category');
-            if (isset($file['name'])) {
-                $file['name'];
-            }
-        }
         Category::create([
             'category_name' => $request->input('category_name'),
             'description' => $request->input('description'),
-            'ordering' => $request->input('ordering'),
-            'image' => $file['name']
+            'ordering' => $request->input('ordering')
         ]);
 
         return redirect(route('list-danh-muc'))->with('success', 'Thêm thành danh mục thành công !!!');
@@ -60,20 +60,11 @@ class CategoryController extends Controller
 
     function postEditCategory($id, CategoryRequest $request)
     {
-        $file['name'] = [];
-        if ($request->hasFile('image_category')) {
-            $file = upload_image('image_category');
-            if (isset($file['name'])) {
-                $file['name'];
-            }
-        }
-
         $category = Category::find($id);
         $category->update([
             'category_name' => $request->input('category_name'),
             'description' => $request->input('description'),
             'ordering' => $request->input('ordering'),
-            'image' => $file['name'] ? $file['name'] : $category->image,
         ]);
         return redirect(route('list-danh-muc'))->with('success', 'Sửa thành danh mục thành công !!!');
     }

@@ -30,9 +30,9 @@
                     <th>Danh mục</th>
                     <th>
                         <select class="form-control"  name="category_id">
-                            <option value="8">Đầm DÃ NGOẠI</option>
-                            <option value="9">DENIM JACKETS & ÁO KHOÁC</option>
-                            <option value="10">ÁO KHOÁC & ÁO JACKETS</option>
+                            @foreach($categories as $vl)
+                                <option>{{$vl -> category_name}}</option>
+                            @endforeach
                         </select>
                     </th>
                 </tr>

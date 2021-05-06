@@ -29,12 +29,12 @@ class HomeController extends Controller
         return view('frontend.gioithieu');
     }
 
-    public function danhmuc(Request $request)
-    {
-        $sx = $request->input('sx', 'ASC');
-        $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
-        return view('frontend.danhmuc', compact('aoclb_products'));
-    }
+//    public function danhmuc(Request $request)
+//    {
+//        $sx = $request->input('sx', 'ASC');
+//        $categories = Product::where('category_id', $sx)->orderBy('price', $sx)->get();
+//        return view('frontend.danhmuc', compact('categories'));
+//    }
 
     /**
      * Show the application dashboard.
@@ -43,6 +43,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $categories = Category::all();
         $sx = $request->input('sx', 'ASC');
         $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
         $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
@@ -58,7 +59,7 @@ class HomeController extends Controller
             $aoclb_products = $aoclb_products->sortByDesc('price_sale');
         }
 
-        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products', 'new_products'));
+        return view('frontend.home.index', compact('aoclb_products', 'aodoituyen_products', 'aologo_products', 'new_products', 'categories'));
     }
 
     public function getOrder(Request $request)
@@ -112,5 +113,4 @@ class HomeController extends Controller
         $orders->delete();
         return redirect(route('home'));
     }
-
 }
