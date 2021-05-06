@@ -67,7 +67,7 @@ Route::post("dang-nhap", ['as' => 'dang-nhap', 'uses' => "CartController@removeI
 Route::post("dang-ky", ['as' => 'dang-ky', 'uses' => "CartController@removeItemCart"]);
 Route::post("tim-kiem", ['as' => 'tim-kiem', 'uses' => "CartController@removeItemCart"]);
 //TODO làm sau giới thiệu liên hệ
-Route::get("danh-muc", ['as' => 'danh-muc', 'uses' => "CategoryController@danhmuc"]);
+Route::get("danh-muc", ['as' => 'danh-muc', 'uses' => "HomeController@danhmuc"]);
 Route::get("gioi-thieu", ['as' => 'gioi-thieu', 'uses' => "HomeController@gioithieu"]);
 Route::get("contact", ['as' => 'contact', 'uses' => "ContactController@view"]);
 Route::post("contact", ['as' => 'contact', 'uses' => "ContactController@postcontact"]);

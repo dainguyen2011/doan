@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 @php
-                    $list_root_category=DB::table('categories')->where('category_name','=',null)->get();
+                    $list_root_category=DB::table('categories')->where('parent','=',null)->get();
                     $list_sub_category=DB::table('categories')->where('parent','!=',null)->get();
                 @endphp
                 <div class="main-menu hidden-xs">
@@ -29,14 +29,12 @@
                             <li><a href="{{route('gioi-thieu')}}"> Giới thiệu</a></li>
                             <li><a href="{{route('contact')}}"> Liên Hệ</a></li>
                             <li><a href="{{route('detail-order')}}">Thông tin đơn hàng</a></li>
-                            <li>
-
-                                <div class="dropdown">
+                            <li><div class="dropdown">
                                     <a class="dropbtn">Danh mục</a>
                                     <div class="dropdown-content">
-                                        @foreach($categories as $vl)
-                                        <a href="{{route('danh-muc')}}">{{$vl->category_name}}</a>
-                                            @endforeach
+                                        <a value="8" href="{{route('danh-muc')}}">Đầm DÃ NGOẠI</a>
+                                        <a  value="9" href="{{route('danh-muc')}}">DENIM JACKETS & ÁO KHOÁC</a>
+                                        <a  value="10" href="{{route('danh-muc')}}">ÁO KHOÁC & ÁO JACKETS</a>
                                     </div>
                                 </div>
                             </li>

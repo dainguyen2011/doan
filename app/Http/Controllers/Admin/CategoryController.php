@@ -17,14 +17,6 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('admin.category.list_category', compact('categories'));
     }
-//    FE
-    function danhmuc($id)
-    {
-        $categories = Category::all();
-        $nameCategories = Category::where('category_name', $id);
-        $id_categories = Category::join('categories');
-        return view('frontend.danhmuc', compact('categories', 'nameCategories'));
-    }
 
     function getAddCategory()
     {

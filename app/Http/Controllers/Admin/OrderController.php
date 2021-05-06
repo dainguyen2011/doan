@@ -34,7 +34,7 @@ class OrderController extends Controller
             $ten_ao = $a->product->product_name;
             $so_luong = $a->product_qty;
         }
-        return view('admin.order.print_order', compact('order','ten_ao','so_luong','date_bill'));
+        return view('admin.order.print_order', compact('order','ten_ao', 'so_luong',' date_bill'));
     }
 
 
@@ -83,8 +83,6 @@ class OrderController extends Controller
         $order_count = Orders::where('status_1', 0)->count();
         $ordered_count = Orders::where('status_1', 2)->count();
         $bbb = OrderProduct::latest('product_qty')->whereDay('updated_at', \Carbon\Carbon::now())->first();
-//        dd(\Carbon\Carbon::now()->month);
-        dd($bbb);
         $products = OrderProduct::with('product', 'orders')->when($request->month, function ($qr) use ($request) {
             $qr->whereMonth('updated_at', $request->month);
         })

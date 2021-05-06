@@ -23,17 +23,15 @@ class ProductController extends Controller
 
     function getAddProduct()
     {
-        $categories = Category::all();
-        return view('admin.product.add_new_item', compact('categories'));
+        return view('admin.product.add_new_item');
     }
 
     function getEditProduct($id)
     {
-        $categories = Category::all();
         $product = Product::find($id);
         $parent_categories = Category::query()->where('parent', '=', null)->get();
         $subcategories = Category::query()->where('parent', '!=', null)->get();
-        return view('admin.product.edit_item', compact('product', 'parent_categories', 'subcategories', 'categories'));
+        return view('admin.product.edit_item', compact('product', 'parent_categories', 'subcategories'));
     }
 
     function getEditListImageProduct($id, Request $request)
