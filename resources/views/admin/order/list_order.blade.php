@@ -11,7 +11,7 @@
                 <th>Trạng thái</th>
                 <th>Tổng tiền</th>
                 <th>Đã thanh toán</th>
-                <th>Xem</th>
+                <th>Chi tiết</th>
                 <th>In hóa đơn</th>
                 <th>Xóa</th>
             </tr>

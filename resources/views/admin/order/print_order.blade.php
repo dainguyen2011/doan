@@ -28,9 +28,6 @@
 <section id="form">
     <div class="container pt-5 pb-5">
         <div class="row">
-            <div>
-               <a  href="{{route('list-don-hang')}}"> <img src="http://aobongda.com/Uploads/Module/htmlcontent/logo.png"></a>
-            </div>
             <div class="col-md-12 text-center">
                 <h3 style="color: #b91f1f" class="text-uppercase">Hóa đơn thanh toán
                 </h3>
@@ -72,7 +69,8 @@
                                 </div>
                                 <p>Ngày xuất hóa đơn: {{$date_bill}}</p>
                             </div>
-                            <h4 style="float: right; color: #36b91a">Địa chỉ: 137 Phan Bá Vành, Bắc Từ Liêm, TP Hà Nội</h4>
+                            <h4 style="float: right; color: #36b91a">Địa chỉ:
+                                km19, khu công nghiệp kandmark, thành phố Hải Dương, Tỉnh Hải Dương </h4>
                         </form>
 
                     </div>

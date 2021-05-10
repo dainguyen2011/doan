@@ -8,6 +8,7 @@ use App\Orders;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use \Session;
@@ -29,12 +30,12 @@ class OrderController extends Controller
     public function printOrder ($id, Request $request)
     {
         $order = Orders::find($id);
-        $date_bill = \Carbon\Carbon::now();
+        $date_bill = Carbon::now();
         foreach ($order->orderProducts as $a){
             $ten_ao = $a->product->product_name;
             $so_luong = $a->product_qty;
         }
-        return view('admin.order.print_order', compact('order','ten_ao', 'so_luong',' date_bill'));
+        return view('admin.order.print_order', compact('order','ten_ao', 'so_luong', 'date_bill'));
     }
 
 
@@ -75,7 +76,7 @@ class OrderController extends Controller
         return redirect(route('list-don-hang'));
     }
 
-    public function thongkesp(Request $request)
+    public function thongke(Request $request)
     {
         $month = $request->month ? $request->month : \Carbon\Carbon::now()->month;
         $orders = Orders::all();
@@ -125,7 +126,7 @@ class OrderController extends Controller
 
     public function export()
     {
-        return Excel::download(new OrderExport, 'thongke.xlsx');
+        return Excel::download(new OrderExport, 'thongkesanpham.xlsx');
     }
 
     public function changeStatus($id)

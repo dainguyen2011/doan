@@ -32,8 +32,18 @@ class HomeController extends Controller
     public function danhmuc(Request $request)
     {
         $sx = $request->input('sx', 'ASC');
-        $aoclb_products = Product::where('category_id', $sx)->orderBy('price', $sx)->get();
+        $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
         return view('frontend.danhmuc', compact('aoclb_products'));
+    } public function danhmuc9(Request $request)
+    {
+        $sx = $request->input('sx', 'ASC');
+        $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
+        return view('frontend.danhmuc9', compact('aodoituyen_products'));
+    } public function danhmuc10(Request $request)
+    {
+        $sx = $request->input('sx', 'ASC');
+        $aologo_products = Product::where('category_id', 10)->orderBy('price', $sx)->get();
+        return view('frontend.danhmuc10', compact( 'aologo_products'));
     }
 
     /**
@@ -95,6 +105,9 @@ class HomeController extends Controller
         ]);
         return back();
 
+    }
+    public function phanhoi(){
+        return view('phanhoi');
     }
 
     public function listRate($id, Request $request)

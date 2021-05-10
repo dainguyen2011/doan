@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-    background-image: url('https://img.lovepik.com/photo/50093/5165.jpg_wh860.jpg');
+    background-image: url('https://dbk.vn/uploads/ckfinder/images/tin-tuc-1/hinh-nen-dep-4.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -44,7 +44,7 @@ html,body{
 
 .input-group-prepend span{
     width: 50px;
-    background-color: #FFC312;
+    background-color: #38c172;
     color: black;
     border:0 !important;
 }

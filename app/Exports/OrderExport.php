@@ -36,7 +36,7 @@ class OrderExport implements FromCollection, WithHeadings
                 }
             }
             $product[] = array(
-                '0' => $row->iteration,
+                '0' => $row->id,
                 '1' => $row->product_name,
                 '2' => $row->created_at,
                 '3' => $row->pay ,
