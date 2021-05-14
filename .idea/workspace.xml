@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b798ac80-34aa-4612-bc86-1dedeb44bbc5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_22_082903_create_comments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_22_082903_create_comments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_22_055836_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_03_22_055836_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_22_195527_create_comment_replys_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_22_195527_create_comment_replys_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +201,8 @@
       <workItem from="1618539220858" duration="8753000" />
       <workItem from="1618563680457" duration="2067000" />
       <workItem from="1620098719601" duration="38392000" />
-      <workItem from="1620223927271" duration="459000" />
+      <workItem from="1620223927271" duration="2399000" />
+      <workItem from="1621004708807" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1618453695047</created>
@@ -296,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620199291378</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="all">
+      <created>1620224434361</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620224434361</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,13 +320,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619518989024" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1620199290806">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="416" y="0" key="CommitChangelistDialog2" timestamp="1620224432445">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="416" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1620224432445" />
     <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1620199290806" />
-    <state x="184" y="86" key="DiffContextDialog" timestamp="1619518260719">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="131" y="60" key="DiffContextDialog" timestamp="1621005199439">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="131" y="60" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1621005199439" />
     <state x="184" y="86" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619518260719" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1619507380099">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -335,9 +343,10 @@
     </state>
     <state x="467" y="176" width="607" height="536" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1620224173847" />
     <state x="656" y="252" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1620206199748" />
-    <state x="680" y="311" key="git4idea.merge.GitPullDialog" timestamp="1619434335805">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="484" y="218" key="git4idea.merge.GitPullDialog" timestamp="1621005185706">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="484" y="218" key="git4idea.merge.GitPullDialog/0.0.1366.728@0.0.1366.728" timestamp="1621005185706" />
     <state x="680" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1619434335805" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1620223947043">
       <screen x="0" y="0" width="1366" height="728" />
