@@ -25,12 +25,12 @@
                     <th>
                         @if($order->status_1 != 2 && $order->status_1 != 3)
                             <a href="{{route('change-status', $order->id)}}">
-                                <span
-                                    class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</span>
+                                <button
+                                    class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</button>
                             </a>
                         @else
-                            <span
-                                class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</span>
+                            <button
+                                class="label {{ $order->getStatus($order->status_1)['class'] }}">{{ $order->getStatus($order->status_1)['name'] }}</button>
                         @endif
                     </th>
                 </tr>

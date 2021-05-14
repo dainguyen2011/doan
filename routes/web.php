@@ -59,6 +59,7 @@ Route::post('update_cart_quality','CartController@update_cart_quality');
 Route::get("gio-hang", ['as' => 'gio-hang', 'uses' => "CartController@index"]);
 //thanh toán
 Route::get("thanh-toan", ['as' => 'thanh-toan', 'uses' => "CartController@payNow"]);
+Route::get("pay-success", ['as' => 'pay-success', 'uses' => "CartController@paysuccess"]);
 Route::post("thanh-toan", ['as' => 'thanh-toan', 'uses' => "CartController@postPayNow"]);
 Route::post("remove-item-cart/{id}", ['as' => 'remove-item-cart', 'uses' => "CartController@removeItemCart"]);
 //đăng nhập đăng ký tìm kiếm
@@ -67,11 +68,12 @@ Route::post("dang-ky", ['as' => 'dang-ky', 'uses' => "CartController@removeItemC
 Route::post("tim-kiem", ['as' => 'tim-kiem', 'uses' => "CartController@removeItemCart"]);
 //TODO làm sau giới thiệu liên hệ
 Route::get("danh-muc", ['as' => 'danh-muc', 'uses' => "HomeController@danhmuc"]);
+Route::get("danh-muc9", ['as' => 'danh-muc9', 'uses' => "HomeController@danhmuc9"]);
+Route::get("danh-muc10", ['as' => 'danh-muc10', 'uses' => "HomeController@danhmuc10"]);
 Route::get("gioi-thieu", ['as' => 'gioi-thieu', 'uses' => "HomeController@gioithieu"]);
 Route::get("contact", ['as' => 'contact', 'uses' => "ContactController@view"]);
 Route::post("contact", ['as' => 'contact', 'uses' => "ContactController@postcontact"]);
 Route::post("lien-he", ['as' => 'lien-he', 'uses' => "CartController@removeItemCart"]);
-
 Route::get("profile", ['as' => 'profile', 'uses' => "UserController@getprofile"]);
 Route::get("edit-profile", ['as' => 'edit-profile', 'uses' => "UserController@geteditprofile"]);
 Route::post("edit-profile", ['as' => 'update-profile', 'uses' => "UserController@getpostprofile"]);

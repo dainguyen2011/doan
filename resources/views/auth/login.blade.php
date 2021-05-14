@@ -44,9 +44,9 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn float-right login_btn">Đăng nhập</button>
+                                <button type="submit" class="btn float-right login_btn btn-success">Đăng nhập</button>
                                 @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                    <a class="btn btn-link " href="{{ route('password.request') }}">
                                         {{ __('Quên mật khẩu ?') }}
                                     </a>
                                 @endif

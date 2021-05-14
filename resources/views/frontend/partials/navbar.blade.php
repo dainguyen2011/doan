@@ -32,9 +32,9 @@
                             <li><div class="dropdown">
                                     <a class="dropbtn">Danh mục</a>
                                     <div class="dropdown-content">
-                                        <a href="{{route('danh-muc')}}">đầm dã ngoại</a>
-                                        <a >DENIM JACKETS & ÁO KHOÁC</a>
-                                        <a >ÁO KHOÁC & ÁO JACKETS</a>
+                                        <a value="8" href="{{route('danh-muc')}}">Đầm DÃ NGOẠI</a>
+                                        <a  value="9" href="{{route('danh-muc9')}}">DENIM JACKETS & ÁO KHOÁC</a>
+                                        <a  value="10" href="{{route('danh-muc10')}}">ÁO KHOÁC & ÁO JACKETS</a>
                                     </div>
                                 </div>
                             </li>

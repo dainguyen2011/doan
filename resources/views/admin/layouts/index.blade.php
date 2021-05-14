@@ -100,7 +100,7 @@
                                         <img src="{{ asset('/'.auth()->user()->avatar)}}" alt="an-user-info">
                                     </div>
                                     <div class="an-user-info">
-                                        <div class="an-username">Xin chào, {{auth()->user()->name}} {{auth()->user()->type}}</div>
+                                        <div class="an-username">Xin chào, {{auth()->user()->name}} Admin</div>
                                     </div>
                                 </div>
                             </li>
@@ -148,16 +148,12 @@
                                 </ul>
                             </li>
                             <li>
-                                <a><i class="fa fa-filter text-green"></i> <span
+                                <a><i  class="fa fa-filter text-green"></i> <span
                                         class="">Thống kê</span></a>
                                 <ul class="nav-flyout">
                                     <li>
                                         <a href="{{route('list-thong-ke')}}"><i
-                                                class="ion-arrow-return-right text-yellow"></i>Theo đơn hàng</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('list-thong-ke-sp')}}"><i
-                                                class="ion-arrow-return-right text-yellow"></i>Theo sản phẩm</a>
+                                                class="ion-arrow-return-right text-yellow"></i>Thống kê trong tháng</a>
                                     </li>
                                 </ul>
                             </li>
