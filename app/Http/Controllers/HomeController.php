@@ -55,6 +55,7 @@ class HomeController extends Controller
     {
         $sx = $request->input('sx', 'ASC');
         $aoclb_products = Product::where('category_id', 8)->orderBy('price', $sx)->get();
+        //$abc = Product::where('category_id')->limit(5);
         $aodoituyen_products = Product::where('category_id', 9)->orderBy('price', $sx)->get();
         $new_products = Product::when($sx, function ($qr) use ($sx) {
             $qr->orderBy('price', $sx);

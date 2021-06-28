@@ -76,6 +76,7 @@
                     <div class="row">
                         <div id="product-slider" class="owl-carousel">
                             @foreach($new_products as $product)
+
                                 <div class="col-md-4">
                                     <div class="single-product">
                                         <div class="single-product-img">
@@ -87,7 +88,7 @@
                                                 <span class="nhapnhay"
                                                     style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                             @endif
-                                            <a href="{{route('showDetail',$product->id)}}"><img
+                                            <a href="{{route('showDetail',$product->id)}}"><img height="100px" width="100px"
                                                     class="primary-img myImage"
                                                     src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
                                         </div>
@@ -110,6 +111,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             @endforeach
                         </div>
                     </div>
@@ -123,11 +125,11 @@
                                     <div class="single-product">
                                         <div class="single-product-img">
                                             @if($product->quantity ==0)
-                                                <span
+                                                <span class="nhapnhay2"
                                                     style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
                                             @if($product->sale >0)
-                                                <span
+                                                <span class="nhapnhay"
                                                     style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                             @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img
@@ -164,10 +166,10 @@
                                     <div class="single-product">
                                         <div class="single-product-img">
                                             @if($product->quantity ==0)
-                                                <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                                <span class="nhapnhay2" style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
                                             @if($product->sale >0)
-                                                <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                <span class="nhapnhay" style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                             @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                 src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
@@ -201,10 +203,10 @@
                                     <div class="single-product">
                                         <div class="single-product-img">
                                             @if($product->quantity ==0)
-                                                <span style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
+                                                <span class="nhapnhay2" style="background: #f13b43;padding: 3px 8px;font-size: 15px;position: absolute;right: 0;color: #fff;">Hết hàng</span>
                                             @endif
                                             @if($product->sale >0)
-                                                <span style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
+                                                <span class="nhapnhay" style="background: #3eb3f1;padding: 3px 8px;font-size: 15px;position: absolute;left: 0;color: #fff;">Sale {{$product->sale}} % </span>
                                             @endif
                                             <a href="{{route('showDetail',$product->id)}}"><img class="primary-img"
                                                                                                 src="{{ asset('') }}/{{ pare_url_file($product->product_image_intro) }}"></a>
